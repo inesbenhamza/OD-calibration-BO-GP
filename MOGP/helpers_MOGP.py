@@ -1,99 +1,120 @@
+"""
+ICMMultiOutputGP is a pure gpytorch.ExactGP — no outcome_transform, no Standardize.
+Input normalization and output standardization are handled outside the model.
+"""
+
 import torch
 import gpytorch
+
 from gpytorch.models import ExactGP
-from gpytorch.means import ZeroMean, MultitaskMean, ConstantMean
-from gpytorch.kernels import MaternKernel, MultitaskKernel, RBFKernel
+from gpytorch.means import MultitaskMean, ConstantMean
+from gpytorch.kernels import MaternKernel, MultitaskKernel
 from gpytorch.likelihoods import MultitaskGaussianLikelihood
 from gpytorch.constraints import Interval
 from gpytorch.mlls import ExactMarginalLogLikelihood
 from gpytorch.distributions import MultitaskMultivariateNormal, MultivariateNormal
+
 from botorch.posteriors.gpytorch import GPyTorchPosterior
 from botorch.models.model import Model
 from botorch.fit import fit_gpytorch_mll
-from botorch.exceptions import ModelFittingError
 
 
-def fit_gpytorch_mll_with_adam_fallback( # added for optimization failure (from BO4Mob) 
+def fit_gpytorch_mll_with_adam_fallback(
     mll: ExactMarginalLogLikelihood,
     max_adam_iters: int = 200,
     lr: float = 0.1,
     verbose: bool = True,
-) -> bool:
+) -> str:
     """
-    Fit MLL with fit_gpytorch_mll (L-BFGS-B); on failure, fall back to Adam.
-    Returns True if fit succeeded (either method).
+    Fit the GP marginal log likelihood with fit_gpytorch_mll (typically L-BFGS-B).
+    If that fails, fall back to Adam.
+
+    Returns
+    -------
+    str
+        'lbfgs' if L-BFGS-B succeeded, 'adam' if the fallback was used.
     """
     try:
         fit_gpytorch_mll(mll)
         if verbose:
-            print("GP fit successful (L-BFGS-B)")
-        return True
+            print("GP fit successful (fit_gpytorch_mll)")
+        return "lbfgs"
     except Exception as e:
         if verbose:
-            print(f"L-BFGS-B fit failed ({e}), falling back to Adam ({max_adam_iters} steps)")
+            print(f"fit_gpytorch_mll failed ({e}), falling back to Adam ({max_adam_iters} steps)")
+
         mll.train()
-        optimizer = torch.optim.Adam(mll.parameters(), lr=lr)
         model = mll.model
-        for i in range(max_adam_iters):
+        optimizer = torch.optim.Adam(mll.parameters(), lr=lr)
+
+        for _ in range(max_adam_iters):
             optimizer.zero_grad()
             output = model(*model.train_inputs)
-            loss = -mll(output, model.train_targets).sum()
+            loss = -mll(output, model.train_targets)
             loss.backward()
             optimizer.step()
+
+        mll.eval()
         if verbose:
             print("Adam fallback finished")
-        return True
+        return "adam"
 
 
-"""
-building a custom model for icm to enable Specific kernel configuration, Custom mean function:
-MultitaskMean(ConstantMean()) — one mean per task, Likelihood control:
-MultitaskGaussianLikelihood with custom noise constraints
-"""
+#########################
+####################################
+########################
 
 
-class ICMMultiOutputGP(ExactGP): 
+class ICMMultiOutputGP(ExactGP):
+    """
+    Multi-output Exact GP using an ICM / MultitaskKernel construction.
 
+    Parameters
+    ----------
+    train_X : torch.Tensor
+        Shape [N, d], normalized inputs.
+    train_Y : torch.Tensor
+        Shape [N, L], multi-task targets.
+    likelihood : MultitaskGaussianLikelihood
+        GPyTorch multitask likelihood.
+    rank : int
+        Rank of the task covariance factorization.
+    """
 
     def __init__(self, train_X, train_Y, likelihood, rank: int = 1):
-        """
-        train_X : [N, d]  (inputs, normalized to [0,1]^d)
-        train_Y : [N, L]  (per-edge (task) outputs / error on edges)
-        """
         super().__init__(train_X, train_Y, likelihood)
 
-        self.num_tasks = train_Y.shape[-1] 
+        self.num_tasks = train_Y.shape[-1]
+
+        # One learnable constant mean per task through MultitaskMean wrapping ConstantMean
         self.mean_module = MultitaskMean(
-             ConstantMean(),  
-             num_tasks=self.num_tasks)
-        #self.mean_module = ConstantMean(batch_shape=torch.Size([self.num_tasks])) # gives one learnable mean per task 
+            ConstantMean(),
+            num_tasks=self.num_tasks,
+        )
 
-
-        # Data kernel k(x, x') on OD inputs, shared over input.
-        # No ScaleKernel: MultitaskKernel handles scaling (avoids overparameterization).
+        # Shared input kernel over x
         data_kernel = MaternKernel(
             nu=2.5,
             ard_num_dims=train_X.shape[-1],
             lengthscale_constraint=Interval(0.005, 4.0),
         )
 
-        # Kronecker of data kernel and task kernel : multitask kernel combine data kernel and task kernel
-        self.covar_module = MultitaskKernel( 
+        # ICM multitask kernel = data kernel x task kernel
+        self.covar_module = MultitaskKernel(
             data_kernel,
             num_tasks=self.num_tasks,
-            rank=rank, 
+            rank=rank,
         )
 
     def forward(self, x):
-        mean_x = self.mean_module(x) 
+        mean_x = self.mean_module(x)
         covar_x = self.covar_module(x)
         return MultitaskMultivariateNormal(mean_x, covar_x)
 
-
-    def transform_inputs(self, X=None, **kwargs): # normalisation well be done outside the model 
+    def transform_inputs(self, X=None, **kwargs):
         """
-        BoTorch calls model.transform_inputs(X=...). For a pure GPyTorch model
-        we simply return X unchanged.
+        BoTorch may call model.transform_inputs(X=...).
+        Since normalization is handled outside, return X unchanged.
         """
         return X
 
@@ -105,28 +126,36 @@ def initialize_icm_gp(
     rank: int = 1,
 ):
     """
-    Initialize icm with specified rank.
+    Initialize an ICM multitask GP.
 
-    train_X_norm : [N, d]  (normalized inputs in [0,1]^d)
-    train_Y      : [N, L]  (per-edge errors / tasks)
-    verbose      : bool    (print diagnostic information)
+    Parameters
+    ----------
+    train_X_norm : torch.Tensor
+        Shape [N, d], normalized inputs in [0, 1]^d.
+    train_Y : torch.Tensor
+        Shape [N, L], per-task targets.
+    verbose : bool
+        Unused placeholder for diagnostics.
+    rank : int
+        Rank of the task covariance factorization.
 
-    return : 
+    Returns
+    -------
     model : ICMMultiOutputGP
-    mll   : ExactMarginalLogLikelihood
+    mll : ExactMarginalLogLikelihood
     """
     if train_X_norm.dim() != 2 or train_Y.dim() != 2:
-        raise ValueError("Expected train_X_norm [N,d], train_Y [N,L].")    
+        raise ValueError("Expected train_X_norm [N, d] and train_Y [N, L].")
 
-    N, d = train_X_norm.shape
+    N, _ = train_X_norm.shape
     N2, L = train_Y.shape
     if N != N2:
-        raise ValueError(f"Mismatch in N: X has {N}, Y has {N2}.")   # check if the number of inputs and outputs are the same for debug 
+        raise ValueError(f"Mismatch in number of rows: X has {N}, Y has {N2}.")
 
     likelihood = MultitaskGaussianLikelihood(
         num_tasks=L,
-        noise_constraint=Interval(1e-4, 1.0), # for diagonal noise matrix, This corresponds to a diagonal task-noise covariance, i.e., independent, task-specific observation noise modeled via a Kronecker product with the identity over inputs.
-    )   # this is diagonal noise matrix,  made for identity matox knoecker product with task specific noise matrix, noise is indepednt across task 
+        noise_constraint=Interval(1e-4, 1.0),
+    ) 
 
     model = ICMMultiOutputGP(
         train_X=train_X_norm,
@@ -139,39 +168,94 @@ def initialize_icm_gp(
     return model, mll
 
 
-
-
-
-
-
-
-class LinearAggregationICM(Model):   # linear aggregagtion to be used in ei 
+def select_icm_rank(
+    train_X_norm: torch.Tensor,
+    train_Y: torch.Tensor,
+    ranks: list = [1, 2, 3],
+    verbose: bool = True,
+) -> int:
     """
-    Wrap an ICMMultiOutputGP (L outputs) and expose a scalar GP:
+    Select the ICM task covariance rank by marginal log-likelihood.
 
-        S(x) = Σ_l w_l * e_l(x)
+    For each candidate rank, fits an ICMMultiOutputGP and evaluates the MLL
+    on the training data. The rank with the highest MLL is returned.
 
-    where:
-      - e(x) ∈ R^L are per-task / per-edge outputs of the ICM
-      - w ∈ R^L are fixed uniform weights
+    Parameters
+    ----------
+    train_X_norm : torch.Tensor
+        Shape [N, d], normalized inputs.
+    train_Y : torch.Tensor
+        Shape [N, L], multi-task targets.
+    ranks : list of int
+        Candidate ranks to evaluate.
+    verbose : bool
+        Print MLL scores per rank.
+
+    Returns
+    -------
+    int
+        Best rank.
+    """
+    best_rank = ranks[0]
+    best_score = float("-inf")
+
+    for rank in ranks:
+        model, mll = initialize_icm_gp(train_X_norm, train_Y, rank=rank, verbose=False)
+        model = model.to(dtype=train_X_norm.dtype)
+        mll = mll.to(dtype=train_X_norm.dtype)
+        fit_gpytorch_mll_with_adam_fallback(mll, verbose=False)
+        model.eval()
+        with torch.no_grad():
+            output = model(train_X_norm)
+            score = mll(output, model.train_targets).item()
+        if verbose:
+            print(f"  rank={rank}: MLL={score:.4f}")
+        if score > best_score:
+            best_score = score
+            best_rank = rank
+
+    if verbose:
+        print(f"  → selected rank={best_rank} (MLL={best_score:.4f})")
+    return best_rank
+
+
+class LinearAggregationICM(Model):
+    """
+    Wrap an ICMMultiOutputGP with L outputs and expose a scalar posterior:
+
+        S(x) = sum_l w_l * e_l(x)
+
+    where e(x) are the task outputs and w are fixed weights.
+
+    This is intended for scalar acquisitions such as Expected Improvement.
+    Supports q=1 only.
     """
 
-    def __init__(self, base_icm_model: ICMMultiOutputGP, weights: torch.Tensor, normalize_weights: bool = False):
+    def __init__(
+        self,
+        base_icm_model: ICMMultiOutputGP,
+        weights: torch.Tensor,
+        normalize_weights: bool = False,
+    ):
         super().__init__()
         self.base_model = base_icm_model
 
         w = torch.as_tensor(
             weights,
-            dtype=base_icm_model.train_targets.dtype,
-            device=base_icm_model.train_targets.device,
-        )
-        if normalize_weights:
-            w = w / w.sum()
-        self.register_buffer("w", w.view(-1))  # [L]
+            dtype=base_icm_model.train_targets.dtype, # same as base model targets for consistency, which is the num_tasks dimension of the multitask GP
+            device=base_icm_model.train_targets.device, # same device as base model targets for consistency
+        ).view(-1)
 
-    @property  # this is for the botorch model to know that the model has one output
+        if w.numel() != base_icm_model.num_tasks:
+            raise ValueError(
+                f"weights has length {w.numel()}, but base model has "
+                f"{base_icm_model.num_tasks} tasks."
+            )
+
+        self.register_buffer("w", w)
+
+    @property
     def num_outputs(self) -> int:
-        # one scalar output S(x)
         return 1
 
     def posterior(
@@ -181,70 +265,80 @@ class LinearAggregationICM(Model):   # linear aggregagtion to be used in ei
         **kwargs,
     ) -> GPyTorchPosterior:
         """
-        X : [b, d] or [b, 1, d] (q=1)
+        Compute the scalar posterior for S(x) = w^T e(x).
 
-        For each x_b:
-          - get multi-output dist e_b(x) (L tasks)
-          - aggregate S_b = wᵀ e_b
-            Var(S_b) = wᵀ Σ_b w
+        Parameters
+        ----------
+        X : torch.Tensor
+            Shape [b, d] or [b, 1, d].
+        observation_noise : bool
+            Whether to include observation noise in the posterior.
+
+        Returns
+        -------
+        GPyTorchPosterior
+            Scalar posterior with one output.
         """
-        # Handle shapes [b,1,d] vs [b,d] : for the botorch model to know that the input has one dimension
         if X.dim() == 3:
-            b, q, d = X.shape
-            if q != 1: # no batch acquisition 
-                #sequential BO: acquire 1 point → evaluate → update model → repeat
+            b, q, d = X.shape 
+            if q != 1: # as we are not evlaluating multiple points in parallel as we are using EI and not a q-batch acquisition functions 
+                # model compute the scalar aggregate points by points 
                 raise RuntimeError("LinearAggregationICM supports q=1 only.")
-            X = X.view(b, d)
+            X = X.view(b, d) # b is the batch size (nb of training points), d is the input dimension (tasks)
         elif X.dim() == 2:
             b, d = X.shape
         else:
             raise RuntimeError(f"Unexpected X.dim()={X.dim()}, expected 2 or 3.")
 
-        
         self.base_model.eval()
-        self.base_model.likelihood.eval() 
+        self.base_model.likelihood.eval()
 
-      
-        multi_dist = self.base_model(X)   # MultitaskMultivariateNormal
-        if observation_noise:
-            multi_dist = self.base_model.likelihood(multi_dist)
-
-
-        mean_e = multi_dist.mean                       # [b, L], Posterior mean of the latent function for each task, expected value of task l at point i (noise-free)
-        cov_e = multi_dist.covariance_matrix           # b*L, b*L
-
-        L = self.base_model.num_tasks
-        w = self.w 
-
+        w = self.w
         mus = []
         vars_ = []
 
-        for i in range(b): # for each point in the batch
-            start = i * L
-            end   = (i + 1) * L
+        # Safer: compute one-point multitask posterior at a time
+        # rather than slicing a large flattened covariance matrix.
+        for i in range(b): # for each data point
+            # base_model is the GP over L outputs jointly. So if we call it on one input gives a gaussian dist over the vector [e_1(x),...,e_L(x)] of the L outputs. Then we can compute the mean and covariance of S(x) = w^T e(x) using the mean and covariance of e(x) and the weights w.
+            dist_i = self.base_model(X[i : i + 1])  # one x (candidate point passed into posterior by the acquisition function), multitask posterior
+            if observation_noise:
+                dist_i = self.base_model.likelihood(dist_i)
 
-            mean_i = mean_e[i]                  # L
-            cov_i  = cov_e[start:end, start:end]  # L, L
 
-            mu_S  = (mean_i * w).sum()          # wᵀ μ
-            var_S = w @ cov_i @ w               # wᵀ Σ w, as an exemple if we habe 2 tasks : var_S = w1^2 * var_1 + w2^2 * var_2 + 2 * w1 * w2 * cov_12
+            #reminder GP gives a joint distribution over all tasks output simultaneously at the same input point 
+            mean_i = dist_i.mean.squeeze(0)          # [L] mean of the L outputs at this point
+            cov_i = dist_i.covariance_matrix         # [L, L] for one input point, covaariance between each task output at that point
 
+
+
+
+            #K_** = K_data(x_i, x_i) ⊗ K_task    shape: [L, L]
+            #  K_** = K_data(x_i, x_i) ⊗ K_task            shape: [L, N·L]
+
+
+
+
+            #Diagonal = how uncertain the GP is about each task at x_i
+             #Off-diagonal = how correlated two tasks are at x_i (learned by ICM from the task kernel)
+            
+
+
+            # aggregation
+            mu_S = (mean_i * w).sum()
+            var_S = w @ cov_i @ w # single scalar variance of the aggregate S(x) = w^T e(x)
+            #variance of the weighted sum S = w_1·e_1 + w_2·e_2 + w_3·e_3, which is the standard formula for variance of a linear combination of correlated random variable
 
             if var_S.item() < -1e-12:
                 raise RuntimeError(f"Negative scalar variance encountered: {var_S.item()}")
 
-            # treat tiny negatives as numerical zero
-            var_S = torch.clamp(var_S, min=0.0)
+            var_S = torch.clamp(var_S, min=0.0) # no negative variance
 
-      
             mus.append(mu_S)
             vars_.append(var_S)
 
-        mus   = torch.stack(mus).view(b, 1)      # b, 1
-        vars_ = torch.stack(vars_).view(b, 1, 1) # b, 1, 1
+        mus = torch.stack(mus).view(b, 1)         # batch of scalar means
+        vars_ = torch.stack(vars_).view(b, 1, 1)  # batch of 1x1 covariances
 
         mvn = MultivariateNormal(mus, vars_)
-       #expects a covariance matrix of shape (b, 1, 1), i.e. b independent 1×1 covariance matrices
         return GPyTorchPosterior(mvn)
-
-

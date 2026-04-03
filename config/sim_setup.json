@@ -14,12 +14,13 @@
     "od_bound_end": 2000,
     "BO_batch_size": 1,
     "BO_num_restarts": 10,
-    "BO_raw_samples": 32,
+    "BO_raw_samples": 128, 
     "BO_sample_shape": 128, 
     "CLEANUP_INTERMEDIATE_FILES": true,
     "EARLY_STOP_PATIENCE": 10,
     "EARLY_STOP_DELTA": 0.001,
     "EARLY_STOP_MIN_ACQ": 0.0,
     "EARLY_STOP_ENABLED": false,
-    "rank": 1 
+    "rank": 1,
+    "dim_od": 4
 }

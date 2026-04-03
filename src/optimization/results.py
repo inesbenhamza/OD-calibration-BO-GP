@@ -22,3 +22,4 @@ class BOResults:
     wall_times: List[float]             # Wall-clock time per iteration
     iteration_start: int                # Which iteration BO started from
     df_edge_stats: Optional[pd.DataFrame] = None  # All simulated flows per edge
+    gp_optimizer_log: Optional[List[str]] = None  # 'lbfgs' or 'adam' per BO iteration (MOGP only)

@@ -68,29 +68,31 @@ def save_bo_results(
         iteration_start=results.iteration_start,
         df_edge_stats=results.df_edge_stats,
     )
-    
+
     with open(pickle_path, 'wb') as f:
         pickle.dump(results_cpu, f)
     print(f"  ✓ Saved BOResults: {pickle_path}")
     
-    # 2. Save convergence.csv (for visualization scripts)
+
+    n_conv = len(results.convergence_curve)
+    pad = n_conv - len(results.acq_values) 
     conv_df = pd.DataFrame({
-        "iteration": range(len(results.convergence_curve)),
+        "iteration": range(n_conv),
         "best_S_model": results.convergence_curve,
-        "acq_value": [0.0] * results.iteration_start + results.acq_values,  # Pad initial samples
-        "wall_time": [0.0] * results.iteration_start + results.wall_times,
+        "acq_value": [0.0] * pad + list(results.acq_values),
+        "wall_time": [0.0] * pad + list(results.wall_times),
     })
     conv_path = save_dir / "convergence.csv"
     conv_df.to_csv(conv_path, index=False)
     print(f"  ✓ Saved convergence.csv: {conv_path}")
     
-    # 3. Save edge_stats.csv (if available)
+
     if results.df_edge_stats is not None and not results.df_edge_stats.empty:
         edge_stats_path = save_dir / "edge_stats.csv"
         results.df_edge_stats.to_csv(edge_stats_path, index=False)
         print(f"  ✓ Saved edge_stats.csv: {edge_stats_path}")
     
-    # 4. Save metadata.json
+
     meta = {
         "best_S": float(results.best_S),
         "best_idx": int(results.best_idx),
@@ -109,6 +111,7 @@ def save_bo_results(
     with open(meta_path, 'w') as f:
         json.dump(meta, f, indent=2)
     print(f"  ✓ Saved metadata.json: {meta_path}")
+
 
 
 def load_bo_results(

@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 
 
-
 def _ensure_edge_id(df: pd.DataFrame, context: str) -> pd.DataFrame:
     """
     Ensure the dataframe has an 'edge_id' column. If common alternatives exist,
@@ -180,59 +179,8 @@ def compute_squared_metric_per_edge(df_true, df_simulated, edge_ids):
 
 
 
-def compute_cubic_metric_per_edge(df_true, df_simulated, edge_ids):
-    """
-    Per-edge cubic metric (IND-GP with flow-proportional weights).
-    
-    The cubic metric is a reparameterization such that:
-    sum_l w_l^cb * e_l^cb(x) = e_agg(x) = (1/L) * sum_l ((s_l^sim - s_l^GT) / s_l^GT)^2
-    
-    where:
-    - e_l^cb = total_gt_flow * ((s_sim - s_gt)^2 / s_gt^3)
-    - w_l^cb = s_l^GT / (L * sum_j s_j^GT)
 
 
-    so each gp is fitted on the cubic metric of a single edge, therefore the mll i soptimized differently than the squared metric so the hyperparameters should be different.
-    therefore the posterior error prediction for each eadge is different than the squared metric.
-    therefore the aggregated value should be different and the acquisiton function should use different points. 
-    
-    """
-    df_true = _ensure_edge_id(df_true, "compute_cubic_metric_per_edge/df_true")
-    df_simulated = _ensure_edge_id(df_simulated, "compute_cubic_metric_per_edge/df_simulated")
-    errors = []
-
-    # Global constant: sum_j s_j^GT (ONLY over edge_ids for consistency with weights)
-    # Filter df_true to only edge_ids first
-    df_true_filtered = df_true[df_true["edge_id"].isin(edge_ids)]
-    total_gt_flow = df_true_filtered["interval_nVehContrib"].astype(float).sum()
-
-
-    for edge_id in edge_ids:
-        true_row = df_true[df_true["edge_id"] == edge_id]
-        if len(true_row) == 0:
-            errors.append(np.nan)
-            continue
-
-        s_gt = float(true_row["interval_nVehContrib"].values[0])
-
-        # Return NaN for edges with zero GT flow (to match squared metric behavior)
-        if s_gt <= 0:
-            errors.append(np.nan)
-            continue
-
-        sim_row = df_simulated[df_simulated["edge_id"] == edge_id]
-        s_sim = (
-            float(sim_row["interval_nVehContrib"].values[0])
-            if len(sim_row) > 0
-            else 0.0
-        )
-
-        diff_sq = (s_sim - s_gt) ** 2
-        e_l = total_gt_flow * (diff_sq / s_gt**3)
-
-        errors.append(e_l)
-
-    return np.array(errors)
 
 
 

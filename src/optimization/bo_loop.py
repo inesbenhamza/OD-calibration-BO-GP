@@ -19,15 +19,13 @@ from botorch.optim import optimize_acqf
 from botorch.utils.transforms import unnormalize
 from gpytorch.mlls import ExactMarginalLogLikelihood
 
-from src.simulation.sumo_runner import (
-    create_od_xml,
-    simulate_od,
-    parse_loop_data_xml_to_pandas,
-)
+from src.simulation.sumo_runner import run_simulation_for_od, parse_simulation_outputs
 from src.models.gp_models import (
     initialize_vanillabo_model,
     initialize_independent_gp_models_with_modellist,
     make_linear_aggregation_model_from_error_gps,
+    extract_independent_gp_hyperparameters,
+    extract_vanillabo_hyperparameters,
 )
 from MOGP.helpers_MOGP import (
     initialize_icm_gp,
@@ -52,9 +50,11 @@ class BayesianOptimizationLoop:
         device: torch.device,
         dtype: torch.dtype,
         error_metric_func: Optional[Callable[[pd.DataFrame, pd.DataFrame, List[str]], np.ndarray]] = None,
-        use_flow_proportional_weights: bool = False,
+        restart_output_dir: Optional[Path] = None,
     ):
         self.config = config
+        # When running multiple restarts, sim outputs (bo_iter_*) go inside this dir; else under simulation_run_path
+        self.restart_output_dir = Path(restart_output_dir) if restart_output_dir is not None else None
         self.gt_edge_data = gt_edge_data
         self.edge_ids = edge_ids
         self.gt_od_vals = gt_od_vals
@@ -66,42 +66,15 @@ class BayesianOptimizationLoop:
 
         self.error_metric_func = error_metric_func
 
-        flow_proportional_weights = False
-        self.flow_proportional_weights = flow_proportional_weights
-
-        # Compute weights (uniform or flow-proportional)
+        # Uniform weights: w_l = 1/L for all edges
         num_edges = len(edge_ids)
-
-        print(f"\nInitializing weights: use_flow_proportional_weights={use_flow_proportional_weights}, "
-              f"flow_proportional_weights={flow_proportional_weights}, "
-              f"metric_func={getattr(error_metric_func, '__name__', None)}")
-
-        if flow_proportional_weights:  # so cubic metric for ind gp 
-            gt_flows_series = gt_edge_data.set_index("edge_id")["interval_nVehContrib"] # extract the flow for each edge
-
-            gt_flows = gt_flows_series.reindex(edge_ids, fill_value=0.0).values.astype(float)
-            
-            total_flow = gt_flows.sum()
-            if total_flow > 0:
-                weights_np = gt_flows / (num_edges * total_flow)
-            else:
-                # Fallback to uniform if no flow data
-                weights_np = np.full(num_edges, 1.0 / num_edges)
-                print(f"  WARNING: Total flow is 0, falling back to uniform weights")
-            self.weights = torch.tensor(weights_np, dtype=dtype, device=device)
-            print(f"Using flow-proportional weights (sum={self.weights.sum().item():.6f}, total_flow={total_flow:.2f})")
-            print(f"  Weight range: [{self.weights.min().item():.6f}, {self.weights.max().item():.6f}]")
-            print(f"  First 5 weights: {self.weights[:5].cpu().numpy()}")
-            print(f"  Uniform weight would be: {1.0/num_edges :.6f}")
-        else:
-            # Uniform weights: w_l = 1/L for all edges
-            self.weights = torch.full(
-                (num_edges,),
-                1.0 / num_edges,
-                dtype=dtype,
-                device=device
-            )
-            print(f"Using uniform weights (1/{num_edges} each)")
+        self.weights = torch.full(
+            (num_edges,),
+            1.0 / num_edges,
+            dtype=dtype,
+            device=device
+        )
+        print(f"\nUsing uniform weights (1/{num_edges} each), metric_func={getattr(error_metric_func, '__name__', None)}")
 
         # Storage for BO progress
         self.all_X_norm: List[torch.Tensor] = []   # Normalized OD matrices
@@ -141,15 +114,9 @@ class BayesianOptimizationLoop:
         X_real = unnormalize(X_norm.unsqueeze(0), self.bounds).squeeze()
         curr_od = X_real.cpu().numpy()
 
-        # Create simulation directory
-        sim_dir = f'{self.config["simulation_run_path"]}/bo_iter_{iteration}'
-        Path(sim_dir).mkdir(parents=True, exist_ok=True)
-
-        # Create OD XML
-        od_xml = f"{sim_dir}/od.xml"
-
-        # debug: print the current od matrix
-        print(f"  Current OD matrix: {curr_od}")
+        # Simulation directory (inside restart folder when running multiple restarts)
+        base = self.restart_output_dir if self.restart_output_dir is not None else Path(self.config["simulation_run_path"])
+        sim_dir = base / f"bo_iter_{iteration}"
 
         # Use actual TAZ names from routes_df (e.g. taz91, taz92, ...)
         od_pairs = (
@@ -165,40 +132,22 @@ class BayesianOptimizationLoop:
                 f"OD pairs: {od_pairs.values.tolist()}"
             )
 
-        base_od = od_pairs.copy()
-        base_od["count"] = curr_od
+        print(f"  Current OD matrix: {curr_od}")
 
-        print(
-            f"  Creating OD with TAZ pairs: "
-            f"{base_od[['fromTaz', 'toTaz']].values.tolist()}"
-        )
-
-        create_od_xml(
+        seed = self.config.get("seed", 0)
+        prefix_output = run_simulation_for_od(
             curr_od,
-            base_od,
-            od_xml,
-            self.config["od_duration_sec"],
+            od_pairs,
+            sim_dir,
+            self.config,
             self.base_path,
-        )
-
-        # Run simulation
-        prefix_output = f"{sim_dir}/sim"
-        simulate_od(
-            od_xml,
-            prefix_output,
-            self.base_path,
-            self.config["net_xml"],
-            self.config["taz2edge_xml"],
-            self.config["additional_xml"],
             self.routes_df,
-            self.config["sim_end_time"],
-            self.config["TRIPS2ODS_OUT_STR"],
+            seed=seed,
         )
-
-        # Parse results
-        sim_edge_out = f'{prefix_output}_{self.config["EDGE_OUT_STR"]}'
-        curr_loop_stats, _, _ = parse_loop_data_xml_to_pandas(
-            self.base_path, sim_edge_out, prefix_output, self.config["SUMO_PATH"]
+        curr_loop_stats = parse_simulation_outputs(
+            prefix_output,
+            self.config,
+            self.base_path,
         )
 
         edge_stats_iter = (
@@ -211,17 +160,13 @@ class BayesianOptimizationLoop:
         self.edge_stats_records.append(edge_stats_iter)
 
         # Debug: which metric function is used this iteration
-        print(
-            f"  [DEBUG] Using error metric func={self.error_metric_func.__name__}, "
-            f"use_flow_proportional_weights={not torch.allclose(self.weights, torch.full_like(self.weights, 1.0 / len(self.edge_ids)))}"
-        )
+        print(f"  [DEBUG] Using error metric func={self.error_metric_func.__name__}")
 
         errors = self.error_metric_func(
             self.gt_edge_data,
             curr_loop_stats,
             self.edge_ids,
-        )  #  error from simulated flow and ground truth flow, either cubic or squared
-        # error is computed for each edge, either cubic or squared
+        )
 
         if isinstance(errors, (int, float)):
             # Vanilla BO
@@ -355,21 +300,12 @@ class BayesianOptimizationLoop:
 
             # Use stored weights for GP aggregation across edges
             weights_np = self.weights.cpu().numpy()
-            
-            # Extract ground truth flows if using flow-proportional weights (vectorized for efficiency)
-            gt_flows = None
-            if not torch.allclose(self.weights, torch.full_like(self.weights, 1.0 / len(self.edge_ids))):
-                # Not uniform weights, so extract flows for flow-proportional weighting
-                # Use vectorized pandas operation (same optimization as in initialization)
-                gt_flows_series = self.gt_edge_data.set_index("edge_id")["interval_nVehContrib"]
-                gt_flows = gt_flows_series.reindex(self.edge_ids, fill_value=0.0).values.astype(float)
 
-            # Create aggregated model (works for both uniform and flow-proportional weights)
             aggregated_gp_model = make_linear_aggregation_model_from_error_gps(
                 model_list_gp_errors=model_list_gp_errors,
                 weights=weights_np,
-                ground_truth_flows=gt_flows,
-                expect_flow_weights=self.flow_proportional_weights,
+                ground_truth_flows=None,
+                expect_flow_weights=False,
             )
 
             # Set models to eval mode for inference
@@ -422,21 +358,26 @@ class BayesianOptimizationLoop:
             # Train ICM on standardized per-edge errors (using filtered data)
             icm_model, mll = initialize_icm_gp(train_X_filtered, train_Y_errors_std)
             fit_ok = fit_gpytorch_mll_with_adam_fallback(mll, verbose=True)
-            if not fit_ok:
+            self._last_gp_optimizer = fit_ok  # 'lbfgs' or 'adam'
+            if fit_ok not in ("lbfgs", "adam"):
                 print("    WARNING: ICM GP fit failed")
 
-            # Create aggregated model with weights (handle None case)
+            # Scalar for EI: Z(x) = sum_l (w_l * sigma_l) * z_l(x) with z_l standardized edges.
+            # Then S_raw(x) = sum_l w_l * mu_l + Z(x), so minimizing Z is equivalent to minimizing raw S.
+            sigma = y_std.squeeze(0)  # [L]
             if self.weights is None:
                 L = icm_model.train_targets.shape[-1]
-                weights = torch.ones(
-                    L,
+                weights = torch.full(
+                    (L,),
+                    1.0 / L,
                     dtype=icm_model.train_targets.dtype,
                     device=icm_model.train_targets.device,
                 )
             else:
-                weights = self.weights
+                weights = self.weights.to(device=sigma.device, dtype=sigma.dtype)
 
-            aggregated_gp_model = LinearAggregationICM(icm_model, weights)
+            weights_eff = weights * sigma
+            aggregated_gp_model = LinearAggregationICM(icm_model, weights_eff)
             aggregated_gp_model.eval()
             
             return aggregated_gp_model
@@ -453,7 +394,7 @@ class BayesianOptimizationLoop:
 
         best_f_for_ei must be in the same space as model.posterior() outputs:
         - For vanillabo/independent_gp: raw space (Standardize transform auto-untransforms)
-        - For ICM: standardized space (model trained on standardized per-edge errors)
+        - For ICM/MOGP: Z = sum_l (w_l * sigma_l) * z_l (affine to raw S; see update_gp_model)
         
         Parameters are read from self.config if not provided:
         - num_restarts: from config["NUM_RESTARTS"] or config["BO_num_restarts"] (default: 5)
@@ -470,7 +411,7 @@ class BayesianOptimizationLoop:
         
         acqf = ExpectedImprovement(
             model=aggregated_gp_model,
-            best_f=best_f_for_ei,  # scalar raw value (same space as model outputs)
+            best_f=best_f_for_ei,  # same space as aggregated_gp_model.posterior() mean
             maximize=False,   # we minimize S(x)
         )
 
@@ -528,6 +469,7 @@ class BayesianOptimizationLoop:
         self.best_idx = int(np.argmin(self.all_S))
         self.best_S = float(self.all_S[self.best_idx])   # raw S
         self.convergence_curve = [self.best_S]
+        self.gp_optimizer_log = []   # 'lbfgs' or 'adam' per BO iteration (MOGP only)
 
         print(f"\nInitial training data: {len(train_X_init)} samples")
         print(f"Initial best S (raw): {self.best_S:.6f}")
@@ -571,13 +513,29 @@ class BayesianOptimizationLoop:
             aggregated_gp_model = self.update_gp_model(train_X, train_Y_errors)
             # Ensure model is in eval mode for inference
             aggregated_gp_model.eval()
+            # Track which optimizer was used this iteration (only set for MOGP)
+            self.gp_optimizer_log.append(getattr(self, "_last_gp_optimizer", None))
+
+            model_name = self.config.get("model_name") or "vanillabo"
+
+            # Log GP hyperparameters every iteration to CSV
+            _hp_dir = self.restart_output_dir if self.restart_output_dir is not None else Path(self.config["simulation_run_path"])
+            _hp_path = _hp_dir / "hyperparameters_per_iteration.csv"
+            if model_name == "vanillabo":
+                _hp_row = {"iteration": iteration, **extract_vanillabo_hyperparameters(aggregated_gp_model)}
+            elif model_name == "independent_gp":
+                _hp_summary = extract_independent_gp_hyperparameters(aggregated_gp_model, edge_ids=self.edge_ids)["summary"]
+                _hp_row = {"iteration": iteration, **_hp_summary}
+            else:
+                _hp_row = None
+            if _hp_row is not None:
+                pd.DataFrame([_hp_row]).to_csv(_hp_path, mode="a", header=not _hp_path.exists(), index=False)
 
             # 2) Compute best_f for EI
             # ExpectedImprovement expects best_f in the same space as model.posterior() outputs
             # For models with Standardize transform, posterior() auto-untransforms to raw space
             # For ICM: model is trained on standardized per-edge errors, so aggregated outputs are in standardized space
             # For independent_gp: Standardize transform auto-untransforms to raw space
-            model_name = self.config.get("model_name") or "vanillabo"
             if model_name == "vanillabo":
                 train_Y_raw = train_Y_errors.reshape(-1)  # Raw aggregated errors
                 best_f_for_ei = train_Y_raw.min()
@@ -586,21 +544,36 @@ class BayesianOptimizationLoop:
                 train_Y_raw_agg = (train_Y_errors * self.weights).sum(dim=1) if train_Y_errors.dim() == 2 else train_Y_errors.reshape(-1)
                 best_f_for_ei = train_Y_raw_agg.min()
             elif model_name in ["mogp", "icm"]:
-                # For ICM: model outputs are in standardized space (per-edge errors were standardized before training)
-                # Need to standardize per-edge errors, then aggregate to get standardized S
-                if hasattr(self, 'icm_y_mean') and hasattr(self, 'icm_y_std'):
-                    # Standardize per-edge errors using stored parameters
+                # Z = sum_l (w_l * sigma_l) * z_l matches LinearAggregationICM(..., w * sigma) posterior
+                if hasattr(self, "icm_y_mean") and hasattr(self, "icm_y_std"):
                     train_Y_errors_std = (train_Y_errors - self.icm_y_mean) / self.icm_y_std
-                    # Aggregate standardized per-edge errors
-                    train_Y_std_agg = (train_Y_errors_std * self.weights).sum(dim=1)
-                    best_f_for_ei = train_Y_std_agg.min()
+                    sigma = self.icm_y_std.squeeze(0)  # [L]
+                    if self.weights is None:
+                        w = torch.ones(
+                            train_Y_errors.shape[1],
+                            dtype=sigma.dtype,
+                            device=sigma.device,
+                        ) / train_Y_errors.shape[1]
+                    else:
+                        w = self.weights.to(device=sigma.device, dtype=sigma.dtype)
+                    train_Z_agg = (train_Y_errors_std * (w * sigma)).sum(dim=1)
+                    best_f_for_ei = train_Z_agg.min()
                 else:
                     # Fallback: compute standardization on the fly (shouldn't happen if update_gp_model was called)
                     y_mean = train_Y_errors.mean(dim=0, keepdim=True)
                     y_std = train_Y_errors.std(dim=0, keepdim=True).clamp_min(1e-6)
                     train_Y_errors_std = (train_Y_errors - y_mean) / y_std
-                    train_Y_std_agg = (train_Y_errors_std * self.weights).sum(dim=1)
-                    best_f_for_ei = train_Y_std_agg.min()
+                    sigma = y_std.squeeze(0)
+                    if self.weights is None:
+                        w = torch.ones(
+                            train_Y_errors.shape[1],
+                            dtype=sigma.dtype,
+                            device=sigma.device,
+                        ) / train_Y_errors.shape[1]
+                    else:
+                        w = self.weights.to(device=sigma.device, dtype=sigma.dtype)
+                    train_Z_agg = (train_Y_errors_std * (w * sigma)).sum(dim=1)
+                    best_f_for_ei = train_Z_agg.min()
             else:
                 raise ValueError(f"Unknown model_name: {model_name}")
             
@@ -611,17 +584,25 @@ class BayesianOptimizationLoop:
             
             # Determine space label based on model type
             if model_name in ["mogp", "icm"]:
-                space_label = "std"
-                space_desc = "standardized (ICM trained on standardized per-edge errors)"
+                space_label = "Z"
+                space_desc = "Z = sum_l (w_l*sigma_l*z_l), affine to raw S"
             else:
                 space_label = "raw"
                 space_desc = "raw (Standardize transform auto-untransforms)"
             
             print(f"  Best f ({space_label}, for EI): {best_f_for_ei:.6f} (from {space_desc})")
-            print(f"  Best S from posterior: {S_train_from_posterior.min():.6f} (should match {space_label})")
-            print(f"  Training S (posterior) range: [{S_train_from_posterior.min():.6f}, {S_train_from_posterior.max():.6f}]")
+            _post_note = (
+                " (Z on training pts; need not equal raw S)"
+                if model_name in ["mogp", "icm"]
+                else " (should align with raw S)"
+            )
+            print(f"  Best scalar from posterior: {S_train_from_posterior.min():.6f}{_post_note}")
+            print(
+                f"  Training scalar (posterior) range: "
+                f"[{S_train_from_posterior.min():.6f}, {S_train_from_posterior.max():.6f}]"
+            )
 
-            # 3) Optimize acquisition function (EI on S in raw space)
+            # 3) Optimize acquisition function (EI minimizes same raw S via model scalar space)
             print("\nStep 2: Optimize acquisition function")
             print(f"  Current best S (raw): {self.best_S:.6f}")
             X_next_norm, acq_val = self.optimize_acquisition(
@@ -636,7 +617,10 @@ class BayesianOptimizationLoop:
                 post = aggregated_gp_model.posterior(X_next_norm.unsqueeze(0))
                 pred_mean_std = float(post.mean.item())
                 pred_std_std = float(post.variance.sqrt().item())
-            print(f"  GP predicts S_std: {pred_mean_std:.6f} ± {pred_std_std:.6f}")
+            if model_name in ["mogp", "icm"]:
+                print(f"  GP predicts Z (ICM agg): {pred_mean_std:.6f} ± {pred_std_std:.6f}")
+            else:
+                print(f"  GP predicts S: {pred_mean_std:.6f} ± {pred_std_std:.6f}")
             print(f"  Candidate X (norm): {X_next_norm.cpu().numpy()}")
             
             # Check if candidate is too close to existing points
@@ -765,5 +749,6 @@ class BayesianOptimizationLoop:
             wall_times=self.wall_times,
             iteration_start=iteration_start,
             df_edge_stats=df_edge_stats,
+            gp_optimizer_log=self.gp_optimizer_log if self.gp_optimizer_log else None,
         )
         return results

@@ -31,7 +31,6 @@ def run_multiple_bo_restarts(
     n_restarts: int = 5,
     n_bo_iterations: int = 10,
     error_metric_func: Optional[Callable[[pd.DataFrame, pd.DataFrame, List[str]], np.ndarray]] = None,
-    use_flow_proportional_weights: bool = False,
     early_stop_patience: int = 0,
     early_stop_delta: float = 0.0,
 ) -> Dict:
@@ -43,8 +42,6 @@ def run_multiple_bo_restarts(
     for restart in range(n_restarts):
         print(f"RESTART {restart + 1}/{n_restarts}")
 
-        # Full reseed per restart (torch, numpy, python)
-        # Use same seed calculation as notebook: 42 + restart * 1000
         restart_seed = 42 + restart * 1000
         try:
             from src.utils.seed import set_seed
@@ -54,7 +51,11 @@ def run_multiple_bo_restarts(
             torch.manual_seed(restart_seed)
             print(f"  Reseeded torch with seed {restart_seed}")
 
-        # Instantiate a fresh BO loop
+        restart_dir = None
+        if "simulation_run_path" in config:
+            restart_dir = Path(config["simulation_run_path"]) / "results" / f"restart_{restart+1}_seed-{restart_seed}"
+            restart_dir.mkdir(parents=True, exist_ok=True)
+
         bo_loop = BayesianOptimizationLoop(
             config,
             gt_edge_data,
@@ -66,7 +67,7 @@ def run_multiple_bo_restarts(
             device,
             dtype,
             error_metric_func=error_metric_func,
-            use_flow_proportional_weights=use_flow_proportional_weights,
+            restart_output_dir=restart_dir,
         )
 
         print(f"  Using SAME {train_X_init.shape[0]} initial samples for every restart.")

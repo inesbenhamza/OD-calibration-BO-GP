@@ -18,12 +18,18 @@ def parse_loop_data_xml_to_pandas(base_dir, sim_edge_file, prefix_output, SUMO_P
     """
     output_csv = f"{base_dir}/{prefix_output}_loopOutputs.csv"
 
-    convert_cmd = (
-        f"python {SUMO_PATH}/tools/xml/xml2csv.py "
-        f"{sim_edge_file} -o {output_csv}"
-    )
+    convert_cmd = [
+        "python", f"{SUMO_PATH}/tools/xml/xml2csv.py",
+        sim_edge_file, "-o", output_csv
+    ]
 
-    os.system(convert_cmd)
+    result = subprocess.run(convert_cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"xml2csv.py failed (exit {result.returncode}) for {sim_edge_file}\n"
+            f"stderr: {result.stderr.strip()}\n"
+            f"stdout: {result.stdout.strip()}"
+        )
 
     df = pd.read_csv(output_csv, sep=";")
 
@@ -323,3 +329,99 @@ def simulate_od(
     print("Running SUMO:", sumo_cmd)
     os.system(sumo_cmd)
 
+
+def run_simulation_for_od(
+    od_vector,
+    base_od_df: pd.DataFrame,
+    sim_dir,
+    config: dict,
+    base_path,
+    routes_df: pd.DataFrame,
+    seed: int = 0,
+) -> str:
+    """
+    Run SUMO for a given OD demand vector.
+
+    Parameters
+    ----------
+    od_vector : array-like
+        OD demand values (one per OD pair), in same order as base_od_df rows.
+    base_od_df : pd.DataFrame
+        Base OD table with columns fromTaz, toTaz (same order as od_vector).
+    sim_dir : str or Path
+        Directory for this simulation (OD XML and outputs written here).
+    config : dict
+        Must contain: od_duration_sec, net_xml, taz2edge_xml, additional_xml,
+        sim_end_time, TRIPS2ODS_OUT_STR.
+    base_path : str or Path
+        Project base directory.
+    routes_df : pd.DataFrame
+        Routes table for trip updates.
+    seed : int, optional
+        Random seed for SUMO/od2trips. Default 0.
+
+    Returns
+    -------
+    str
+        Output prefix path relative to base_path (e.g. "path/to/sim_dir/sim").
+    """
+    sim_dir = Path(sim_dir)
+    sim_dir.mkdir(parents=True, exist_ok=True)
+    base_path = Path(base_path)
+
+    create_od_xml(
+        od_vector,
+        base_od_df.copy(),
+        "od.xml",
+        config["od_duration_sec"],
+        str(sim_dir),
+    )
+
+    prefix_output = str(sim_dir / "sim")
+    simulate_od(
+        str(sim_dir / "od.xml"),
+        prefix_output,
+        str(base_path),
+        str(config["net_xml"]),
+        str(config["taz2edge_xml"]),
+        str(config["additional_xml"]),
+        routes_df,
+        str(config["sim_end_time"]),
+        config["TRIPS2ODS_OUT_STR"],
+        sim_start_time=0,
+        seed=seed,
+    )
+    return prefix_output
+
+
+def parse_simulation_outputs(
+    prefix_output,
+    config: dict,
+    base_path,
+) -> pd.DataFrame:
+    """
+    Read SUMO edge output and return the edge flow dataframe.
+
+    Parameters
+    ----------
+    prefix_output : str or Path
+        Simulation output prefix (e.g. "path/to/sim_dir/sim", relative to base_path).
+    config : dict
+        Must contain EDGE_OUT_STR and SUMO_PATH.
+    base_path : str or Path
+        Project base directory.
+
+    Returns
+    -------
+    pd.DataFrame
+        Edge-level flow data with columns including edge_id and interval_nVehContrib.
+    """
+    base_path = Path(base_path)
+    sim_edge_out = f"{prefix_output}_{config['EDGE_OUT_STR']}"
+    df_agg, _, _ = parse_loop_data_xml_to_pandas(
+        str(base_path),
+        sim_edge_out,
+        str(prefix_output),
+        str(config["SUMO_PATH"]),
+    )
+    return df_agg

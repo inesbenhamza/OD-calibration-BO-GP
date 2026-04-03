@@ -66,7 +66,7 @@ def load_kwargs_config(base_path: str, model_name: str, sim_setup_filename: str 
     kwargs_config["model_name"] = model_name
     kwargs_config["kernel"] = kernel
 
-    kwargs_config["network_path"] = Path("network", network_name)
+    kwargs_config["network_path"] = Path("network", network_name) # network/quickstart if network is quickstart
     kwargs_config["taz2edge_xml"] = Path(base_path, kwargs_config["network_path"], 'taz.xml')
     kwargs_config["net_xml"] = Path(base_path, kwargs_config["network_path"], 'net.xml')
 
@@ -106,6 +106,7 @@ def load_kwargs_config(base_path: str, model_name: str, sim_setup_filename: str 
     kwargs_config["sim_stat_freq_sec"] = sim_setup['sim_stat_freq_sec']
     kwargs_config["od_duration_sec"] = sim_setup['od_duration_sec']
     kwargs_config["n_init_search"] = sim_setup['n_init_search']
+    kwargs_config["dim_od"] = sim_setup['dim_od']
 
     # BO PARAMETERS - Add both naming conventions for compatibility
     # Lowercase with BO_ prefix (for direct access)
