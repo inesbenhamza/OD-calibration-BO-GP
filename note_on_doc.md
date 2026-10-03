@@ -234,15 +234,3 @@ Seed → restart index: `restart_idx = (seed - 42) // 1000 + 1` (seed 42 →
 restart 1, seed 1042 → restart 2, seed 2042 → restart 3).
 
 ---
-
-## Known Issues (as of this rewrite)
-
-- A large number of files repo-wide have an identical `" 2"`-suffixed
-  duplicate (`requirements 2.txt`, `README 2.md`, most of `scripts/`,
-  several `config/sim_setup_*.json`, etc.) — looks like an iCloud/Dropbox
-  sync-conflict artifact (consistent with the similarly-named stray
-  `env/pyvenv.cfg` found referencing a `Sumo_od_calibration 3` folder
-  earlier). Spot-checked identical via `diff`; not yet cleaned up.
-- `graph2.py` at the repo root is an orphaned, unused, older duplicate of
-  `MOGP/graph.py` (predates the SharedPrivate kernel) — not imported
-  anywhere.
