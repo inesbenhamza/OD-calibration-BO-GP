@@ -1,0 +1,20 @@
+<data>
+    <interval id="CarA" begin="0" end="3600">
+        <tazRelation from="taz_S1" to="taz_T1" count="500"/>
+        <tazRelation from="taz_S1" to="taz_T3" count="500"/>
+        <tazRelation from="taz_S1" to="taz_T6" count="500"/>
+        <tazRelation from="taz_S1" to="taz_T7" count="600"/>
+        <tazRelation from="taz_S3" to="taz_T4" count="600"/>
+        <tazRelation from="taz_S4" to="taz_T2" count="500"/>
+        <tazRelation from="taz_S5" to="taz_T1" count="500"/>
+        <tazRelation from="taz_S5" to="taz_T3" count="500"/>
+        <tazRelation from="taz_S5" to="taz_T6" count="600"/>
+        <tazRelation from="taz_S5" to="taz_T7" count="500"/>
+        <tazRelation from="taz_S6" to="taz_T1" count="500"/>
+        <tazRelation from="taz_S6" to="taz_T3" count="500"/>
+        <tazRelation from="taz_S6" to="taz_T6" count="600"/>
+        <tazRelation from="taz_S6" to="taz_T7" count="500"/>
+        <tazRelation from="taz_S7" to="taz_T5" count="600"/>
+        <tazRelation from="taz_S8" to="taz_T2" count="600"/>
+    </interval>
+</data>

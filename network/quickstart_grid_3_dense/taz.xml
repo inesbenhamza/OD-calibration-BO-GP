@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- Origins /taz source  91/92, destinations/ taz sink 94/93 -->
+    <taz id="taz_91">
+        <tazSource id="c0_D2" weight="1.00"/></taz>
+    <taz id="taz_92">
+        <tazSource id="c0_D4" weight="1.00"/></taz>
+    <taz id="taz_94">
+        <tazSink   id="c0_D7" weight="1.00"/></taz>
+    <taz id="taz_93">
+        <tazSink   id="c0_D5" weight="1.00"/>
+    </taz>
+
+    <!-- origins O3/O4, destinations D3(upper)/D4(lower) -->
+    <taz id="taz_O3">
+        <tazSource id="c1_D2" weight="1.00"/></taz>
+    <taz id="taz_O4">
+        <tazSource id="c1_D4" weight="1.00"/></taz>
+    <taz id="taz_D3">
+        <tazSink   id="c1_D7" weight="1.00"/></taz>
+    <taz id="taz_D4">
+        <tazSink   id="c1_D5" weight="1.00"/>
+    </taz>
+
+    <!-- origins O5/O6, destinations D5(upper)/D6(lower) -->
+    <taz id="taz_O5">
+        <tazSource id="c2_D2" weight="1.00"/>
+    </taz>
+    <taz id="taz_O6">
+        <tazSource id="c2_D4" weight="1.00"/>
+    </taz>
+    <taz id="taz_D5">
+        <tazSink   id="c2_D7" weight="1.00"/>
+    </taz>
+    <taz id="taz_D6">
+        <tazSink   id="c2_D5" weight="1.00"/>
+    </taz>
+
+</additional>

@@ -1,0 +1,16 @@
+<data>
+    <interval id="CarA" begin="0" end="3600">
+        <!-- Cross-copy 0→1 -->
+        <tazRelation from="taz_92" to="taz_D3" count="1200"/>
+        <tazRelation from="taz_92" to="taz_D4" count="700"/>
+        <!-- Cross-copy 1→2 -->
+        <tazRelation from="taz_O4" to="taz_D5" count="1100"/>
+        <tazRelation from="taz_O4" to="taz_D6" count="550"/>
+        <!-- Backward cross-copy 1→0 and 2→1 -->
+        <tazRelation from="taz_O3" to="taz_93"  count="900"/>
+        <tazRelation from="taz_O5" to="taz_D4"  count="800"/>
+        <!-- Two-corridor crossing 0→2 and 1→2 -->
+        <tazRelation from=   count="750"/>
+        <tazRelation from="taz_O3" to="taz_D5"  count="450"/>
+    </interval>
+</data>

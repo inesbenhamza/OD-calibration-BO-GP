@@ -4,6 +4,7 @@ import subprocess
 from pathlib import Path
 
 # Third-party imports
+import numpy as np
 import pandas as pd
 import xml.etree.ElementTree as ET
 
@@ -33,7 +34,7 @@ def parse_loop_data_xml_to_pandas(base_dir, sim_edge_file, prefix_output, SUMO_P
 
     df = pd.read_csv(output_csv, sep=";")
 
-    df["interval_nVehContrib"] = df["edge_arrived"] + df["edge_left"]
+    df["interval_nVehContrib"] = df["edge_arrived"] + df["edge_left"] # this is edge_arrived + edge_left
     df["interval_harmonicMeanSpeed"] = df["edge_speed"]
 
     df_agg = df.groupby("edge_id", as_index=False).agg(
@@ -147,9 +148,15 @@ def create_od_tazrelation_xml(od_df: pd.DataFrame, output_file: Path, od_end_tim
     print(f"Created OD TAZ relation XML at: {output_file}")
 
 
-def update_trip_routes(in_trips_xml, out_trips_xml, routes_df):
+def update_trip_routes(in_trips_xml, out_trips_xml, routes_df, seed=0):
     """
-    Fix from/to edges of the generated trips to match fixed route set.
+    Assign each generated trip to a fixed route from the route set.
+
+    Writes <vehicle> elements with an explicit <route edges="..."/> child,
+    so SUMO follows the exact route_edges path instead of recomputing its
+    own shortest path between from/to edges (which would ignore the "ratio"
+    split for OD pairs with multiple route options sharing the same
+    start/last edge).
 
     Parameters
     ----------
@@ -158,7 +165,11 @@ def update_trip_routes(in_trips_xml, out_trips_xml, routes_df):
     out_trips_xml : str
         Output trips XML file path.
     routes_df : pd.DataFrame
-        Routes DataFrame with fromTaz, toTaz, start_edge, last_edge columns.
+        Routes DataFrame with fromTaz, toTaz, route_edges columns.
+        May contain multiple rows per (fromTaz, toTaz) pair (split routes),
+        optionally weighted by a "ratio" column.
+    seed : int, optional
+        Seed for the RNG used to assign trips to split routes. Default: 0.
     """
     # Check if input file exists
     if not Path(in_trips_xml).exists():
@@ -166,35 +177,63 @@ def update_trip_routes(in_trips_xml, out_trips_xml, routes_df):
             f"Input trips file not found: {in_trips_xml}\n"
             f"This file should have been created by od2trips. Check the od2trips command output."
         )
-    
+
     tree = ET.parse(in_trips_xml)
     root = tree.getroot()
 
     trips_df = xml2df_str(root, "trip")
+    routes_df = routes_df.copy()
     routes_df["fromTaz"] = routes_df["fromTaz"].astype(str)
     routes_df["toTaz"] = routes_df["toTaz"].astype(str)
 
     trips_df = trips_df.drop(columns=["to", "from"], errors="ignore")
 
-    merged = trips_df.merge(
-        routes_df[["fromTaz", "toTaz", "start_edge", "last_edge"]],
-        on=["fromTaz", "toTaz"],
-        how="inner"
-    )
-    merged = merged.rename(columns={"start_edge": "from", "last_edge": "to"})
+    has_ratio = "ratio" in routes_df.columns
+    rng = np.random.default_rng(seed)
+
+    # For OD pairs with multiple routes (split ratios), assign each trip to
+    # exactly one route (sampled according to the ratios), instead of merging
+    # to a cross product which would create duplicate vehicle ids.
+    assigned_groups = []
+    for (from_taz, to_taz), group in trips_df.groupby(["fromTaz", "toTaz"], sort=False):
+        od_routes = routes_df[
+            (routes_df["fromTaz"] == from_taz) & (routes_df["toTaz"] == to_taz)
+        ]
+        if od_routes.empty:
+            continue
+
+        if len(od_routes) == 1:
+            chosen = od_routes.iloc[np.zeros(len(group), dtype=int)]
+        else:
+            weights = (
+                od_routes["ratio"].astype(float).to_numpy()
+                if has_ratio
+                else np.ones(len(od_routes))
+            )
+            weights = weights / weights.sum()
+            choice_idx = rng.choice(len(od_routes), size=len(group), p=weights)
+            chosen = od_routes.iloc[choice_idx]
+
+        group = group.reset_index(drop=True)
+        chosen = chosen[["route_edges"]].reset_index(drop=True)
+        assigned_groups.append(pd.concat([group, chosen], axis=1))
+
+    merged = pd.concat(assigned_groups, ignore_index=True)
     merged["depart_float"] = merged["depart"].astype(float)
     merged = merged.sort_values(by="depart_float")
 
-    merged.to_xml(
-        out_trips_xml,
-        attr_cols=[
-            "id", "depart", "from", "to", "type",
-            "fromTaz", "toTaz", "departLane", "departSpeed"
-        ],
-        root_name="routes",
-        row_name="trip",
-        index=False
-    )
+    new_root = ET.Element("routes")
+    for _, trip_row in merged.iterrows():
+        veh = ET.SubElement(new_root, "vehicle", {
+            "id": str(trip_row["id"]),
+            "depart": str(trip_row["depart"]),
+            "type": str(trip_row["type"]),
+            "departLane": str(trip_row["departLane"]),
+            "departSpeed": str(trip_row["departSpeed"]),
+        })
+        ET.SubElement(veh, "route", {"edges": str(trip_row["route_edges"])})
+
+    ET.ElementTree(new_root).write(out_trips_xml, encoding="utf-8", xml_declaration=True)
 
 
 
@@ -261,7 +300,7 @@ def simulate_od(
         "od2trips",
         "--spread.uniform",
         "--taz-files", str(taz2edge_xml),
-        "--tazrelation-files", str(od_xml),
+        "--tazrelation-files", str(Path(od_xml).resolve()),
         "--seed", str(seed),
         "-o", str(trips_before)
     ]
@@ -301,7 +340,7 @@ def simulate_od(
         )
 
     # 2. Update trips based on fixed routes
-    update_trip_routes(trips_before, trips_after, routes_df)
+    update_trip_routes(trips_before, trips_after, routes_df, seed=seed)
     
     # Verify the output file was created
     if not trips_after_path.exists():

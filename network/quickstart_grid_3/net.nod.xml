@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  3-copy quickstart grid.
+  k=0: copy 1 (origins 91, 92 — bottom in SUMO coords)
+  k=1: copy 2 (origins O3, O4 — middle)
+  k=2: copy 3 (origins O5, O6 — top)
+  Inter-copy connections at lower central junction (node 3) of each copy.
+-->
+<nodes>
+    <!-- Copy 0 (copy 1): y_offset = 0 -->
+    <node id="c0_91"  x="0"    y="1000" type="dead_end"/>
+    <node id="c0_92"  x="0"    y="0"    type="dead_end"/>
+    <node id="c0_911" x="500"  y="1000" type="priority"/>
+    <node id="c0_912" x="500"  y="0"    type="priority"/>
+    <node id="c0_1"   x="1000" y="1000" type="priority"/>
+    <node id="c0_2"   x="1000" y="0"    type="priority"/>
+    <node id="c0_6"   x="2000" y="1000" type="priority"/>
+    <node id="c0_3"   x="2000" y="0"    type="priority"/>
+    <node id="c0_5"   x="3000" y="1000" type="priority"/>
+    <node id="c0_4"   x="3000" y="0"    type="priority"/>
+    <node id="c0_914" x="3500" y="1000" type="priority"/>
+    <node id="c0_913" x="3500" y="0"    type="priority"/>
+    <node id="c0_94"  x="4000" y="1000" type="dead_end"/>
+    <node id="c0_93"  x="4000" y="0"    type="dead_end"/>
+
+    <!-- Copy 1 (copy 2): y_offset = 1100 -->
+    <node id="c1_91"  x="0"    y="2100" type="dead_end"/>
+    <node id="c1_92"  x="0"    y="1100" type="dead_end"/>
+    <node id="c1_911" x="500"  y="2100" type="priority"/>
+    <node id="c1_912" x="500"  y="1100" type="priority"/>
+    <node id="c1_1"   x="1000" y="2100" type="priority"/>
+    <node id="c1_2"   x="1000" y="1100" type="priority"/>
+    <node id="c1_6"   x="2000" y="2100" type="priority"/>
+    <node id="c1_3"   x="2000" y="1100" type="priority"/>
+    <node id="c1_5"   x="3000" y="2100" type="priority"/>
+    <node id="c1_4"   x="3000" y="1100" type="priority"/>
+    <node id="c1_914" x="3500" y="2100" type="priority"/>
+    <node id="c1_913" x="3500" y="1100" type="priority"/>
+    <node id="c1_94"  x="4000" y="2100" type="dead_end"/>
+    <node id="c1_93"  x="4000" y="1100" type="dead_end"/>
+
+    <!-- Copy 2 (copy 3): y_offset = 2200 -->
+    <node id="c2_91"  x="0"    y="3200" type="dead_end"/>
+    <node id="c2_92"  x="0"    y="2200" type="dead_end"/>
+    <node id="c2_911" x="500"  y="3200" type="priority"/>
+    <node id="c2_912" x="500"  y="2200" type="priority"/>
+    <node id="c2_1"   x="1000" y="3200" type="priority"/>
+    <node id="c2_2"   x="1000" y="2200" type="priority"/>
+    <node id="c2_6"   x="2000" y="3200" type="priority"/>
+    <node id="c2_3"   x="2000" y="2200" type="priority"/>
+    <node id="c2_5"   x="3000" y="3200" type="priority"/>
+    <node id="c2_4"   x="3000" y="2200" type="priority"/>
+    <node id="c2_914" x="3500" y="3200" type="priority"/>
+    <node id="c2_913" x="3500" y="2200" type="priority"/>
+    <node id="c2_94"  x="4000" y="3200" type="dead_end"/>
+    <node id="c2_93"  x="4000" y="2200" type="dead_end"/>
+</nodes>

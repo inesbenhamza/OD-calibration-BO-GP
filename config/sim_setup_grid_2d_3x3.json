@@ -1,0 +1,16 @@
+{
+    "network_name": "grid_2d_3x3",
+    "routes_file": "routes.csv",
+    "sim_start_time": 0,
+    "sim_end_time": 3900,
+    "sim_stat_freq_sec": 300,
+    "od_duration_sec": 3600,
+    "n_init_search": 20,
+    "od_bound_start": 1,
+    "od_bound_end": 1000,
+    "BO_niter": 100,
+    "BO_batch_size": 1,
+    "BO_raw_samples": 256,
+    "BO_num_restarts": 16,
+    "dim_od": 12
+}

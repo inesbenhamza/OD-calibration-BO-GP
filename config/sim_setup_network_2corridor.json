@@ -14,6 +14,7 @@
     "BO_batch_size": 1,
     "BO_raw_samples": 256,
     "BO_sample_shape": 256, 
-    "BO_num_restarts": 16
+    "BO_num_restarts": 16,
+    "dim_od": 21
 }
 

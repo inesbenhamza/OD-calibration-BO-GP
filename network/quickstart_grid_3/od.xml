@@ -1,0 +1,27 @@
+<data>
+    <interval id="CarA" begin="0" end="3600">
+        <!-- Local pairs: copy 0 -->
+        <tazRelation from="taz_91" to="taz_94" count="700"/>
+        <tazRelation from="taz_92" to="taz_93" count="700"/>
+        <!-- Local pairs: copy 1 -->
+        <tazRelation from="taz_O3" to="taz_D3" count="700"/>
+        <tazRelation from="taz_O4" to="taz_D4" count="700"/>
+        <!-- Local pairs: copy 2 -->
+        <tazRelation from="taz_O5" to="taz_D5" count="700"/>
+        <tazRelation from="taz_O6" to="taz_D6" count="700"/>
+        <!-- Cross-copy pairs: 92 → copy 1 (split: 60% D3, 40% D4) -->
+        <tazRelation from="taz_92" to="taz_D3" count="500"/>
+        <tazRelation from="taz_92" to="taz_D4" count="400"/>
+        <!-- Cross-copy pairs: O4 → copy 2 (split: 60% D5, 40% D6) -->
+        <tazRelation from="taz_O4" to="taz_D5" count="500"/>
+        <tazRelation from="taz_O4" to="taz_D6" count="400"/>
+        <!-- Backward cross-copy pairs -->
+        <tazRelation from="taz_O3" to="taz_93"  count="400"/>
+        <tazRelation from="taz_O5" to="taz_D4"  count="400"/>
+        <!-- Diagonal pairs (use L15/L16 connectors, mirroring original quickstart) -->
+        <tazRelation from="taz_91" to="taz_93" count="400"/>
+        <tazRelation from="taz_92" to="taz_94" count="400"/>
+        <tazRelation from="taz_O4" to="taz_D3" count="400"/>
+        <tazRelation from="taz_O6" to="taz_D5" count="400"/>
+    </interval>
+</data>

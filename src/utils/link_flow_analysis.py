@@ -23,9 +23,6 @@ def _ensure_edge_id(df: pd.DataFrame, context: str) -> pd.DataFrame:
         f"[{context}] expected column 'edge_id' but found {list(df.columns)}"
     )
 
-
-
-
 def parse_link_flow_xml_to_pandas(
     base_dir: Path,
     sim_link_file: Path,
@@ -98,108 +95,148 @@ def parse_link_flow_xml_to_pandas(
 
 
 
-
 # METRICS
+
+##########################
+################### NRMSE with squared error 
+##########################
+
+def precompute_error_constant(df_true, edge_ids):
+    """
+    Computes C_sq = |S| / (sum_l gt_l)^2 once before the BO loop.
+    Used to compute per-link nRMSE^2 contributions f_l = C_sq * (sim_l - gt_l)^2.
+
+    L and total_gt are computed over valid edges only (gt > 0), so that
+    sum_l f_l = nRMSE^2 exactly.
+    """
+    
+    import warnings
+
+    df_true = _ensure_edge_id(df_true, "precompute_error_constant")
+    true_lookup = df_true.set_index("edge_id")["interval_nVehContrib"].to_dict()
+
+    gt_values = np.array([true_lookup.get(e, 0.0) for e in edge_ids], dtype=float)
+    valid_mask = gt_values > 0
+
+    n_invalid = (~valid_mask).sum()
+    if n_invalid > 0:
+        invalid_ids = [e for e, v in zip(edge_ids, valid_mask) if not v]
+        warnings.warn(
+            f"precompute_error_constant: {n_invalid} edge(s) have zero or "
+            f"missing GT counts and will be excluded from L and total_gt: {invalid_ids}",
+            UserWarning,
+            stacklevel=2,
+        )
+
+    L = int(valid_mask.sum())
+    total_gt = gt_values[valid_mask].sum()
+
+    if L == 0 or total_gt == 0:
+        raise ValueError("No valid GT edges (gt > 0) found — check your edge_ids / df_true.")
+
+    return L / (total_gt ** 2)  # C_sq = |S| / (sum_l gt_l)^2
+
+
+def compute_error_per_edge(df_true, df_simulated, edge_ids, C):
+    """
+    Per-edge nRMSE^2 contributions:
+        f_l = C_sq * (sim_l - gt_l)^2  >= 0
+    where C_sq = |S| / (sum_l gt_l)^2 is precomputed and fixed.
+
+    Properties:
+        f_l >= 0               <- non-negative
+        sum_l f_l = nRMSE^2   <- BO objective recovered exactly
+        sqrt(sum_l f_l) = nRMSE <- interpretable calibration metric
+    """
+    df_true      = _ensure_edge_id(df_true,      "compute_error_per_edge/df_true")
+    df_simulated = _ensure_edge_id(df_simulated, "compute_error_per_edge/df_simulated")
+
+    true_lookup = df_true.set_index("edge_id")["interval_nVehContrib"].to_dict()
+    sim_lookup  = df_simulated.set_index("edge_id")["interval_nVehContrib"].to_dict()
+
+    f_l = np.empty(len(edge_ids))
+    for i, edge_id in enumerate(edge_ids):
+        true_count = true_lookup.get(edge_id, np.nan)
+        sim_count  = sim_lookup.get(edge_id, 0.0)
+
+        if np.isnan(true_count) or true_count <= 0:
+            f_l[i] = np.nan
+        else:
+            f_l[i] = C * (sim_count - true_count) ** 2
+
+    return f_l
+
+
+
+
 #for scalar gp
 
-
-def compute_squared_metric_all_edge(df_true, df_simulated, edge_ids=None):
+def compute_nrmse_all_edge(df_true, df_simulated, edge_ids=None):
     """
-    Aggregated squared error across all edges used for scalar gp (Vanilla BO)
-    it computes the relative squared error per edge, then averages them using uniform weights. (1/L)*sum_l (s_l^sim - s_l^GT)^2
-    Gp is fitted on this scalar metric.
-  
-
-
-    Returning the mean so we assume the edges are equally weighted ( uniform weights)
+    nRMSE = sqrt(sum_l f_l) where f_l = C * (sim_l - gt_l)^2, C = L / (sum_l gt_l)^2.
     """
-    df_true = _ensure_edge_id(df_true, "compute_squared_metric_all_edge/df_true")
-    df_simulated = _ensure_edge_id(df_simulated, "compute_squared_metric_all_edge/df_simulated")
+    df_true      = _ensure_edge_id(df_true,      "compute_nrmse_all_edge/df_true")
+    df_simulated = _ensure_edge_id(df_simulated, "compute_nrmse_all_edge/df_simulated")
 
-    df = df_true.merge(
-        df_simulated,
-        on="edge_id",
-        suffixes=("_GT", "_sim"),
-        how="left",
-    )
-    
+    df = df_true.merge(df_simulated, on="edge_id", suffixes=("_GT", "_sim"), how="left")
+
     if edge_ids is not None:
         df = df[df["edge_id"].isin(edge_ids)]
 
     df["interval_nVehContrib_sim"] = df["interval_nVehContrib_sim"].fillna(0.0)
-    
-    df = df[df["interval_nVehContrib_GT"] > 0] #filter out edges with zero GT flow
-    
+    df = df[df["interval_nVehContrib_GT"] > 0]
+
     if len(df) == 0:
-        return float('nan')
+        return float("nan")
 
-    true_counts = df["interval_nVehContrib_GT"].astype(float).to_numpy()
-    sim_counts  = df["interval_nVehContrib_sim"].astype(float).to_numpy()
+    gt  = df["interval_nVehContrib_GT"].astype(float).to_numpy()
+    sim = df["interval_nVehContrib_sim"].astype(float).to_numpy()
 
-    rel_err_sq = ((sim_counts - true_counts) / true_counts) ** 2 # computes the relative squared error for all edges at once (element-wise)
+    C = len(gt) / (gt.sum() ** 2)
+    nrmse_sq = float((C * (sim - gt) ** 2).sum())
 
-    return float(rel_err_sq.mean()) # return the mean of the squared relative errors for all edges e.g equivalent to dividing by the number of edges/uniform weights
-
-
-
+    return float(np.sqrt(nrmse_sq))
 
 
-#for ind gp 
 
-def compute_squared_metric_per_edge(df_true, df_simulated, edge_ids):
+
+
+
+
+
+##########################
+################### NRMSE with signed residuals
+##########################
+
+def compute_signed_residual_per_edge(df_true, df_simulated, edge_ids):
     """
-    Per-edge squared relative error (IND-GP).
-    for ind gp, each gp is fitted on the squared relative error of a single edge.
+    Per-edge SIGNED residual r_l = sim_l - gt_l (no squaring, no C scaling).
+
+    This is the GP training target for the signed-residual + MC-acquisition
+    BO loop: S(x) = C * sum_l r_l(x)^2 is a nonlinear (quadratic) transform of
+    jointly-Gaussian GP outputs, so it must be reconstructed by squaring and
+    scaling AFTER sampling from the posterior (analytic EI does not apply) to 
+    get back to the nrmse^2 --
+    see run_signed_residual_mc_ei_bo.py.
+
+    Properties:
+        r_l can be negative or positive  <- unlike f_l = C*(sim_l-gt_l)^2 >= 0
+        C * r_l^2 = f_l                  <- recovers compute_error_per_edge exactly
     """
-    df_true = _ensure_edge_id(df_true, "compute_squared_metric_per_edge/df_true")
-    df_simulated = _ensure_edge_id(df_simulated, "compute_squared_metric_per_edge/df_simulated")
-    errors = []
+    df_true      = _ensure_edge_id(df_true,      "compute_signed_residual_per_edge/df_true")
+    df_simulated = _ensure_edge_id(df_simulated, "compute_signed_residual_per_edge/df_simulated")
 
-    for edge_id in edge_ids:
-        true_row = df_true[df_true["edge_id"] == edge_id]
-        if len(true_row) == 0:
-            errors.append(np.nan)
-            continue
+    true_lookup = df_true.set_index("edge_id")["interval_nVehContrib"].to_dict() # to_dict() for fast lookup, create a dict with edge_id as key and interval_nVehContrib as value
+    sim_lookup  = df_simulated.set_index("edge_id")["interval_nVehContrib"].to_dict()
 
-        true_count = float(true_row["interval_nVehContrib"].values[0])
+    r_l = np.empty(len(edge_ids))
+    for i, edge_id in enumerate(edge_ids):
+        true_count = true_lookup.get(edge_id, np.nan)
+        sim_count  = sim_lookup.get(edge_id, 0.0)
 
-        sim_row = df_simulated[df_simulated["edge_id"] == edge_id]
-        sim_count = (
-            float(sim_row["interval_nVehContrib"].values[0])
-            if len(sim_row) > 0
-            else 0.0
-        )
-
-        if true_count > 0:
-            errors.append(((sim_count - true_count) / true_count) ** 2)
+        if np.isnan(true_count) or true_count <= 0:
+            r_l[i] = np.nan
         else:
-            errors.append(np.nan)
+            r_l[i] = sim_count - true_count
 
-    return np.array(errors) # return an array of squared relative errors for each edge
-
-
-
-
-
-
-
-
-#to evaluate the aggregated discrepancy e_agg(x)
-def compute_eagg_from_sim(gt_edge_data, sim_edge_data, edge_ids):
-    gt_edge_data = _ensure_edge_id(gt_edge_data, "compute_eagg_from_sim/gt_edge_data")
-    sim_edge_data = _ensure_edge_id(sim_edge_data, "compute_eagg_from_sim/sim_edge_data")
-    diffs = []
-    for edge_id in edge_ids:
-        gt_row = gt_edge_data[gt_edge_data["edge_id"] == edge_id]
-        if len(gt_row) == 0:
-            continue
-
-        s_gt = float(gt_row["interval_nVehContrib"].values[0])
-
-        sim_row = sim_edge_data[sim_edge_data["edge_id"] == edge_id]
-        s_sim = float(sim_row["interval_nVehContrib"].values[0]) if len(sim_row) > 0 else 0.0
-
-        if s_gt > 0:
-            diffs.append(((s_sim - s_gt) / s_gt) ** 2)
-
-    return float(np.mean(diffs))
+    return r_l

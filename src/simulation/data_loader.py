@@ -61,10 +61,15 @@ def load_kwargs_config(base_path: str, model_name: str, sim_setup_filename: str 
 
     kwargs_config = {}
 
+
+    # network and kernel config 
     network_name = sim_setup['network_name']
     kwargs_config["network_name"] = network_name
-    kwargs_config["model_name"] = model_name
-    kwargs_config["kernel"] = kernel
+    kwargs_config["model_name"] = model_name or sim_setup.get("model_name", "vanillabo")
+    kwargs_config["kernel"] = kernel or sim_setup.get("kernel", "matern-2p5")
+
+    #parameters setup for the ablation study on the effect of the OD bounds 
+    kwargs_config["constraint_mode"] = sim_setup.get("constraint_mode", "tight")
 
     kwargs_config["network_path"] = Path("network", network_name) # network/quickstart if network is quickstart
     kwargs_config["taz2edge_xml"] = Path(base_path, kwargs_config["network_path"], 'taz.xml')
@@ -84,7 +89,7 @@ def load_kwargs_config(base_path: str, model_name: str, sim_setup_filename: str 
     kwargs_config["additional_xml"] = Path(base_path, kwargs_config["network_path"], 'additional.xml')
 
     # Include kernel in output path (like BO4Mob does)
-    kwargs_config["simulation_run_path"] = f"output/{network_name}_{model_name}_{kernel}"
+    kwargs_config["simulation_run_path"] = f"output/{network_name}_{kwargs_config['model_name']}_{kwargs_config['kernel']}"
     
     # Add path keys for prepare_run_paths() function
     kwargs_config["path_init"] = kwargs_config["simulation_run_path"] + "/initial_search"
@@ -104,6 +109,16 @@ def load_kwargs_config(base_path: str, model_name: str, sim_setup_filename: str 
     kwargs_config["sim_start_time"] = sim_setup['sim_start_time']
     kwargs_config["sim_end_time"] = sim_setup['sim_end_time']
     kwargs_config["sim_stat_freq_sec"] = sim_setup['sim_stat_freq_sec']
+
+    # Warmup exclusion: skip the first stat interval when the simulation starts
+    # at t=0, because the network is empty at the start and the first interval
+    # shows artificially low flows. For networks with a non-zero sim_start_time
+    # (e.g. quickstart at 54000s), traffic is already established so no warmup needed.
+    if sim_setup['sim_start_time'] == 0:
+        kwargs_config["sensor_start_time"] = sim_setup['sim_stat_freq_sec']
+    else:
+        kwargs_config["sensor_start_time"] = sim_setup['sim_start_time']
+    kwargs_config["sensor_end_time"] = sim_setup['sim_end_time']
     kwargs_config["od_duration_sec"] = sim_setup['od_duration_sec']
     kwargs_config["n_init_search"] = sim_setup['n_init_search']
     kwargs_config["dim_od"] = sim_setup['dim_od']
@@ -112,16 +127,16 @@ def load_kwargs_config(base_path: str, model_name: str, sim_setup_filename: str 
     # Lowercase with BO_ prefix (for direct access)
     kwargs_config["BO_batch_size"] = sim_setup["BO_batch_size"]
     kwargs_config["BO_num_restarts"] = sim_setup["BO_num_restarts"]
-    kwargs_config["BO_raw_samples"] = sim_setup["BO_raw_samples"]
-    kwargs_config["BO_sample_shape"] = sim_setup.get("BO_sample_shape") or sim_setup.get("bo_sample_shape", 64)
+    kwargs_config["BO_raw_samples"] = sim_setup.get("BO_raw_samples") or sim_setup.get("BO_sample_shape", 128)
+    #kwargs_config["BO_sample_shape"] = sim_setup.get("BO_sample_shape") or sim_setup.get("bo_sample_shape", 128)
     kwargs_config["BO_niter"] = sim_setup["BO_niter"]
-    
+
     # UPPERCASE keys (used in helpers_od_calibration_BN.py)
     kwargs_config["NITER"] = sim_setup["BO_niter"]
     kwargs_config["BATCH_SIZE"] = sim_setup["BO_batch_size"]
     kwargs_config["NUM_RESTARTS"] = sim_setup["BO_num_restarts"]
-    kwargs_config["RAW_SAMPLES"] = sim_setup["BO_raw_samples"]
-    kwargs_config["SAMPLE_SHAPE"] = sim_setup.get("BO_sample_shape") or sim_setup.get("bo_sample_shape", 64)
+    kwargs_config["RAW_SAMPLES"] = sim_setup.get("BO_raw_samples", 128)
+    #kwargs_config["SAMPLE_SHAPE"] = sim_setup.get("BO_sample_shape") or sim_setup.get("bo_sample_shape", 128)
 
     # Optional cleanup setting
     kwargs_config["CLEANUP_INTERMEDIATE_FILES"] = sim_setup.get("CLEANUP_INTERMEDIATE_FILES", False)
@@ -130,15 +145,19 @@ def load_kwargs_config(base_path: str, model_name: str, sim_setup_filename: str 
     kwargs_config["EARLY_STOP_PATIENCE"] = sim_setup.get("EARLY_STOP_PATIENCE", 0)
     kwargs_config["EARLY_STOP_DELTA"] = sim_setup.get("EARLY_STOP_DELTA", 1e-6)
     kwargs_config["EARLY_STOP_MIN_ACQ"] = sim_setup.get("EARLY_STOP_MIN_ACQ", 0.0)
+    
 
     # OD bounds (BO4Mob-style: lb=1 to avoid "No vehicles loaded")
     kwargs_config["od_bound_start"] = sim_setup.get("od_bound_start", 1)
     kwargs_config["od_bound_end"] = sim_setup.get("od_bound_end", 2000)
 
+
     return kwargs_config
 
 
-# =====================================================================
+
+
+
 # XML/IO HELPERS
 
 
@@ -184,4 +203,12 @@ def is_in_OD_set(routes_df, orig, dest):
     Check if OD pair is in route set.
     """
     return ((routes_df.fromTaz == orig) and (routes_df.toTaz == dest))
+
+
+
+
+
+
+
+
 

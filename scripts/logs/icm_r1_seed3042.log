@@ -1,0 +1,139 @@
+Total GT demand: 8400.0
+[INIT] ICM rank=1 seed=3042: loaded 20 initial points (reused, not re-simulated). best S so far = 0.102795
+Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/net.xml' ... done (7ms).
+Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/additional.xml' ... done (1ms).
+Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_0/sim_trips.xml'
+Loading done.
+Simulation version 1.24.0 started with time: 0.00.
+Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 233 ACT 233 BUF 0)                             Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 465 ACT 465 BUF 0)                             Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 699 ACT 691 BUF 0)                             Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 927 ACT 825 BUF 0)                             Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 1161 ACT 927 BUF 0)                            Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 1396 ACT 924 BUF 0)                            Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 1625 ACT 961 BUF 0)                            Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 1856 ACT 963 BUF 0)                            Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 2090 ACT 968 BUF 0)                            Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 2323 ACT 950 BUF 0)                           Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 2552 ACT 969 BUF 0)                           Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 2784 ACT 931 BUF 0)                           Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 3018 ACT 933 BUF 0)                           Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 3248 ACT 963 BUF 0)                           Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 3483 ACT 967 BUF 0)                           Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 3711 ACT 943 BUF 0)                           Step #1700.00 (1ms ~= 1000.00*RT, ~941000.00UPS, vehicles TOT 3945 ACT 941 BUF 0)         Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 4182 ACT 950 BUF 0)                           Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 4410 ACT 946 BUF 0)                           Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 4643 ACT 970 BUF 0)                           Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 4874 ACT 955 BUF 0)                           Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 5109 ACT 962 BUF 0)                           Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 5337 ACT 941 BUF 0)                           Step #2400.00 (0ms ?*RT. ?UPS, vehicles TOT 5570 ACT 929 BUF 0)                           Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 5803 ACT 932 BUF 0)                           Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 6034 ACT 941 BUF 0)                           Step #2700.00 (0ms ?*RT. ?UPS, vehicles TOT 6268 ACT 935 BUF 0)                           Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 6498 ACT 930 BUF 0)                           Step #2900.00 (0ms ?*RT. ?UPS, vehicles TOT 6730 ACT 955 BUF 0)                           Step #3000.00 (0ms ?*RT. ?UPS, vehicles TOT 6965 ACT 970 BUF 0)                           Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 7194 ACT 980 BUF 0)                           Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 7427 ACT 941 BUF 0)                           Step #3300.00 (1ms ~= 1000.00*RT, ~944000.00UPS, vehicles TOT 7658 ACT 944 BUF 0)         Step #3400.00 (0ms ?*RT. ?UPS, vehicles TOT 7892 ACT 939 BUF 0)                           Step #3500.00 (0ms ?*RT. ?UPS, vehicles TOT 8122 ACT 947 BUF 0)                           Step #3600.00 (0ms ?*RT. ?UPS, vehicles TOT 8354 ACT 935 BUF 0)                           Step #3700.00 (0ms ?*RT. ?UPS, vehicles TOT 8354 ACT 693 BUF 0)                           Step #3800.00 (0ms ?*RT. ?UPS, vehicles TOT 8354 ACT 480 BUF 0)                           Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 8354 ACT 223 BUF 0)                           
+Simulation ended at time: 3900.00.
+Reason: The final simulation step has been reached.
+Performance:
+ Duration: 0.52s
+ Real time factor: 7528.96
+ UPS: 6528214.285714
+Vehicles:
+ Inserted: 8354
+ Running: 223
+ Waiting: 0
+Statistics (avg of 8131):
+ RouteLength: 4968.27
+ Speed: 12.30
+ Duration: 405.26
+ WaitingTime: 0.57
+ TimeLoss: 43.98
+ DepartDelay: 0.48
+Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_0/od.xml
+od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_0/od.xml --seed 3042 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_0/sim_trips_beforeRteUpdates.xml
+Running SUMO: sumo --output-prefix output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_0/sim_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_0/sim_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 3042
+[ICM rank=1 seed=3042] [iter 1/50] off_diag=4.7434 S_next=0.001161 best_S=0.001161 nRMSE=0.034070 acqLogEI=-2.2971 (101.9s, total 102s)
+Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/net.xml' ... done (4ms).
+Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/additional.xml' ... done (0ms).
+Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_1/sim_trips.xml'
+Loading done.
+Simulation version 1.24.0 started with time: 0.00.
+Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 233 ACT 233 BUF 0)                             Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 466 ACT 466 BUF 0)                             Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 698 ACT 687 BUF 0)                             Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 928 ACT 847 BUF 0)                             Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 1160 ACT 924 BUF 0)                            Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 1393 ACT 941 BUF 0)                            Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 1624 ACT 927 BUF 0)                            Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 1856 ACT 942 BUF 0)                            Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 2092 ACT 937 BUF 0)                            Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 2318 ACT 937 BUF 0)                           Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 2551 ACT 917 BUF 0)                           Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 2781 ACT 913 BUF 0)                           Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 3017 ACT 945 BUF 0)                           Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 3247 ACT 936 BUF 0)                           Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 3481 ACT 939 BUF 0)                           Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 3707 ACT 954 BUF 0)                           Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 3944 ACT 921 BUF 0)                           Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 4177 ACT 928 BUF 0)                           Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 4406 ACT 935 BUF 0)                           Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 4642 ACT 934 BUF 0)                           Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 4871 ACT 936 BUF 0)                           Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 5103 ACT 938 BUF 0)                           Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 5333 ACT 933 BUF 0)                           Step #2400.00 (1ms ~= 1000.00*RT, ~920000.00UPS, vehicles TOT 5568 ACT 920 BUF 0)         Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 5799 ACT 945 BUF 0)                           Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 6032 ACT 940 BUF 0)                           Step #2700.00 (0ms ?*RT. ?UPS, vehicles TOT 6264 ACT 944 BUF 0)                           Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 6493 ACT 936 BUF 0)                           Step #2900.00 (0ms ?*RT. ?UPS, vehicles TOT 6726 ACT 928 BUF 0)                           Step #3000.00 (0ms ?*RT. ?UPS, vehicles TOT 6957 ACT 920 BUF 0)                           Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 7190 ACT 933 BUF 0)                           Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 7421 ACT 942 BUF 0)                           Step #3300.00 (0ms ?*RT. ?UPS, vehicles TOT 7654 ACT 952 BUF 0)                           Step #3400.00 (0ms ?*RT. ?UPS, vehicles TOT 7884 ACT 950 BUF 0)                           Step #3500.00 (0ms ?*RT. ?UPS, vehicles TOT 8117 ACT 917 BUF 0)                           Step #3600.00 (0ms ?*RT. ?UPS, vehicles TOT 8349 ACT 943 BUF 0)                           Step #3700.00 (0ms ?*RT. ?UPS, vehicles TOT 8349 ACT 704 BUF 0)                           Step #3800.00 (0ms ?*RT. ?UPS, vehicles TOT 8349 ACT 453 BUF 0)                           Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 8349 ACT 245 BUF 0)                           
+Simulation ended at time: 3900.00.
+Reason: The final simulation step has been reached.
+Performance:
+ Duration: 0.47s
+ Real time factor: 8297.87
+ UPS: 7101934.042553
+Vehicles:
+ Inserted: 8349
+ Running: 245
+ Waiting: 0
+Statistics (avg of 8104):
+ RouteLength: 4909.62
+ Speed: 12.30
+ Duration: 400.28
+ WaitingTime: 0.58
+ TimeLoss: 42.94
+ DepartDelay: 0.49
+Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_1/od.xml
+od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_1/od.xml --seed 3043 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_1/sim_trips_beforeRteUpdates.xml
+Running SUMO: sumo --output-prefix output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_1/sim_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_1/sim_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 3043
+[ICM rank=1 seed=3042] [iter 2/50] off_diag=4.6253 S_next=0.000571 best_S=0.000571 nRMSE=0.023891 acqLogEI=-9.9483 (133.5s, total 235s)
+Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/net.xml' ... done (7ms).
+Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/additional.xml' ... done (1ms).
+Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_2/sim_trips.xml'
+Loading done.
+Simulation version 1.24.0 started with time: 0.00.
+Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 232 ACT 232 BUF 0)                             Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 468 ACT 468 BUF 0)                             Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 700 ACT 689 BUF 0)                             Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 933 ACT 822 BUF 0)                             Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 1167 ACT 905 BUF 0)                            Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 1402 ACT 928 BUF 0)                            Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 1633 ACT 930 BUF 0)                            Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 1867 ACT 930 BUF 0)                            Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 2102 ACT 934 BUF 0)                            Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 2335 ACT 945 BUF 0)                           Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 2567 ACT 957 BUF 0)                           Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 2800 ACT 930 BUF 0)                           Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 3035 ACT 946 BUF 0)                           Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 3268 ACT 943 BUF 0)                           Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 3500 ACT 915 BUF 0)                           Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 3733 ACT 927 BUF 0)                           Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 3968 ACT 955 BUF 0)                           Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 4205 ACT 920 BUF 0)                           Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 4432 ACT 930 BUF 0)                           Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 4667 ACT 946 BUF 0)                           Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 4900 ACT 954 BUF 0)                           Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 5133 ACT 908 BUF 0)                           Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 5365 ACT 938 BUF 0)                           Step #2400.00 (0ms ?*RT. ?UPS, vehicles TOT 5600 ACT 926 BUF 0)                           Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 5833 ACT 943 BUF 0)                           Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 6066 ACT 929 BUF 0)                           Step #2700.00 (0ms ?*RT. ?UPS, vehicles TOT 6301 ACT 973 BUF 0)                           Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 6533 ACT 906 BUF 0)                           Step #2900.00 (0ms ?*RT. ?UPS, vehicles TOT 6767 ACT 906 BUF 0)                           Step #3000.00 (0ms ?*RT. ?UPS, vehicles TOT 7003 ACT 927 BUF 0)                           Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 7233 ACT 958 BUF 0)                           Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 7467 ACT 948 BUF 0)                           Step #3300.00 (0ms ?*RT. ?UPS, vehicles TOT 7700 ACT 931 BUF 0)                           Step #3400.00 (0ms ?*RT. ?UPS, vehicles TOT 7933 ACT 915 BUF 0)                           Step #3500.00 (0ms ?*RT. ?UPS, vehicles TOT 8168 ACT 909 BUF 0)                           Step #3600.00 (0ms ?*RT. ?UPS, vehicles TOT 8400 ACT 962 BUF 0)                           Step #3700.00 (0ms ?*RT. ?UPS, vehicles TOT 8400 ACT 710 BUF 0)                           Step #3800.00 (0ms ?*RT. ?UPS, vehicles TOT 8400 ACT 458 BUF 0)                           Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 8400 ACT 245 BUF 0)                           
+Simulation ended at time: 3900.00.
+Reason: The final simulation step has been reached.
+Performance:
+ Duration: 0.50s
+ Real time factor: 7768.92
+ UPS: 6639073.705179
+Vehicles:
+ Inserted: 8400
+ Running: 245
+ Waiting: 0
+Statistics (avg of 8155):
+ RouteLength: 4864.81
+ Speed: 12.29
+ Duration: 396.85
+ WaitingTime: 0.59
+ TimeLoss: 42.93
+ DepartDelay: 0.49
+Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_2/od.xml
+od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_2/od.xml --seed 3044 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_2/sim_trips_beforeRteUpdates.xml
+Running SUMO: sumo --output-prefix output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_2/sim_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/quickstart_grid_3_graph/icm_rank1_signed_residual_mcEI/restart_4_seed-3042/iter_2/sim_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/quickstart_grid_3/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 3044
+[ICM rank=1 seed=3042] [iter 3/50] off_diag=11.5958 S_next=0.000245 best_S=0.000245 nRMSE=0.015656 acqLogEI=-8.0097 (322.4s, total 558s)
+Traceback (most recent call last):
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/run_icm_mc_ei_bo.py", line 286, in <module>
+    x_next_norm, acq_val = optimize_acqf(
+                           ~~~~~~~~~~~~~^
+        qEI, bounds=bounds_norm, q=1,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        num_restarts=ACQF_NUM_RESTARTS, raw_samples=ACQF_RAW_SAMPLES,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/optimize.py", line 775, in optimize_acqf
+    return _optimize_acqf(opt_inputs=opt_acqf_inputs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/optimize.py", line 796, in _optimize_acqf
+    return _optimize_acqf_batch(opt_inputs=opt_inputs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/optimize.py", line 362, in _optimize_acqf_batch
+    generated_initial_conditions = opt_inputs.get_ic_generator()(
+        acq_function=opt_inputs.acq_function,
+    ...<8 lines>...
+        **opt_inputs.ic_gen_kwargs,
+    )
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/initializers.py", line 441, in gen_batch_initial_conditions
+    acq_function(x_.to(device=device)).cpu()
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/utils/transforms.py", line 400, in decorated
+    return method(cls, X, **kwargs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/utils/transforms.py", line 300, in decorated
+    output = method(acqf, X, *args, **kwargs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/acquisition/monte_carlo.py", line 289, in forward
+    non_reduced_acqval = self._non_reduced_forward(X=X)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/acquisition/monte_carlo.py", line 302, in _non_reduced_forward
+    samples, obj = self._get_samples_and_objectives(X)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/acquisition/monte_carlo.py", line 120, in _get_samples_and_objectives
+    posterior = self.model.posterior(
+        X=X, posterior_transform=self.posterior_transform
+    )
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/run_icm_mc_ei_bo.py", line 233, in posterior
+    mvn = MultitaskMultivariateNormal(mean_tasks.unsqueeze(1), cov_diag, interleaved=True)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/pyro/distributions/distribution.py", line 26, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/gpytorch/distributions/multitask_multivariate_normal.py", line 71, in __init__
+    super().__init__(mean=mean_mvn, covariance_matrix=covariance_matrix, validate_args=validate_args)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/gpytorch/distributions/multivariate_normal.py", line 64, in __init__
+    super().__init__(loc=mean, covariance_matrix=covariance_matrix, validate_args=validate_args)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/torch/distributions/multivariate_normal.py", line 185, in __init__
+    self._unbroadcasted_scale_tril = torch.linalg.cholesky(covariance_matrix)
+                                     ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+torch._C._LinAlgError: linalg.cholesky: (Batch element 7): The factorization could not be completed because the input is not positive-definite (the leading minor of order 23 is not positive-definite).

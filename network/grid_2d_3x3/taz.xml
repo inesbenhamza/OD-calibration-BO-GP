@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- Corner A0 (top-left): outgoing A0A1, A0B0; incoming A1A0, B0A0 -->
+    <taz id="taz_A0">
+        <tazSource id="A0A1" weight="1.0"/>
+        <tazSource id="A0B0" weight="1.0"/>
+        <tazSink   id="A1A0" weight="1.0"/>
+        <tazSink   id="B0A0" weight="1.0"/>
+    </taz>
+
+    <!-- Corner A2 (top-right): outgoing A2A1, A2B2; incoming A1A2, B2A2 -->
+    <taz id="taz_A2">
+        <tazSource id="A2A1" weight="1.0"/>
+        <tazSource id="A2B2" weight="1.0"/>
+        <tazSink   id="A1A2" weight="1.0"/>
+        <tazSink   id="B2A2" weight="1.0"/>
+    </taz>
+
+    <!-- Corner C0 (bottom-left): outgoing C0B0, C0C1; incoming B0C0, C1C0 -->
+    <taz id="taz_C0">
+        <tazSource id="C0B0" weight="1.0"/>
+        <tazSource id="C0C1" weight="1.0"/>
+        <tazSink   id="B0C0" weight="1.0"/>
+        <tazSink   id="C1C0" weight="1.0"/>
+    </taz>
+
+    <!-- Corner C2 (bottom-right): outgoing C2B2, C2C1; incoming B2C2, C1C2 -->
+    <taz id="taz_C2">
+        <tazSource id="C2B2" weight="1.0"/>
+        <tazSource id="C2C1" weight="1.0"/>
+        <tazSink   id="B2C2" weight="1.0"/>
+        <tazSink   id="C1C2" weight="1.0"/>
+    </taz>
+
+</additional>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- InTAS (Ingolstadt) crop, L=73 sub-region. Sources/sinks are the network
+         boundary cut-points (degree-1 nodes) found when cropping. -->
+    <taz id="taz_S1">
+        <tazSource id="-152077572#2" weight="1.00"/></taz>
+    <taz id="taz_S2">
+        <tazSource id="28639688#1" weight="1.00"/></taz>
+    <taz id="taz_S3">
+        <tazSource id="42745545#5.128" weight="1.00"/></taz>
+    <taz id="taz_S4">
+        <tazSource id="24890429#2" weight="1.00"/></taz>
+    <taz id="taz_S5">
+        <tazSource id="32009827" weight="1.00"/></taz>
+    <taz id="taz_S6">
+        <tazSource id="266567304#0" weight="1.00"/></taz>
+    <taz id="taz_S7">
+        <tazSource id="54169280#1" weight="1.00"/></taz>
+    <taz id="taz_S8">
+        <tazSource id="29238186" weight="1.00"/></taz>
+    <taz id="taz_T1">
+        <tazSink   id="24846867#3" weight="1.00"/></taz>
+    <taz id="taz_T2">
+        <tazSink   id="380273341" weight="1.00"/></taz>
+    <taz id="taz_T3">
+        <tazSink   id="152077572#2" weight="1.00"/></taz>
+    <taz id="taz_T4">
+        <tazSink   id="42745545#5.128" weight="1.00"/></taz>
+    <taz id="taz_T5">
+        <tazSink   id="54169280#1" weight="1.00"/></taz>
+    <taz id="taz_T6">
+        <tazSink   id="64464430" weight="1.00"/></taz>
+    <taz id="taz_T7">
+        <tazSink   id="32202328" weight="1.00"/></taz>
+
+</additional>

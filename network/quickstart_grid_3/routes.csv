@@ -1,0 +1,21 @@
+,fromTaz,toTaz,route_idx,ratio,route_edges,start_edge,last_edge
+0,taz_91,taz_94,0,1.0,c0_D2 c0_L2 c0_L12 c0_L10 c0_L7 c0_D7,c0_D2,c0_D7
+1,taz_92,taz_93,0,1.0,c0_D4 c0_L4 c0_L14 c0_L18 c0_L5 c0_D5,c0_D4,c0_D5
+2,taz_O3,taz_D3,0,1.0,c1_D2 c1_L2 c1_L12 c1_L10 c1_L7 c1_D7,c1_D2,c1_D7
+3,taz_O4,taz_D4,0,1.0,c1_D4 c1_L4 c1_L14 c1_L18 c1_L5 c1_D5,c1_D4,c1_D5
+4,taz_O5,taz_D5,0,1.0,c2_D2 c2_L2 c2_L12 c2_L10 c2_L7 c2_D7,c2_D2,c2_D7
+5,taz_O6,taz_D6,0,1.0,c2_D4 c2_L4 c2_L14 c2_L18 c2_L5 c2_D5,c2_D4,c2_D5
+6,taz_92,taz_D3,0,0.5,c0_D4 c0_L4 green_01 c1_L12 c1_L10 c1_L7 c1_D7,c0_D4,c1_D7
+7,taz_92,taz_D3,1,0.5,c0_D4 c0_L4 c0_L14 c0_L18 purple_01 c1_L7 c1_D7,c0_D4,c1_D7
+8,taz_92,taz_D4,0,1.0,c0_D4 c0_L4 green_01 c1_L12 c1_L15 c1_L18 c1_L5 c1_D5,c0_D4,c1_D5
+9,taz_O4,taz_D5,0,0.5,c1_D4 c1_L4 green_12 c2_L12 c2_L10 c2_L7 c2_D7,c1_D4,c2_D7
+10,taz_O4,taz_D5,1,0.5,c1_D4 c1_L4 c1_L14 c1_L18 purple_12 c2_L7 c2_D7,c1_D4,c2_D7
+11,taz_O4,taz_D6,0,1.0,c1_D4 c1_L4 green_12 c2_L12 c2_L15 c2_L18 c2_L5 c2_D5,c1_D4,c2_D5
+12,taz_O3,taz_93,0,0.5,c1_D2 c1_L2 green_01_r c0_L14 c0_L18 c0_L5 c0_D5,c1_D2,c0_D5
+13,taz_O3,taz_93,1,0.5,c1_D2 c1_L2 c1_L12 c1_L10 purple_01_r c0_L5 c0_D5,c1_D2,c0_D5
+14,taz_O5,taz_D4,0,0.5,c2_D2 c2_L2 green_12_r c1_L14 c1_L18 c1_L5 c1_D5,c2_D2,c1_D5
+15,taz_O5,taz_D4,1,0.5,c2_D2 c2_L2 c2_L12 c2_L10 purple_12_r c1_L5 c1_D5,c2_D2,c1_D5
+16,taz_91,taz_93,0,1.0,c0_D2 c0_L2 c0_L12 c0_L15 c0_L18 c0_L5 c0_D5,c0_D2,c0_D5
+17,taz_92,taz_94,0,1.0,c0_D4 c0_L4 c0_L14 c0_L16 c0_L10 c0_L7 c0_D7,c0_D4,c0_D7
+18,taz_O4,taz_D3,0,1.0,c1_D4 c1_L4 c1_L14 c1_L16 c1_L10 c1_L7 c1_D7,c1_D4,c1_D7
+19,taz_O6,taz_D5,0,1.0,c2_D4 c2_L4 c2_L14 c2_L16 c2_L10 c2_L7 c2_D7,c2_D4,c2_D7

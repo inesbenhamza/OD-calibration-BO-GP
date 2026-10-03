@@ -1,0 +1,76 @@
+
+============================================================
+ Jacobian Adjacency — quickstart_grid_3
+============================================================
+ Links (GP tasks)  : 34
+ OD pairs          : 16
+ SUMO runs needed  : 32
+ Rerouting prob    : 0.0
+
+--- Timing a trial simulation ---
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/_trial/od.xml
+ Single sim: 8.8s  |  Total ETA: 4.7 min (32 sims)
+
+--- Computing Jacobian (32 sims) ---
+  [ 1/16] taz_91 → taz_94  d_k=700  δ=70 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_00_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_00_minus/od.xml
+done (17.4s)  top: c0_L18=-0.214, purple_12=-0.057, c1_L18=0.036
+  [ 2/16] taz_92 → taz_93  d_k=700  δ=70 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_01_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_01_minus/od.xml
+done (19.2s)  top: c0_L14=1.000, c0_L18=0.793, c1_L18=-0.064
+  [ 3/16] taz_O3 → taz_D3  d_k=700  δ=70 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_02_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_02_minus/od.xml
+done (18.8s)  top: c1_L12=0.986, c1_L10=0.971, c0_L18=0.343
+  [ 4/16] taz_O4 → taz_D4  d_k=700  δ=70 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_03_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_03_minus/od.xml
+done (18.1s)  top: c1_L14=1.007, c1_L18=0.771, purple_01_r=0.050
+  [ 5/16] taz_O5 → taz_D5  d_k=700  δ=70 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_04_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_04_minus/od.xml
+done (17.9s)  top: c2_L10=1.000, c2_L12=0.986, c0_L18=0.114
+  [ 6/16] taz_O6 → taz_D6  d_k=700  δ=70 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_05_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_05_minus/od.xml
+done (17.9s)  top: c0_L18=-0.193, c2_L15=-0.036, purple_01_r=0.036
+  [ 7/16] taz_92 → taz_D3  d_k=500  δ=50 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_06_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_06_minus/od.xml
+done (17.6s)  top: c0_L14=0.790, purple_01=0.770, c0_L18=0.760
+  [ 8/16] taz_92 → taz_D4  d_k=400  δ=40 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_07_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_07_minus/od.xml
+done (17.5s)  top: green_01=1.000, c1_L12=0.975, c1_L18=-0.412
+  [ 9/16] taz_O4 → taz_D5  d_k=500  δ=50 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_08_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_08_minus/od.xml
+done (17.4s)  top: c1_L14=1.020, purple_12=0.830, c1_L18=0.800
+  [10/16] taz_O4 → taz_D6  d_k=400  δ=40 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_09_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_09_minus/od.xml
+done (17.5s)  top: c2_L15=1.038, green_12=1.000, c2_L12=0.975
+  [11/16] taz_O3 → taz_93  d_k=400  δ=40 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_10_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_10_minus/od.xml
+done (17.5s)  top: c1_L10=0.537, c1_L12=0.512, green_01_r=0.487
+  [12/16] taz_O5 → taz_D4  d_k=400  δ=40 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_11_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_11_minus/od.xml
+done (18.2s)  top: c1_L18=0.725, c2_L12=0.525, green_12_r=0.487
+  [13/16] taz_91 → taz_93  d_k=400  δ=40 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_12_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_12_minus/od.xml
+done (18.4s)  top: c0_L18=1.250, c0_L15=1.000, c1_L18=-0.287
+  [14/16] taz_92 → taz_94  d_k=400  δ=40 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_13_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_13_minus/od.xml
+done (17.3s)  top: c0_L14=1.012, c0_L16=1.000, c1_L18=0.338
+  [15/16] taz_O4 → taz_D3  d_k=400  δ=40 … Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_14_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_14_minus/od.xml
+done (16.7s)  top: c1_L14=1.012, c1_L16=1.000, c1_L10=0.787
+  [16/16] taz_O6 → taz_D5  d_k=400  δ=40 … /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/compute_jacobian_adjacency_grid3.py:251: RuntimeWarning: invalid value encountered in divide
+  adj_norm  = np.where(row_sums > 0, adj_raw / row_sums, 0.0)
+/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/compute_jacobian_adjacency_grid3.py:261: RuntimeWarning: invalid value encountered in divide
+  adj_sparse = np.where(row_sums2 > 0, adj_sparse / row_sums2, 0.0)
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_15_plus/od.xml
+Created OD TAZ relation XML at: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/od_15_minus/od.xml
+done (16.6s)  top: c2_L16=1.000, c2_L10=0.713, c0_L18=0.300
+
+Jacobian saved. Shape: (34, 16)  range [-0.588, 1.250]  mean_abs=0.087
+Sparsification: 65th pct threshold = 0.0468
+Saved:
+  /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/adjacency_quickstart_grid_3_jacobian_raw.csv
+  /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/adjacency_quickstart_grid_3_jacobian.csv
+Sparsified: 87.3% zeros, 147 non-zero entries
+Plot saved: /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/jacobian_adjacency/outputs_grid3/adjacency_distribution_grid3.png
+
+Done.

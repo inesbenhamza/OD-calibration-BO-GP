@@ -1,0 +1,58 @@
+Total GT demand: 8400.0
+[INIT] GraphICM rank=4 seed=1042: loaded 20 initial points. best S so far = 0.102795
+Traceback (most recent call last):
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/run_graphicm_bo_grid3.py", line 287, in <module>
+    x_next_norm, acq_val = optimize_acqf(
+                           ~~~~~~~~~~~~~^
+        qEI, bounds=bounds_norm, q=1,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        num_restarts=ACQF_NUM_RESTARTS, raw_samples=ACQF_RAW_SAMPLES,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/optimize.py", line 775, in optimize_acqf
+    return _optimize_acqf(opt_inputs=opt_acqf_inputs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/optimize.py", line 796, in _optimize_acqf
+    return _optimize_acqf_batch(opt_inputs=opt_inputs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/optimize.py", line 362, in _optimize_acqf_batch
+    generated_initial_conditions = opt_inputs.get_ic_generator()(
+        acq_function=opt_inputs.acq_function,
+    ...<8 lines>...
+        **opt_inputs.ic_gen_kwargs,
+    )
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/optim/initializers.py", line 441, in gen_batch_initial_conditions
+    acq_function(x_.to(device=device)).cpu()
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/utils/transforms.py", line 400, in decorated
+    return method(cls, X, **kwargs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/utils/transforms.py", line 300, in decorated
+    output = method(acqf, X, *args, **kwargs)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/acquisition/monte_carlo.py", line 289, in forward
+    non_reduced_acqval = self._non_reduced_forward(X=X)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/acquisition/monte_carlo.py", line 302, in _non_reduced_forward
+    samples, obj = self._get_samples_and_objectives(X)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/botorch/acquisition/monte_carlo.py", line 120, in _get_samples_and_objectives
+    posterior = self.model.posterior(
+        X=X, posterior_transform=self.posterior_transform
+    )
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/scripts/run_graphicm_bo_grid3.py", line 230, in posterior
+    mvn = MultitaskMultivariateNormal(mean_tasks.unsqueeze(1), cov_diag, interleaved=True)
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/pyro/distributions/distribution.py", line 26, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/gpytorch/distributions/multitask_multivariate_normal.py", line 71, in __init__
+    super().__init__(mean=mean_mvn, covariance_matrix=covariance_matrix, validate_args=validate_args)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/gpytorch/distributions/multivariate_normal.py", line 64, in __init__
+    super().__init__(loc=mean, covariance_matrix=covariance_matrix, validate_args=validate_args)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/env_new/lib/python3.13/site-packages/torch/distributions/multivariate_normal.py", line 185, in __init__
+    self._unbroadcasted_scale_tril = torch.linalg.cholesky(covariance_matrix)
+                                     ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+torch._C._LinAlgError: linalg.cholesky: (Batch element 0): The factorization could not be completed because the input is not positive-definite (the leading minor of order 15 is not positive-definite).

@@ -1,0 +1,6 @@
+Total GT demand: 5000.0
+[GT] scale=2x L=24 mean_flow=1143.6 C_sq=3.186054e-08
+[INIT] GraphGP scale=2x seed=1042: best nRMSE=0.1214
+[RESUME] 50 iters. best_S=0.000220
+
+DONE. nRMSE=0.014826  → output/grid_2d_3x3_congestion_2x/GraphGP_matern_mcEI/results/restart_2_seed-1042

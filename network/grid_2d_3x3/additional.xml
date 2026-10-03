@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <vType accel="1.0" decel="6.0" id="CarA" length="5.0" minGap="2.5" maxSpeed="50.0" sigma="0.5"/>
+
+    <processing>
+        <time-to-teleport value="-1"/>
+    </processing>
+
+    <edgeData id="edge_data_300sec_freq" freq="300" file="../../edge_data_grid_2d_3x3.xml" excludeEmpty="true"/>
+
+</additional>

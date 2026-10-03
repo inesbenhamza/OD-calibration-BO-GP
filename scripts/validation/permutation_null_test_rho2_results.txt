@@ -1,0 +1,35 @@
+Permutation/null test for rho^2 (SharedPrivateGraphKernel, HalfNormalPrior active)
+Run: 2026-08-07
+Script: scripts/validation/permutation_null_test_rho2.py
+Data: real N=100 grid_2d_3x3 trajectory (IndGP_mcEI restart_1_seed-42, vanilla
+100-iter run, output/grid_2d_3x3_bo_vanilla_matern-2p5/), L=24 edges, d=12.
+
+Purpose: check whether the fitted rho^2 on real data reflects genuine
+cross-edge correlation, or is still partly an artifact of the MLE
+degeneracy discussed in the methodology write-up (see MOGP/graph.py,
+SharedPrivateGraphKernel docstring/comments around rho2_prior). Test:
+shuffle each edge's residuals independently across the N training points
+(destroys true cross-edge correspondence, preserves each edge's own
+marginal distribution), refit, and see what rho^2 comes out. A
+well-behaved fit should push rho^2 -> 0 on this null data.
+
+Results:
+  REAL data (true cross-edge correspondence intact):   rho^2 = 6.1497
+  NULL trial 1 (independently shuffled per edge):       rho^2 = 0.0000
+  NULL trial 2 (different shuffle, seed 44):            rho^2 = 0.0000
+  NULL trial 3 (different shuffle, seed 45):            rho^2 = 0.0000
+
+Consistency check against earlier diagnostic (verify_rho2_prior.py,
+same real N=100 trajectory, independently re-fit): rho^2 = 6.1291.
+(6.1497 vs 6.1291 -- within 0.02 of each other.)
+
+Interpretation: the fitted rho^2 is behaviorally distinguishable from what
+the same fitting procedure reports when cross-edge correlation is
+deliberately destroyed. This rules out "the model always inflates rho^2
+regardless of the data" -- it correctly collapses to the constraint floor
+(1e-6, rounds to 0.0000) on all three independent null shuffles, while
+reporting ~6.15 on the real, unshuffled data. Does not by itself prove
+6.15 is the "correct" magnitude of real correlation strength (see
+held-out predictive validation / raw empirical residual correlation as
+further checks, not yet run) -- only that the procedure is not degenerate
+in the "large rho^2 no matter what" sense on this network/trajectory.

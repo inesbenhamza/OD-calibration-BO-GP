@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges>
+    <!-- ── Copy 0 (91/92 → 94/93) ─────────────────────────────────── -->
+    <edge id="c0_D2"  from="c0_91"  to="c0_911" numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c0_D4"  from="c0_92"  to="c0_912" numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c0_L2"  from="c0_911" to="c0_1"   numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c0_L4"  from="c0_912" to="c0_2"   numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c0_L12" from="c0_1"   to="c0_6"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c0_L14" from="c0_2"   to="c0_3"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c0_L15" from="c0_6"   to="c0_3"   numLanes="3" speed="13.89" priority="2"/>
+    <edge id="c0_L16" from="c0_3"   to="c0_6"   numLanes="3" speed="13.89" priority="2"/>
+    <edge id="c0_L10" from="c0_6"   to="c0_5"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c0_L18" from="c0_3"   to="c0_4"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c0_L7"  from="c0_5"   to="c0_914" numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c0_L5"  from="c0_4"   to="c0_913" numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c0_D7"  from="c0_914" to="c0_94"  numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c0_D5"  from="c0_913" to="c0_93"  numLanes="3" speed="13.89" priority="3"/>
+
+    <!-- ── Copy 1 (O3/O4 → D3/D4) ────────────────────────────────── -->
+    <edge id="c1_D2"  from="c1_91"  to="c1_911" numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c1_D4"  from="c1_92"  to="c1_912" numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c1_L2"  from="c1_911" to="c1_1"   numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c1_L4"  from="c1_912" to="c1_2"   numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c1_L12" from="c1_1"   to="c1_6"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c1_L14" from="c1_2"   to="c1_3"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c1_L15" from="c1_6"   to="c1_3"   numLanes="3" speed="13.89" priority="2"/>
+    <edge id="c1_L16" from="c1_3"   to="c1_6"   numLanes="3" speed="13.89" priority="2"/>
+    <edge id="c1_L10" from="c1_6"   to="c1_5"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c1_L18" from="c1_3"   to="c1_4"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c1_L7"  from="c1_5"   to="c1_914" numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c1_L5"  from="c1_4"   to="c1_913" numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c1_D7"  from="c1_914" to="c1_94"  numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c1_D5"  from="c1_913" to="c1_93"  numLanes="3" speed="13.89" priority="3"/>
+
+    <!-- ── Copy 2 (O5/O6 → D5/D6) ────────────────────────────────── -->
+    <edge id="c2_D2"  from="c2_91"  to="c2_911" numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c2_D4"  from="c2_92"  to="c2_912" numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c2_L2"  from="c2_911" to="c2_1"   numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c2_L4"  from="c2_912" to="c2_2"   numLanes="2" speed="13.89" priority="3"/>
+    <edge id="c2_L12" from="c2_1"   to="c2_6"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c2_L14" from="c2_2"   to="c2_3"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c2_L15" from="c2_6"   to="c2_3"   numLanes="3" speed="13.89" priority="2"/>
+    <edge id="c2_L16" from="c2_3"   to="c2_6"   numLanes="3" speed="13.89" priority="2"/>
+    <edge id="c2_L10" from="c2_6"   to="c2_5"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c2_L18" from="c2_3"   to="c2_4"   numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c2_L7"  from="c2_5"   to="c2_914" numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c2_L5"  from="c2_4"   to="c2_913" numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c2_D7"  from="c2_914" to="c2_94"  numLanes="3" speed="13.89" priority="3"/>
+    <edge id="c2_D5"  from="c2_913" to="c2_93"  numLanes="3" speed="13.89" priority="3"/>
+
+    <!-- ── Inter-copy left cross-streets (green): node2 of copy k ↔ node1 of copy k+1 ── -->
+    <edge id="green_01"   from="c0_2" to="c1_1" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="green_01_r" from="c1_1" to="c0_2" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="green_12"   from="c1_2" to="c2_1" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="green_12_r" from="c2_1" to="c1_2" numLanes="3" speed="13.89" priority="2"/>
+    <!-- ── Inter-copy right cross-streets (purple): node4 of copy k ↔ node5 of copy k+1 ── -->
+    <edge id="purple_01"   from="c0_4" to="c1_5" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="purple_01_r" from="c1_5" to="c0_4" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="purple_12"   from="c1_4" to="c2_5" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="purple_12_r" from="c2_5" to="c1_4" numLanes="3" speed="13.89" priority="2"/>
+    <!-- ── Inter-copy middle cross-streets (yellow): node3 of copy k ↔ node6 of copy k+1 ── -->
+    <edge id="yellow_01"   from="c0_3" to="c1_6" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="yellow_01_r" from="c1_6" to="c0_3" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="yellow_12"   from="c1_3" to="c2_6" numLanes="3" speed="13.89" priority="2"/>
+    <edge id="yellow_12_r" from="c2_6" to="c1_3" numLanes="3" speed="13.89" priority="2"/>
+</edges>

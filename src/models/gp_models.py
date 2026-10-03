@@ -1,55 +1,235 @@
 from pathlib import Path
 from typing import Dict, List, Optional, Union
+import copy
+import math
+import xml.etree.ElementTree as _ET
 import numpy as np
 import pandas as pd
 import torch
+from botorch.fit import fit_gpytorch_mll
 from botorch.models import ModelListGP, SingleTaskGP
+from botorch.models.model import Model
 from botorch.models.deterministic import GenericDeterministicModel
 from botorch.posteriors.gpytorch import GPyTorchPosterior
 from botorch.models.transforms.outcome import Standardize
 from gpytorch.constraints import Interval
 from gpytorch.distributions import MultivariateNormal
 from gpytorch.kernels import MaternKernel, RBFKernel, ScaleKernel
+from gpytorch.means import ZeroMean
 from gpytorch.likelihoods import GaussianLikelihood
 from gpytorch.mlls import ExactMarginalLogLikelihood
+from botorch.exceptions.errors import ModelFittingError
+from gpytorch.utils.errors import NotPSDError
 
 
-def set_covar_module(kernel: str, dim: int):
+
+def _randomize_hyperparams(model):
+    """Sample hyperparameters uniformly within their constraints."""
+    with torch.no_grad():
+        ck = model.covar_module 
+
+        if hasattr(ck, "base_kernel") and hasattr(ck.base_kernel, "lengthscale"):
+            lb, ub = 0.005, 20.0
+            if hasattr(ck.base_kernel, "raw_lengthscale_constraint"):
+                c = ck.base_kernel.raw_lengthscale_constraint
+                lb, ub = float(c.lower_bound), float(c.upper_bound)
+                if not math.isfinite(ub):
+                    ub = 20.0
+            shape = ck.base_kernel.lengthscale.shape
+            ck.base_kernel.lengthscale = torch.empty(shape).uniform_(lb, ub)
+
+        if hasattr(ck, "outputscale") and ck.raw_outputscale.requires_grad:
+            lb, ub = 0.05, 2.0
+            if hasattr(ck, "raw_outputscale_constraint"):
+                c = ck.raw_outputscale_constraint
+                c_lb, c_ub = float(c.lower_bound), float(c.upper_bound)
+                if math.isfinite(c_lb):
+                    lb = c_lb
+                if math.isfinite(c_ub) and c_ub > lb:
+                    ub = c_ub
+            ck.outputscale = torch.empty(1).uniform_(lb, ub)
+
+        if isinstance(model.likelihood, GaussianLikelihood):
+            lb, ub = 1e-6, 0.1
+            if hasattr(model.likelihood.noise_covar, "raw_noise_constraint"):
+                c = model.likelihood.noise_covar.raw_noise_constraint
+                lb, ub = float(c.lower_bound), float(c.upper_bound)
+                if not math.isfinite(ub):
+                    ub = 0.1
+            model.likelihood.noise = torch.empty(1).uniform_(lb, ub)
+
+
+def fit_gpytorch_mll_multistart(mll, n_restarts: int = 5, verbose: bool = False, collect_init_samples: bool = False, collect_converged_samples: bool = False):
+    """
+    state_dict() is a PyTorch method that returns a flat dictionary of all learnable parameter tensors in the model. 
+
+    can be checked using 
+
+    import pprint
+    pprint.pprint(dict(mll.model.state_dict()))
+
+    or for exact shape 
+
+    for name, val in mll.model.state_dict().items():
+    print(f"{name}: {val.shape} = {val}")
+
+    mll.model.state_dict() keys :
+    {
+    'likelihood.noise_covar.raw_noise':                                tensor([...]),   # raw noise (pre-transform)
+    'likelihood.noise_covar.raw_noise_constraint.lower_bound':         tensor(...),     # e.g. 1e-3
+    'likelihood.noise_covar.raw_noise_constraint.upper_bound':         tensor(...),     # e.g. 1.0
+    'mean_module.raw_constant':                                        tensor(...),     # GP constant mean
+    'covar_module.raw_outputscale':                                    tensor(...),     # raw outputscale
+    'covar_module.raw_outputscale_constraint.lower_bound':             tensor(...),
+    'covar_module.raw_outputscale_constraint.upper_bound':             tensor(...),
+    'covar_module.base_kernel.raw_lengthscale':                        tensor([[...]]), # shape (1,1) — single lengthscale (not ARD)
+    'covar_module.base_kernel.raw_lengthscale_constraint.lower_bound': tensor(...),     # e.g. 0.001
+    'covar_module.base_kernel.raw_lengthscale_constraint.upper_bound': tensor(...),     # e.g. 4.0
+    'outcome_transform.means':                                         tensor([[...]]), # data mean for Standardize
+    'outcome_transform.stdvs':                                         tensor([[...]]), # data std for Standardize
+    'outcome_transform._stdvs_sq':                                     tensor([[...]]), # precomputed std²
+    'outcome_transform._is_trained':                                   tensor(True),    # whether Standardize has seen data
+    }
+    """
+    original_state = copy.deepcopy(mll.model.state_dict()) # initial hyperparameters before any fitting, default constant set at model cosntruction 
+
+    best_mll_val = -math.inf
+    best_state = None
+    init_samples = [] if collect_init_samples else None # used to inspect the distribution of random initializations and where they converge 
+    converged_samples = [] if collect_converged_samples else None # value of the convegrd hyperpamramerter after fitting and the corresponding MLL, used to inspect the distribution of converged hyperparameters and their quality (MLL)
+    # to see see for ex.. that 3 out of 5 restarts converge to the same solution (good), or that they all converge to different places (bad — landscape has many local optima).
+    
+    
+    for i in range(n_restarts):
+        mll.model.load_state_dict(original_state)
+        _randomize_hyperparams(mll.model)
+        candidate_label = f"random restart {i}/{n_restarts - 1}"
+
+        if collect_init_samples:
+            with torch.no_grad():
+                ck = mll.model.covar_module
+                ls = ck.base_kernel.lengthscale.detach().squeeze().cpu().tolist()
+                if not isinstance(ls, list):
+                    ls = [ls]
+                init_samples.append({
+                    "restart":     i,
+                    "noise":       float(mll.model.likelihood.noise.mean().detach().item()),
+                    "outputscale": float(ck.outputscale.detach().item()) if hasattr(ck, "outputscale") else float("nan"),
+                    "lengthscale": ls,
+                })
+
+        mll.model.train()
+        try:
+            fit_gpytorch_mll(mll)
+            mll.model.train()
+            with torch.no_grad():
+                output = mll.model(*mll.model.train_inputs)
+                mll_val = mll(output, mll.model.train_targets).item()
+            if verbose:
+                print(f"    {candidate_label}: MLL = {mll_val:.4f}")
+            if mll_val > best_mll_val:
+                best_mll_val = mll_val
+                best_state = copy.deepcopy(mll.model.state_dict())
+
+            if collect_converged_samples:
+                with torch.no_grad():
+                    ck = mll.model.covar_module
+                    ls = ck.base_kernel.lengthscale.detach().squeeze().cpu().tolist()
+                    if not isinstance(ls, list):
+                        ls = [ls]
+                    converged_samples.append({
+                        "restart":     i,
+                        "label":       candidate_label,
+                        "mll_val":     mll_val,
+                        "noise":       float(mll.model.likelihood.noise.mean().detach().item()),
+                        "outputscale": float(ck.outputscale.detach().item()) if hasattr(ck, "outputscale") else float("nan"),
+                        "lengthscale": ls,
+                        "is_best":     False,
+                    })
+        except (RuntimeError, NotPSDError, ModelFittingError) as e:
+            if verbose:
+                print(f"    {candidate_label}: failed ({str(e)[:60]})")
+
+    if best_state is not None:
+        mll.model.load_state_dict(best_state)
+    else:
+        mll.model.load_state_dict(original_state)
+
+    if collect_converged_samples and converged_samples:
+        best_idx = max(range(len(converged_samples)), key=lambda k: converged_samples[k]["mll_val"])
+        converged_samples[best_idx]["is_best"] = True
+
+    mll.model.eval()
+    if collect_converged_samples:
+        return converged_samples
+    if collect_init_samples:
+        return init_samples
+
+###
+######
+####
+
+
+
+
+def set_covar_module(kernel: str, constraint_mode):
+
+    if constraint_mode in ("constrained") :
+        ls_constraint = Interval(0.005, 20.0)
+    else:
+        ls_constraint = None
+
+
     if kernel == "matern-1p5":
-        return ScaleKernel(MaternKernel(nu=1.5, ard_num_dims=dim, lengthscale_constraint=Interval(0.005, 4.0)))
+        base_kernel = MaternKernel(nu=1.5, has_lengthscale=True, lengthscale_constraint=ls_constraint)
     elif kernel == "matern-2p5":
-        return ScaleKernel(MaternKernel(nu=2.5, ard_num_dims=dim, lengthscale_constraint=Interval(0.005, 4.0)))
+        base_kernel = MaternKernel(nu=2.5, has_lengthscale=True, lengthscale_constraint=ls_constraint)
     elif kernel == "rbf":
-        return ScaleKernel(RBFKernel(ard_num_dims=dim, lengthscale_constraint=Interval(0.005, 4.0)))
+        base_kernel = RBFKernel(has_lengthscale=True, lengthscale_constraint=ls_constraint)
     else:
         raise ValueError(f"Unknown kernel type: {kernel}")
 
+    scale_kernel = ScaleKernel(base_kernel)
+
+    return scale_kernel
 
 
 
 
+
+####################
+###############################
+###################
 #scalar gp
-def initialize_vanillabo_model(train_X, train_Y, kernel: str):
-    
+def initialize_vanillabo_model(train_X, train_Y, kernel: str, constraint_mode: str = "constrained"):
+
     dim = train_X.size(-1)
-    likelihood = GaussianLikelihood(noise_constraint=Interval(1e-4, 1))
-    covar_module = set_covar_module(kernel, dim)
-    
+
+    covar_module = set_covar_module(kernel, constraint_mode=constraint_mode)
+
+    if constraint_mode in ("constrained") :
+        noise_constraint = Interval(1e-4, 1)
+    else:
+        noise_constraint = None
+
+    likelihood = GaussianLikelihood(noise_constraint=noise_constraint)
     model = SingleTaskGP(
         train_X,
         train_Y,
         covar_module=covar_module,
         likelihood=likelihood,
-        outcome_transform=Standardize(m=1),
-    )
-    
+        outcome_transform= Standardize(m=1), 
+    ) # standardize as constant mean so need to be centered around 0 
+
     return model
 
 
-
+########
+############
+#####################
 
 # INDEPENDENT GP MODELS
-def initialize_independent_gp_models_with_modellist(train_X, train_Y_multi, kernel: str = "matern-2p5"):
+def initialize_independent_gp_models_with_modellist(train_X, train_Y_multi, kernel: str = "matern-2p5", constraint_mode: str = "constrained"):
     """
     Fit independent GPs for each edge/link output using ModelListGP.
 
@@ -68,39 +248,33 @@ def initialize_independent_gp_models_with_modellist(train_X, train_Y_multi, kern
         (model_list_gp, mlls) - ModelListGP containing all edge GPs and list of MLLs
     """
     n_edges = train_Y_multi.size(1)
-    dim = train_X.size(1)  # n_od_pairs
 
-    individual_models = []
-    mlls = []
+    individual_models = [] # list to hold each edge-specific GP model, which will be wrapped in ModelListGP; allows for edge-specific hyperparameters and diagnostics (e.g. which edges are harder to fit, how well the model fits each edge, etc.)
+    mlls = [] # keep track of MLLs for each edge-specific GP, useful for diagnostics and hyperparameter tuning insights (e.g. which edges are harder to fit, how well the model fits each edge, etc.)
 
     for edge_idx in range(n_edges):
-        
-        train_Y_edge = train_Y_multi[:, edge_idx].unsqueeze(-1)  # [N, 1]
-        
-        # Filter out NaN values for this specific edge
-        # Each edge GP trains only on samples where that edge has valid (non-NaN) error
-        valid_mask = ~torch.isnan(train_Y_edge).squeeze(-1)  # [N]
-        #boolean tensor where True means "this value is a valid number" and False means "this value is NaN".
-        
-        
-        #mask.sum(): In PyTorch, summing a boolean tensor treats True as 1 and False as 0.
-        if valid_mask.sum() == 0: #meaning all are nan as its all false 
-            # All samples have NaN for this edge - this shouldn't happen in practice
-            # but we'll use all samples and let GPyTorch handle it
-            train_X_edge = train_X
-            train_Y_edge_filtered = train_Y_edge
-        else:
-            train_X_edge = train_X[valid_mask] # nouveau tenseur train_X_edge qui ne contient que les éléments de train_X où la valeur correspondante dans valid_mask est True.
-            train_Y_edge_filtered = train_Y_edge[valid_mask]
+        train_X_edge          = train_X
+        train_Y_edge_filtered = train_Y_multi[:, edge_idx].unsqueeze(-1)  # takes all rows for a single column so whole column edge_idx (one edge)
 
-        likelihood = GaussianLikelihood(noise_constraint=Interval(1e-4, 1))
-        covar_module = set_covar_module(kernel, dim)
+        covar_module      = set_covar_module(kernel, constraint_mode=constraint_mode)
+
+        outcome_transform = Standardize(m=1)
+
+        if constraint_mode in ("constrained"):
+            noise_constraint = Interval(1e-4, 1)
+        else:
+            noise_constraint = None
+        likelihood = GaussianLikelihood(noise_constraint=noise_constraint)
         gp_model = SingleTaskGP(
             train_X_edge,
             train_Y_edge_filtered,
             covar_module=covar_module,
             likelihood=likelihood,
-            outcome_transform=Standardize(m=1)
+            # fixed ZeroMean (not a learned ConstantMean): Standardize already
+            # exactly zero-centers this edge's targets before fitting, so a
+            # learned constant is redundant. 
+            mean_module=ZeroMean(),
+            outcome_transform=outcome_transform,
         )
 
         mll = ExactMarginalLogLikelihood(gp_model.likelihood, gp_model)
@@ -117,7 +291,9 @@ def initialize_independent_gp_models_with_modellist(train_X, train_Y_multi, kern
 
 
 def predict_independent_gps(model_list_gp, test_X):
-  
+    """for interpretation of the predictions and uncertainties of each edge-specific GP in the ModelListGP,
+    called to inspect things like: "how well does the GP fit edge 3"""
+
     predictions = []
     uncertainties = []
 
@@ -125,12 +301,12 @@ def predict_independent_gps(model_list_gp, test_X):
     for gp_model in model_list_gp.models: # Access individual GPs from ModelListGP
         gp_model.eval()
 
-        with torch.no_grad():
-            posterior = gp_model.posterior(test_X)
-            mean = posterior.mean.squeeze(-1)
-            variance = posterior.variance.squeeze(-1)
-            predictions.append(mean)
-            uncertainties.append(variance.sqrt())
+        with torch.no_grad():  # disable gradient tracking, we're predicting, not training
+            posterior = gp_model.posterior(test_X)       # ask the GP: "what do you predict at these new OD matrices?"
+            mean = posterior.mean.squeeze(-1)             # the GP's best guess for the error at each test point
+            variance = posterior.variance.squeeze(-1)     # how uncertain the GP is at each test point
+            predictions.append(mean)                     # collect this edge's mean predictions
+            uncertainties.append(variance.sqrt())        # std dev = sqrt(variance), more interpretable than variance
 
     predictions = torch.stack(predictions, dim=-1)
     uncertainties = torch.stack(uncertainties, dim=-1)
@@ -138,137 +314,32 @@ def predict_independent_gps(model_list_gp, test_X):
     return predictions, uncertainties
 
 
-
-# LINEAR AGGREGATION MODEL
-
-
-def make_linear_aggregation_model_from_error_gps(model_list_gp_errors, weights=None, ground_truth_flows=None, expect_flow_weights: bool = False):
-    
-    L = len(model_list_gp_errors.models)  # number of edges
-    
-    # Infer dtype from the first GP model (for consistency with GP models)
-    # Default to double precision for numerical stability
-    if len(model_list_gp_errors.models) > 0:
-        model_dtype = next(model_list_gp_errors.models[0].parameters()).dtype
-    else:
-        model_dtype = torch.double  
-
-    if weights is None: 
-        # No weights provided - calculate based on ground_truth_flows or use uniform
-        if ground_truth_flows is not None:
-            flows = torch.as_tensor(ground_truth_flows, dtype=model_dtype)
-            w = flows / (L * flows.sum())
-        else:
-            w = torch.ones(L, dtype=model_dtype) / L
-            print(f"Using uniform weights (1/{L} each)")
-    else: # Use provided weights directly 
-        if isinstance(weights, torch.Tensor):
-            w = weights.to(dtype=model_dtype)
-        else:
-            w = torch.as_tensor(weights, dtype=model_dtype)
-        is_uniform = torch.allclose(w, torch.full_like(w, 1.0/L), atol=1e-6)
-        print(f"Using provided weights (sum={w.sum().item():.6f}, scale={w.sum().item() * L:.6f}, expect_flow_weights={expect_flow_weights})")
-        print(f"  Weight range: [{w.min().item():.6f}, {w.max().item():.6f}]")
-        print(f"  First 5 weights: {w[:5].numpy()}")
-        if expect_flow_weights:
-            if is_uniform:
-                print("  WARNING: Expected flow-proportional weights, but got uniform.")
-            else:
-                print("  Weights are flow-proportional (non-uniform)")
-
-    class LinearAggregationModel(ModelListGP):
-        def __init__(self, *models, w): # call the model using model = linear_aggregation_model(gp1, gp2, gp3, w)
-            super().__init__(*models)# call the parent class ModelListGP 
-            # its equvalent to :
-            #  ModelListGP.__init__(self, gp1, gp2, gp3, ..., gp51)
-            # This creates: self.models = [gp1, gp2, gp3, ..., gp51]
-            self.register_buffer("w", w)
-
-        @property
-        def num_outputs(self):
-            """Override to indicate this is a single-output model."""
-            return 1
-
-        def posterior(self, X, observation_noise=False, **kwargs):
-            """
-            Compute posterior for S(x) = sum_l [w_l * e_l(x)]
-
-            Returns
-            -------
-            GPyTorchPosterior with:
-            - mean: (batch_size,) or (batch_size, 1)
-            - covariance: (batch_size, 1, 1) diagonal
-            """
-            # collecting posteriors from each per-edge-error GP
-            posts = [m.posterior(X, observation_noise=observation_noise) for m in self.models]
-            means = torch.stack([p.mean.squeeze(-1) for p in posts], dim=-1)     # (b, L)
-            vars_ = torch.stack([p.variance.squeeze(-1) for p in posts], dim=-1) # (b, L)
-
-            # linear aggregation is allowed because it's a linear combination of gaussian random variables
-            # Any linear combination of jointly Gaussian random variables is Gaussian.
-            mu_S = (means * self.w).sum(dim=-1)  # (b,)
-            var_S = (vars_ * (self.w ** 2)).sum(dim=-1).clamp_min(1e-12)  # (b,)
-
-            # Create MultivariateNormal with proper shapes
-            # MVN expects: mean (b,), covariance_matrix (b, 1, 1) (botorch expects 3D for covariance)
-            cov_matrix = var_S.view(-1, 1, 1)
-
-            mvn = MultivariateNormal(mu_S, cov_matrix)
-            return GPyTorchPosterior(mvn)
-
-        def forward(self, X):
-            """For compatibility with BoTorch"""
-            return self.posterior(X)
-
-    return LinearAggregationModel(*model_list_gp_errors.models, w=w)
-
-
-
-
-def initialize_model(model_name: str, train_X, train_Y, kernel: str):
+class IndGPAggregationModel(Model):
     """
-    Factory function to initialize GP models based on model name.
-    
-    Parameters
-    ----------
-    model_name : str
-        Model type: "vanillabo" or "independent_gp"/"ind_gp"
-    train_X : torch.Tensor
-        Training inputs
-    train_Y : torch.Tensor
-        Training targets (for vanillabo: aggregated error, for ind_gp: per-edge errors)
-    kernel : str
-        Kernel type ("matern-1p5", "matern-2p5", "rbf")
-    
-    Returns
-    -------
-    Model instance (SingleTaskGP for vanillabo, ModelListGP for ind_gp)
+    Wraps a fitted ModelListGP (L per-edge f_l outputs) and exposes scalar
+    S(x) = sum_l f_l(x) = nRMSE²(x) for use with ExpectedImprovement.
     """
-    if model_name == "vanillabo":
-        return initialize_vanillabo_model(train_X, train_Y, kernel)
-    elif model_name in ["ind_gp", "independent_gp"]:
-        return initialize_independent_gp_models_with_modellist(train_X, train_Y, kernel)
-    else:
-        raise ValueError(f"Unknown model name: {model_name}. Supported: 'vanillabo', 'independent_gp', 'ind_gp'")
 
+    def __init__(self, model_list_gp: ModelListGP):
+        super().__init__()
+        self.model_list_gp = model_list_gp
 
+    @property
+    def num_outputs(self) -> int:
+        return 1
 
+    def posterior(self, X, observation_noise: bool = False, **kwargs) -> GPyTorchPosterior:
+        post = self.model_list_gp.posterior(X, observation_noise=observation_noise)
+        mean = post.mean      
+        var  = post.variance  
 
+        # S = sum_l f_l = nRMSE²  — linear
+        mu_S  = mean.sum(dim=-1, keepdim=True)                    # (N, 1) we get N aggragted mean
+        var_S = var.sum(dim=-1, keepdim=True).clamp_min(1e-12)   # (N, 1) we get N aggregated variance, one per OD
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        mvn = MultivariateNormal(mu_S.squeeze(-1), var_S.squeeze(-1).unsqueeze(-1)) #  Gaussian distribution defined by a mean vector and covariance matrix
+        # used to wrap the mean and variance of the aggregated output S into a MultivariateNormal distribution, which is then wrapped in a GPyTorchPosterior for compatibility with BoTorch acquisition functions.  
+        return GPyTorchPosterior(mvn) # wrappping the mvn into an object 
 
 
 
@@ -323,7 +394,7 @@ def extract_independent_gp_hyperparameters(
             lengthscale_np = float(lengthscale_np.flat[0])
         else:
             lengthscale_np = lengthscale_np.tolist()
-        noise = gp.likelihood.noise.detach().item()
+        noise = float(gp.likelihood.noise.detach().mean().item())
 
         if isinstance(lengthscale_np, (int, float)):
             ls_scalar = lengthscale_np
@@ -381,7 +452,7 @@ def extract_vanillabo_hyperparameters(model) -> Dict:
     ls = cov.base_kernel.lengthscale.detach().squeeze().cpu().numpy()
     if ls.ndim == 0:
         ls = np.array([float(ls)])
-    noise = float(model.likelihood.noise.detach().item())
+    noise = float(model.likelihood.noise.detach().mean().item())
 
     row = {
         "lengthscale_mean": float(ls.mean()),
@@ -397,68 +468,98 @@ def extract_vanillabo_hyperparameters(model) -> Dict:
 
 
 
-def load_all_hyperparameters(
-    results_dir,
-    bo_folder: str,
-    noise_label: str,
-    run_subfolder: str = "",
-    n_restarts_max: int = 100,
-    seed_base: int = 42,
-    seed_step: int = 1000,
-) -> pd.DataFrame:
+
+def load_indgp_iters(
+    sim_base,
+    n_bo_iters: int,
+    train_X_init,
+    train_Y_init,
+    best_S_init: float,
+    edge_ids: List[str],
+    C: float,
+    device,
+    dtype,
+):
     """
-    Load GP hyperparameters from all iterations and all restarts.
+    Resume an IndGP BO run by reloading already-simulated iterations from disk.
 
-    Reads the ``hyperparameters_per_iteration.csv`` saved per restart during
-    the BO loop (written by ``_log_hyperparameters``).
+    Reads od.xml (OD vector) and link_measure_compare.csv (simulated vs GT flows)
+    from each iter_* subfolder under sim_base and reconstructs the training tensors
+    and convergence history up to the last completed iteration.
 
-    Parameters
-    ----------
-    results_dir : str or Path
-        Base simulation output path (``config["simulation_run_path"]``).
-    bo_folder : str
-        BO experiment folder name (e.g. ``"indgp_bo_squared_grouped"``).
-    noise_label : str
-        Noise sub-folder (e.g. ``"noise_1e-4_1"``).
-    run_subfolder : str, optional
-        Extra subfolder between noise_label and "results" (e.g. ``"NEW"``).
-    n_restarts_max : int
-        Maximum number of restarts to look for (stops at first missing).
-    seed_base : int
-        Seed for restart 1 (default 42).
-    seed_step : int
-        Increment between restart seeds (default 1000).
+    best_S_init and returned best_S are in nRMSE² units (= Σ_l f_l).
 
     Returns
     -------
-    pd.DataFrame
-        Columns: restart, seed, iteration, edge_id, outputscale, noise,
-        lengthscale_mean, lengthscale_min, lengthscale_max.
+    train_X, train_Y, best_S, S_hist, start_iter
     """
-    parts = [Path(results_dir), bo_folder, noise_label]
-    if run_subfolder:
-        parts.append(run_subfolder)
-    parts.append("results")
-    base = Path(*parts)
-    dfs = []
-    for r in range(n_restarts_max):
-        seed = seed_base + r * seed_step
-        hp_path = base / f"restart_{r+1}_seed-{seed}" / "hyperparameters_per_iteration.csv"
-        if not hp_path.exists():
+    train_X    = train_X_init.clone()
+    train_Y    = train_Y_init.clone()
+    best_S     = best_S_init
+    S_hist     = [best_S_init]
+    start_iter = 0
+
+    for _it in range(n_bo_iters):
+        od_xml      = Path(sim_base) / f"iter_{_it}" / "od.xml"
+        compare_csv = Path(sim_base) / f"iter_{_it}" / "link_measure_compare.csv"
+        if not od_xml.exists() or not compare_csv.exists():
             break
-        df = pd.read_csv(hp_path)
-        df["restart"] = r + 1
-        df["seed"] = seed
-        dfs.append(df)
-    if not dfs:
-        raise FileNotFoundError(f"No hyperparameter CSVs found under {base}")
-    return pd.concat(dfs, ignore_index=True)
+
+        tree    = _ET.parse(str(od_xml))
+        rows    = [el.attrib for el in tree.getroot().iter("tazRelation")]
+        _counts = pd.DataFrame(rows)["count"].astype(float).values
+        _x      = torch.tensor(_counts, device=device, dtype=dtype).view(1, -1)
+
+        _df = pd.read_csv(str(compare_csv)).set_index("edge_id")
+        per_edge_errors = []
+        for eid in edge_ids:
+            if eid in _df.index:
+                gt_val  = float(_df.loc[eid, "interval_nVehContrib_gt"])
+                sim_val = float(_df.loc[eid, "interval_nVehContrib_sim"])
+                per_edge_errors.append(
+                    C * (sim_val - gt_val) ** 2 if gt_val > 0 else np.nan
+                )
+            else:
+                per_edge_errors.append(np.nan)
+
+        _y    = torch.tensor(per_edge_errors, device=device, dtype=dtype).view(1, -1)
+        _loss = float(np.nansum(per_edge_errors))  # nRMSE² = Σ_l f_l
+
+        train_X = torch.cat([train_X, _x], dim=0)
+        train_Y = torch.cat([train_Y, _y], dim=0)
+        if _loss < best_S:
+            best_S = _loss
+        S_hist.append(best_S)
+        start_iter = _it + 1
+
+    return train_X, train_Y, best_S, S_hist, start_iter
 
 
+def log_indgp_hyperparameters(agg_model, edge_ids: List[str], iteration: int, hp_log_path):
+    """
+    Append one row per edge of GP hyperparameters to a CSV file.
 
-
-
-
-
-
-
+    Parameters
+    ----------
+    agg_model   : LinearAggregationModel (ModelListGP-like with per-edge GPs)
+    edge_ids    : list of edge ID strings
+    iteration   : current BO iteration index
+    hp_log_path : Path — CSV is created on first call, appended thereafter
+    """
+    hp   = extract_independent_gp_hyperparameters(agg_model, edge_ids=edge_ids)
+    rows = []
+    for row in hp["per_edge"]:
+        ls      = row["lengthscale"]
+        ls_list = ls if isinstance(ls, list) else [float(ls)]
+        rows.append({
+            "iteration":        iteration,
+            "edge_id":          row["edge_id"],
+            "outputscale":      row["outputscale"],
+            "noise":            row["noise"],
+            "lengthscale_mean": float(np.mean(ls_list)),
+            "lengthscale_min":  float(np.min(ls_list)),
+            "lengthscale_max":  float(np.max(ls_list)),
+            **{f"lengthscale_dim_{i}": float(v) for i, v in enumerate(ls_list)},
+        })
+    hp_log_path = Path(hp_log_path)
+    pd.DataFrame(rows).to_csv(hp_log_path, mode="a", header=not hp_log_path.exists(), index=False)
