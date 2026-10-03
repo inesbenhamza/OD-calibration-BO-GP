@@ -112,89 +112,6 @@ EDGE_GROUPS_QUICKSTART_GRID_3_DENSE = {
     "c2_out_D6":   ["c2_L18", "c2_L5", "c2_D5"],
 }
 
-
-# Auto-detected via forced-merge chain detection on routes_single.csv: an edge
-# pair (a, b) is merged whenever a has exactly one successor (b) and b has
-# exactly one predecessor (a) across every route in the network, i.e. flow
-# through a always continues unsplit into b (mostly SUMO's
-# -AddedOnRampEdge/-AddedOffRampEdge lane-change/ramp artifacts splitting one
-# logical road into multiple edge IDs). 128 routed edges collapse to 72 groups.
-EDGE_GROUPS_NETWORK_3JUNCTION = {
-    "114650795": ["114650795"],
-    "114650797": ["114650797"],
-    "114660785": ["114660785"],
-    "157805319#0": ["157805319#0", "619042909", "619042907"],
-    "157805328": ["157805328"],
-    "157805329": ["157805329", "393883332#0"],
-    "158245395#1": ["158245395#1", "395974916#0", "395974916#1"],
-    "158245406": ["158245406"],
-    "158245407": ["158245407"],
-    "158245408": ["158245408"],
-    "158245422": ["158245422", "394409924#0"],
-    "158966998#0": ["158966998#0", "393892680"],
-    "184753017": ["184753017", "186398860"],
-    "23955360": ["23955360"],
-    "28413844": ["28413844", "508115743", "508115743-AddedOffRampEdge"],
-    "300579880#1": ["300579880#1", "394409220"],
-    "31559304": ["31559304"],
-    "360972546#1": ["360972546#1", "508115796"],
-    "371277198": ["371277198"],
-    "393882679#1": ["393882679#1", "360972515", "52286755#0", "52286755#1"],
-    "393884249": ["393884249", "157805334#0"],
-    "393884250#0": ["393884250#0", "393884250#1"],
-    "395452529": ["395452529"],
-    "395452530": ["395452530"],
-    "395974920#1": ["395974920#1", "395974919"],
-    "417509529": ["417509529"],
-    "417510077": ["417510077", "158245409#0"],
-    "417527489": ["417527489", "395974921", "396158856", "724603155#0"],
-    "417527934": ["417527934"],
-    "417527974": ["417527974", "158966994#0"],
-    "4336093": ["4336093"],
-    "498017747": ["498017747"],
-    "498017755": ["498017755", "498017755-AddedOffRampEdge"],
-    "5001947": ["5001947", "395974918#0"],
-    "508115744": ["508115744", "508115744-AddedOffRampEdge"],
-    "508115745": ["508115745"],
-    "508115768": ["508115768"],
-    "508115775": ["508115775"],
-    "508115788-AddedOnRampEdge": ["508115788-AddedOnRampEdge", "508115788"],
-    "508115805": ["508115805", "416161449", "31559309"],
-    "508115808": ["508115808"],
-    "508115819": ["508115819"],
-    "508115828": ["508115828"],
-    "508137802": ["508137802", "508137802-AddedOffRampEdge"],
-    "508479370#1": ["508479370#1", "508479370#1-AddedOffRampEdge"],
-    "52286756#1-AddedOnRampEdge": ["52286756#1-AddedOnRampEdge", "52286756#1"],
-    "544296215#0": ["544296215#0"],
-    "544296215#1-AddedOnRampEdge": ["544296215#1-AddedOnRampEdge", "544296215#1", "544296215#1-AddedOffRampEdge"],
-    "544296216": ["544296216", "544296216-AddedOffRampEdge"],
-    "544296217": ["544296217", "508115814", "508115814-AddedOffRampEdge"],
-    "544296218#0": ["544296218#0"],
-    "544296218#1-AddedOnRampEdge": ["544296218#1-AddedOnRampEdge", "544296218#1"],
-    "544296218#2-AddedOnRampEdge": ["544296218#2-AddedOnRampEdge", "544296218#2", "157607513#0"],
-    "544299026-AddedOnRampEdge": ["544299026-AddedOnRampEdge", "544299026"],
-    "619042896": ["619042896", "619042896-AddedOffRampEdge"],
-    "619042912": ["619042912", "619042916"],
-    "619042919-AddedOnRampEdge": ["619042919-AddedOnRampEdge", "619042919"],
-    "619042921-AddedOnRampEdge": ["619042921-AddedOnRampEdge", "619042921"],
-    "619042922": ["619042922", "619042923"],
-    "619042924": ["619042924", "619042925", "619042925-AddedOffRampEdge"],
-    "752127424": ["752127424", "752127424-AddedOffRampEdge"],
-    "849833093": ["849833093"],
-    "851550873": ["851550873"],
-    "851552197": ["851552197"],
-    "851554086": ["851554086"],
-    "851556422": ["851556422"],
-    "851556423": ["851556423", "851556423-AddedOffRampEdge"],
-    "8923925#0": ["8923925#0", "8923925#2", "8923925#3"],
-    "8925761": ["8925761"],
-    "8926272": ["8926272", "393882678#0"],
-    "8926408": ["8926408", "394411058"],
-    "8926742": ["8926742", "508115781", "508115802"],
-}
-
-
 # 3x3 grid: each edge is its own group (no serial duplicates in a grid)
 EDGE_GROUPS_GRID_2D_3X3 = {e: [e] for e in [
     "A0A1", "A0B0", "A1A0", "A1A2", "A1B1", "A2A1", "A2B2",
@@ -207,7 +124,6 @@ __all__ = [
     "EDGE_GROUPS",
     "EDGE_GROUPS_QUICKSTART_GRID_3",
     "EDGE_GROUPS_QUICKSTART_GRID_3_DENSE",
-    "EDGE_GROUPS_NETWORK_3JUNCTION",
     "EDGE_GROUPS_GRID_2D_3X3",
     "get_edge_groups",
     "get_representative_edges",
@@ -228,8 +144,6 @@ def get_edge_groups(
         return dict(EDGE_GROUPS_QUICKSTART_GRID_3)
     if network_name == "quickstart_grid_3_dense":
         return dict(EDGE_GROUPS_QUICKSTART_GRID_3_DENSE)
-    if network_name == "network_3junction":
-        return dict(EDGE_GROUPS_NETWORK_3JUNCTION)
     if network_name == "grid_2d_3x3":
         return dict(EDGE_GROUPS_GRID_2D_3X3)
     if net_xml:
