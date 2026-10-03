@@ -1,988 +1,0 @@
-Total GT demand: 43971.0
-[INIT] L=72 edges, dim_od=44, C=3.107301e-09
-[1/30] total demand=41635.9
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (14ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_0_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1064 ACT 990 BUF 91)                           Step #200.00 (1ms ~= 1000.00*RT, ~1589000.00UPS, vehicles TOT 2082 ACT 1589 BUF 232)      Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3069 ACT 1865 BUF 401)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4033 ACT 2158 BUF 592)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4992 ACT 2454 BUF 793)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5919 ACT 2724 BUF 1023)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6827 ACT 2985 BUF 1269)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7656 ACT 3209 BUF 1593)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8360 ACT 3319 BUF 2055)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9044 ACT 3410 BUF 2519)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 9734 ACT 3489 BUF 2989)                       Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10432 ACT 3609 BUF 3449)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11176 ACT 3707 BUF 3858)                      Step #1400.00 (1ms ~= 1000.00*RT, ~3873000.00UPS, vehicles TOT 11922 ACT 3873 BUF 4268)   Step #1500.00 (1ms ~= 1000.00*RT, ~4004000.00UPS, vehicles TOT 12663 ACT 4004 BUF 4688)   Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13359 ACT 4134 BUF 5145)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 14029 ACT 4209 BUF 5628)                      Step #1800.00 (1ms ~= 1000.00*RT, ~4364000.00UPS, vehicles TOT 14786 ACT 4364 BUF 6042)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 15486 ACT 4484 BUF 6491)                      Step #2000.00 (1ms ~= 1000.00*RT, ~4611000.00UPS, vehicles TOT 16190 ACT 4611 BUF 6940)   Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 16902 ACT 4748 BUF 7388)                      Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 17575 ACT 4858 BUF 7869)                      Step #2300.00 (1ms ~= 1000.00*RT, ~5024000.00UPS, vehicles TOT 18279 ACT 5024 BUF 8321)   Step #2400.00 (1ms ~= 1000.00*RT, ~5136000.00UPS, vehicles TOT 18974 ACT 5136 BUF 8779)   Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 19438 ACT 4987 BUF 9473)                      Step #2600.00 (1ms ~= 1000.00*RT, ~4989000.00UPS, vehicles TOT 19950 ACT 4989 BUF 10121)  Step #2700.00 (2ms ~= 500.00*RT, ~2502000.00UPS, vehicles TOT 20575 ACT 5004 BUF 10658)   Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 21010 ACT 4769 BUF 11375)                     Step #2900.00 (1ms ~= 1000.00*RT, ~4886000.00UPS, vehicles TOT 21614 ACT 4886 BUF 11924)  Step #3000.00 (1ms ~= 1000.00*RT, ~5046000.00UPS, vehicles TOT 22323 ACT 5046 BUF 12373)  Step #3100.00 (1ms ~= 1000.00*RT, ~4984000.00UPS, vehicles TOT 22816 ACT 4984 BUF 13033)  Step #3200.00 (1ms ~= 1000.00*RT, ~5253000.00UPS, vehicles TOT 23553 ACT 5253 BUF 13456)  Step #3300.00 (2ms ~= 500.00*RT, ~2619000.00UPS, vehicles TOT 24155 ACT 5238 BUF 14016)   Step #3400.00 (1ms ~= 1000.00*RT, ~5125000.00UPS, vehicles TOT 24545 ACT 5125 BUF 14775)  Step #3500.00 (1ms ~= 1000.00*RT, ~5160000.00UPS, vehicles TOT 25180 ACT 5160 BUF 15299)  Step #3600.00 (2ms ~= 500.00*RT, ~2495500.00UPS, vehicles TOT 25620 ACT 4991 BUF 16014)   Step #3700.00 (1ms ~= 1000.00*RT, ~4699000.00UPS, vehicles TOT 25853 ACT 4699 BUF 15781)  Step #3800.00 (2ms ~= 500.00*RT, ~2296500.00UPS, vehicles TOT 26168 ACT 4593 BUF 15466)   Step #3900.00 (1ms ~= 1000.00*RT, ~4489000.00UPS, vehicles TOT 26481 ACT 4489 BUF 15153)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.29s
- Real time factor: 1185.41
- UPS: 4772850.151976
-Vehicles:
- Inserted: 26481 (Loaded: 41634)
- Running: 4489
- Waiting: 15153
- Teleports: 6 (Jam: 6)
-Statistics (avg of 21992):
- RouteLength: 3288.38
- Speed: 13.46
- Duration: 448.81
- WaitingTime: 2.44
- TimeLoss: 303.74
- DepartDelay: 73.39
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_0.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_0.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_0_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_0_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_0_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=2.186462e-01 nRMSE=0.467596
-[2/30] total demand=45972.0
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_1_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1170 ACT 1088 BUF 107)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2308 ACT 1669 BUF 249)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3371 ACT 1887 BUF 462)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4389 ACT 2063 BUF 718)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5416 ACT 2327 BUF 969)                         Step #600.00 (1ms ~= 1000.00*RT, ~2397000.00UPS, vehicles TOT 6278 ACT 2397 BUF 1386)     Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7283 ACT 2633 BUF 1656)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 8178 ACT 2785 BUF 2037)                        Step #900.00 (1ms ~= 1000.00*RT, ~2881000.00UPS, vehicles TOT 9003 ACT 2881 BUF 2494)     Step #1000.00 (1ms ~= 1000.00*RT, ~3130000.00UPS, vehicles TOT 9945 ACT 3130 BUF 2825)    Step #1100.00 (1ms ~= 1000.00*RT, ~3000000.00UPS, vehicles TOT 10602 ACT 3000 BUF 3445)   Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11722 ACT 3372 BUF 3604)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12510 ACT 3492 BUF 4091)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 13101 ACT 3351 BUF 4778)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 13895 ACT 3454 BUF 5260)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14764 ACT 3554 BUF 5666)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 15492 ACT 3629 BUF 6220)                      Step #1800.00 (1ms ~= 1000.00*RT, ~3588000.00UPS, vehicles TOT 16155 ACT 3588 BUF 6841)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 17068 ACT 3845 BUF 7192)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 17652 ACT 3712 BUF 7889)                      Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 18412 ACT 3810 BUF 8406)                      Step #2200.00 (1ms ~= 1000.00*RT, ~3693000.00UPS, vehicles TOT 18973 ACT 3693 BUF 9121)   Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 19661 ACT 3766 BUF 9710)                      Step #2400.00 (2ms ~= 500.00*RT, ~1845000.00UPS, vehicles TOT 20197 ACT 3690 BUF 10448)   Step #2500.00 (1ms ~= 1000.00*RT, ~3699000.00UPS, vehicles TOT 20892 ACT 3699 BUF 11033)  Step #2600.00 (1ms ~= 1000.00*RT, ~3800000.00UPS, vehicles TOT 21619 ACT 3800 BUF 11584)  Step #2700.00 (2ms ~= 500.00*RT, ~1805500.00UPS, vehicles TOT 22207 ACT 3611 BUF 12277)   Step #2800.00 (1ms ~= 1000.00*RT, ~3711000.00UPS, vehicles TOT 22978 ACT 3711 BUF 12778)  Step #2900.00 (1ms ~= 1000.00*RT, ~3554000.00UPS, vehicles TOT 23567 ACT 3554 BUF 13466)  Step #3000.00 (1ms ~= 1000.00*RT, ~3974000.00UPS, vehicles TOT 24632 ACT 3974 BUF 13681)  Step #3100.00 (2ms ~= 500.00*RT, ~1952500.00UPS, vehicles TOT 25163 ACT 3905 BUF 14424)   Step #3200.00 (2ms ~= 500.00*RT, ~1859500.00UPS, vehicles TOT 25709 ACT 3719 BUF 15155)   Step #3300.00 (1ms ~= 1000.00*RT, ~3764000.00UPS, vehicles TOT 26442 ACT 3764 BUF 15698)  Step #3400.00 (2ms ~= 500.00*RT, ~1962500.00UPS, vehicles TOT 27282 ACT 3925 BUF 16134)   Step #3500.00 (1ms ~= 1000.00*RT, ~3853000.00UPS, vehicles TOT 27879 ACT 3853 BUF 16816)  Step #3600.00 (1ms ~= 1000.00*RT, ~3639000.00UPS, vehicles TOT 28419 ACT 3639 BUF 17552)  Step #3700.00 (1ms ~= 1000.00*RT, ~3292000.00UPS, vehicles TOT 28714 ACT 3292 BUF 17257)  Step #3800.00 (2ms ~= 500.00*RT, ~1486000.00UPS, vehicles TOT 28814 ACT 2972 BUF 17157)   Step #3900.00 (1ms ~= 1000.00*RT, ~2695000.00UPS, vehicles TOT 28992 ACT 2695 BUF 16979)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.13s
- Real time factor: 945.225
- UPS: 3045489.578284
-Vehicles:
- Inserted: 28992 (Loaded: 45971)
- Running: 2695
- Waiting: 16979
-Statistics (avg of 26297):
- RouteLength: 3142.44
- Speed: 13.97
- Duration: 403.84
- WaitingTime: 1.61
- TimeLoss: 261.92
- DepartDelay: 151.28
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_1.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_1.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_1_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_1_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_1_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.652682e-01 nRMSE=0.406532
-[3/30] total demand=43553.5
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (11ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_2_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1059 ACT 978 BUF 155)                          Step #200.00 (1ms ~= 1000.00*RT, ~1532000.00UPS, vehicles TOT 2058 ACT 1532 BUF 365)      Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3033 ACT 1702 BUF 598)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 3993 ACT 1852 BUF 845)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4967 ACT 2041 BUF 1082)                        Step #600.00 (1ms ~= 1000.00*RT, ~2229000.00UPS, vehicles TOT 5941 ACT 2229 BUF 1321)     Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6903 ACT 2398 BUF 1565)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7861 ACT 2597 BUF 1815)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8816 ACT 2806 BUF 2078)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9718 ACT 3045 BUF 2379)                       Step #1100.00 (1ms ~= 1000.00*RT, ~3328000.00UPS, vehicles TOT 10676 ACT 3328 BUF 2634)   Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11553 ACT 3571 BUF 2964)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12292 ACT 3715 BUF 3435)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 13023 ACT 3821 BUF 3916)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 13647 ACT 3845 BUF 4503)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14405 ACT 3969 BUF 4947)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 14972 ACT 3958 BUF 5594)                      Step #1800.00 (1ms ~= 1000.00*RT, ~3874000.00UPS, vehicles TOT 15517 ACT 3874 BUF 6268)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 16081 ACT 3828 BUF 6906)                      Step #2000.00 (1ms ~= 1000.00*RT, ~3818000.00UPS, vehicles TOT 16743 ACT 3818 BUF 7456)   Step #2100.00 (1ms ~= 1000.00*RT, ~4097000.00UPS, vehicles TOT 17596 ACT 4097 BUF 7813)   Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 18182 ACT 4059 BUF 8432)                      Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 18713 ACT 4016 BUF 9113)                      Step #2400.00 (1ms ~= 1000.00*RT, ~3914000.00UPS, vehicles TOT 19293 ACT 3914 BUF 9741)   Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 19969 ACT 3998 BUF 10274)                     Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 20527 ACT 3964 BUF 10929)                     Step #2700.00 (1ms ~= 1000.00*RT, ~3949000.00UPS, vehicles TOT 21095 ACT 3949 BUF 11574)  Step #2800.00 (1ms ~= 1000.00*RT, ~4079000.00UPS, vehicles TOT 21837 ACT 4079 BUF 12038)  Step #2900.00 (0ms ?*RT. ?UPS, vehicles TOT 22527 ACT 4148 BUF 12558)                     Step #3000.00 (1ms ~= 1000.00*RT, ~4113000.00UPS, vehicles TOT 23091 ACT 4113 BUF 13203)  Step #3100.00 (1ms ~= 1000.00*RT, ~4120000.00UPS, vehicles TOT 23692 ACT 4120 BUF 13812)  Step #3200.00 (1ms ~= 1000.00*RT, ~4106000.00UPS, vehicles TOT 24249 ACT 4106 BUF 14464)  Step #3300.00 (1ms ~= 1000.00*RT, ~4055000.00UPS, vehicles TOT 24829 ACT 4055 BUF 15099)  Step #3400.00 (1ms ~= 1000.00*RT, ~4300000.00UPS, vehicles TOT 25647 ACT 4300 BUF 15483)  Step #3500.00 (1ms ~= 1000.00*RT, ~4219000.00UPS, vehicles TOT 26242 ACT 4219 BUF 16097)  Step #3600.00 (1ms ~= 1000.00*RT, ~4257000.00UPS, vehicles TOT 26846 ACT 4257 BUF 16705)  Step #3700.00 (1ms ~= 1000.00*RT, ~3825000.00UPS, vehicles TOT 26969 ACT 3825 BUF 16582)  Step #3800.00 (2ms ~= 500.00*RT, ~1703000.00UPS, vehicles TOT 27009 ACT 3406 BUF 16542)   Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 27185 ACT 3161 BUF 16366)                     
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 2.95s
- Real time factor: 1320.69
- UPS: 4510686.420589
-Vehicles:
- Inserted: 27185 (Loaded: 43551)
- Running: 3161
- Waiting: 16366
- Teleports: 6 (Jam: 6)
-Statistics (avg of 24024):
- RouteLength: 3313.14
- Speed: 14.10
- Duration: 383.30
- WaitingTime: 1.87
- TimeLoss: 237.78
- DepartDelay: 161.28
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_2.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_2.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_2_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_2_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_2_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=2.387225e-01 nRMSE=0.488592
-[4/30] total demand=44449.9
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (11ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_3_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1067 ACT 1000 BUF 167)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2092 ACT 1581 BUF 380)                         Step #300.00 (1ms ~= 1000.00*RT, ~1856000.00UPS, vehicles TOT 3077 ACT 1856 BUF 628)      Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4037 ACT 2137 BUF 904)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4975 ACT 2409 BUF 1199)                        Step #600.00 (1ms ~= 1000.00*RT, ~2579000.00UPS, vehicles TOT 5781 ACT 2579 BUF 1629)     Step #700.00 (1ms ~= 1000.00*RT, ~2644000.00UPS, vehicles TOT 6475 ACT 2644 BUF 2169)     Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7159 ACT 2706 BUF 2718)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 7847 ACT 2732 BUF 3269)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 8521 ACT 2760 BUF 3829)                       Step #1100.00 (1ms ~= 1000.00*RT, ~2721000.00UPS, vehicles TOT 9151 ACT 2721 BUF 4434)    Step #1200.00 (1ms ~= 1000.00*RT, ~2961000.00UPS, vehicles TOT 10044 ACT 2961 BUF 4776)   Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 10782 ACT 3078 BUF 5272)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 11460 ACT 3162 BUF 5827)                      Step #1500.00 (1ms ~= 1000.00*RT, ~3248000.00UPS, vehicles TOT 12116 ACT 3248 BUF 6406)   Step #1600.00 (1ms ~= 1000.00*RT, ~3268000.00UPS, vehicles TOT 12785 ACT 3268 BUF 6973)   Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 13464 ACT 3416 BUF 7528)                      Step #1800.00 (1ms ~= 1000.00*RT, ~3314000.00UPS, vehicles TOT 13985 ACT 3314 BUF 8254)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 14968 ACT 3660 BUF 8495)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 15453 ACT 3529 BUF 9244)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3445000.00UPS, vehicles TOT 16004 ACT 3445 BUF 9931)   Step #2200.00 (1ms ~= 1000.00*RT, ~3484000.00UPS, vehicles TOT 16623 ACT 3484 BUF 10547)  Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 17194 ACT 3521 BUF 11207)                     Step #2400.00 (2ms ~= 500.00*RT, ~1888500.00UPS, vehicles TOT 18012 ACT 3777 BUF 11623)   Step #2500.00 (1ms ~= 1000.00*RT, ~3828000.00UPS, vehicles TOT 18622 ACT 3828 BUF 12248)  Step #2600.00 (1ms ~= 1000.00*RT, ~3674000.00UPS, vehicles TOT 19047 ACT 3674 BUF 13060)  Step #2700.00 (1ms ~= 1000.00*RT, ~3618000.00UPS, vehicles TOT 19674 ACT 3618 BUF 13672)  Step #2800.00 (2ms ~= 500.00*RT, ~1785500.00UPS, vehicles TOT 20253 ACT 3571 BUF 14325)   Step #2900.00 (1ms ~= 1000.00*RT, ~3495000.00UPS, vehicles TOT 20770 ACT 3495 BUF 15041)  Step #3000.00 (2ms ~= 500.00*RT, ~1779000.00UPS, vehicles TOT 21429 ACT 3558 BUF 15622)   Step #3100.00 (1ms ~= 1000.00*RT, ~3624000.00UPS, vehicles TOT 22058 ACT 3624 BUF 16223)  Step #3200.00 (2ms ~= 500.00*RT, ~1876500.00UPS, vehicles TOT 22759 ACT 3753 BUF 16755)   Step #3300.00 (2ms ~= 500.00*RT, ~1878000.00UPS, vehicles TOT 23311 ACT 3756 BUF 17441)   Step #3400.00 (1ms ~= 1000.00*RT, ~3981000.00UPS, vehicles TOT 24068 ACT 3981 BUF 17917)  Step #3500.00 (1ms ~= 1000.00*RT, ~3927000.00UPS, vehicles TOT 24494 ACT 3927 BUF 18727)  Step #3600.00 (2ms ~= 500.00*RT, ~1971500.00UPS, vehicles TOT 25028 ACT 3943 BUF 19427)   Step #3700.00 (2ms ~= 500.00*RT, ~1860000.00UPS, vehicles TOT 25315 ACT 3720 BUF 19140)   Step #3800.00 (2ms ~= 500.00*RT, ~1804500.00UPS, vehicles TOT 25728 ACT 3609 BUF 18727)   Step #3900.00 (1ms ~= 1000.00*RT, ~3421000.00UPS, vehicles TOT 26000 ACT 3421 BUF 18455)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.27s
- Real time factor: 912.494
- UPS: 2875256.902199
-Vehicles:
- Inserted: 26000 (Loaded: 44455)
- Running: 3421
- Waiting: 18455
-Statistics (avg of 22579):
- RouteLength: 3150.06
- Speed: 12.78
- Duration: 404.97
- WaitingTime: 1.60
- TimeLoss: 256.77
- DepartDelay: 147.48
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_3.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_3.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_3_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_3_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_3_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.771582e-01 nRMSE=0.420902
-[5/30] total demand=47136.0
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_4_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1184 ACT 1105 BUF 128)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2341 ACT 1767 BUF 277)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3407 ACT 2069 BUF 525)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4461 ACT 2387 BUF 776)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5508 ACT 2737 BUF 1039)                        Step #600.00 (1ms ~= 1000.00*RT, ~2847000.00UPS, vehicles TOT 6321 ACT 2847 BUF 1541)     Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7249 ACT 3048 BUF 1917)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7994 ACT 3161 BUF 2484)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8883 ACT 3363 BUF 2906)                        Step #1000.00 (1ms ~= 1000.00*RT, ~3665000.00UPS, vehicles TOT 9881 ACT 3665 BUF 3215)    Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10633 ACT 3729 BUF 3770)                      Step #1200.00 (1ms ~= 1000.00*RT, ~3719000.00UPS, vehicles TOT 11300 ACT 3719 BUF 4412)   Step #1300.00 (1ms ~= 1000.00*RT, ~3894000.00UPS, vehicles TOT 12087 ACT 3894 BUF 4941)   Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12805 ACT 3948 BUF 5529)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 13518 ACT 4029 BUF 6123)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14597 ACT 4494 BUF 6352)                      Step #1700.00 (1ms ~= 1000.00*RT, ~4400000.00UPS, vehicles TOT 15140 ACT 4400 BUF 7121)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 15752 ACT 4389 BUF 7833)                      Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 16324 ACT 4330 BUF 8555)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 17217 ACT 4592 BUF 8973)                      Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 17835 ACT 4625 BUF 9665)                      Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 18483 ACT 4744 BUF 10325)                     Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 18999 ACT 4607 BUF 11113)                     Step #2400.00 (1ms ~= 1000.00*RT, ~4892000.00UPS, vehicles TOT 19852 ACT 4892 BUF 11575)  Step #2500.00 (1ms ~= 1000.00*RT, ~4864000.00UPS, vehicles TOT 20432 ACT 4864 BUF 12305)  Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 20959 ACT 4723 BUF 13087)                     Step #2700.00 (0ms ?*RT. ?UPS, vehicles TOT 21747 ACT 4916 BUF 13608)                     Step #2800.00 (1ms ~= 1000.00*RT, ~4701000.00UPS, vehicles TOT 22091 ACT 4701 BUF 14570)  Step #2900.00 (1ms ~= 1000.00*RT, ~4641000.00UPS, vehicles TOT 22643 ACT 4641 BUF 15331)  Step #3000.00 (0ms ?*RT. ?UPS, vehicles TOT 23267 ACT 4676 BUF 16024)                     Step #3100.00 (1ms ~= 1000.00*RT, ~4476000.00UPS, vehicles TOT 23662 ACT 4476 BUF 16931)  Step #3200.00 (1ms ~= 1000.00*RT, ~4467000.00UPS, vehicles TOT 24263 ACT 4467 BUF 17639)  Step #3300.00 (2ms ~= 500.00*RT, ~2171500.00UPS, vehicles TOT 24802 ACT 4343 BUF 18407)   Step #3400.00 (2ms ~= 500.00*RT, ~2317000.00UPS, vehicles TOT 25715 ACT 4634 BUF 18809)   Step #3500.00 (2ms ~= 500.00*RT, ~2329500.00UPS, vehicles TOT 26349 ACT 4659 BUF 19479)   Step #3600.00 (2ms ~= 500.00*RT, ~2304000.00UPS, vehicles TOT 26861 ACT 4608 BUF 20278)   Step #3700.00 (3ms ~= 333.33*RT, ~1457333.33UPS, vehicles TOT 27192 ACT 4372 BUF 19947)   Step #3800.00 (1ms ~= 1000.00*RT, ~4432000.00UPS, vehicles TOT 27678 ACT 4432 BUF 19461)  Step #3900.00 (2ms ~= 500.00*RT, ~2065500.00UPS, vehicles TOT 27785 ACT 4131 BUF 19354)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.92s
- Real time factor: 994.137
- UPS: 3907407.341320
-Vehicles:
- Inserted: 27785 (Loaded: 47139)
- Running: 4131
- Waiting: 19354
- Teleports: 6 (Jam: 6)
-Statistics (avg of 23654):
- RouteLength: 3333.99
- Speed: 13.05
- Duration: 463.17
- WaitingTime: 2.17
- TimeLoss: 317.64
- DepartDelay: 173.93
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_4.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_4.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_4_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_4_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_4_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.364803e-01 nRMSE=0.369432
-[6/30] total demand=44991.7
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (11ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_5_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1123 ACT 1046 BUF 129)                         Step #200.00 (1ms ~= 1000.00*RT, ~1644000.00UPS, vehicles TOT 2204 ACT 1644 BUF 294)      Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3236 ACT 1865 BUF 517)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4259 ACT 2095 BUF 738)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5252 ACT 2336 BUF 994)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6017 ACT 2359 BUF 1483)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6766 ACT 2360 BUF 1983)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7527 ACT 2353 BUF 2470)                        Step #900.00 (1ms ~= 1000.00*RT, ~2563000.00UPS, vehicles TOT 8450 ACT 2563 BUF 2802)     Step #1000.00 (1ms ~= 1000.00*RT, ~2596000.00UPS, vehicles TOT 9237 ACT 2596 BUF 3263)    Step #1100.00 (1ms ~= 1000.00*RT, ~2623000.00UPS, vehicles TOT 10002 ACT 2623 BUF 3746)   Step #1200.00 (1ms ~= 1000.00*RT, ~2663000.00UPS, vehicles TOT 10768 ACT 2663 BUF 4227)   Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11531 ACT 2700 BUF 4714)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12241 ACT 2714 BUF 5256)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12964 ACT 2710 BUF 5782)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13696 ACT 2748 BUF 6302)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 14402 ACT 2712 BUF 6843)                      Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 15112 ACT 2721 BUF 7391)                      Step #1900.00 (1ms ~= 1000.00*RT, ~2689000.00UPS, vehicles TOT 15808 ACT 2689 BUF 7936)   Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16537 ACT 2713 BUF 8452)                      Step #2100.00 (1ms ~= 1000.00*RT, ~2720000.00UPS, vehicles TOT 17246 ACT 2720 BUF 9001)   Step #2200.00 (1ms ~= 1000.00*RT, ~2712000.00UPS, vehicles TOT 17946 ACT 2712 BUF 9545)   Step #2300.00 (1ms ~= 1000.00*RT, ~2763000.00UPS, vehicles TOT 18661 ACT 2763 BUF 10083)  Step #2400.00 (1ms ~= 1000.00*RT, ~2731000.00UPS, vehicles TOT 19378 ACT 2731 BUF 10614)  Step #2500.00 (1ms ~= 1000.00*RT, ~2811000.00UPS, vehicles TOT 20123 ACT 2811 BUF 11118)  Step #2600.00 (1ms ~= 1000.00*RT, ~2810000.00UPS, vehicles TOT 20846 ACT 2810 BUF 11642)  Step #2700.00 (1ms ~= 1000.00*RT, ~2835000.00UPS, vehicles TOT 21598 ACT 2835 BUF 12147)  Step #2800.00 (1ms ~= 1000.00*RT, ~2885000.00UPS, vehicles TOT 22326 ACT 2885 BUF 12664)  Step #2900.00 (2ms ~= 500.00*RT, ~1444500.00UPS, vehicles TOT 23041 ACT 2889 BUF 13199)   Step #3000.00 (1ms ~= 1000.00*RT, ~2917000.00UPS, vehicles TOT 23777 ACT 2917 BUF 13715)  Step #3100.00 (1ms ~= 1000.00*RT, ~2966000.00UPS, vehicles TOT 24494 ACT 2966 BUF 14249)  Step #3200.00 (1ms ~= 1000.00*RT, ~2983000.00UPS, vehicles TOT 25220 ACT 2983 BUF 14770)  Step #3300.00 (1ms ~= 1000.00*RT, ~3037000.00UPS, vehicles TOT 25944 ACT 3037 BUF 15296)  Step #3400.00 (1ms ~= 1000.00*RT, ~3037000.00UPS, vehicles TOT 26658 ACT 3037 BUF 15832)  Step #3500.00 (1ms ~= 1000.00*RT, ~3103000.00UPS, vehicles TOT 27395 ACT 3103 BUF 16342)  Step #3600.00 (2ms ~= 500.00*RT, ~1562500.00UPS, vehicles TOT 28112 ACT 3125 BUF 16875)   Step #3700.00 (2ms ~= 500.00*RT, ~1295000.00UPS, vehicles TOT 28227 ACT 2590 BUF 16760)   Step #3800.00 (1ms ~= 1000.00*RT, ~2333000.00UPS, vehicles TOT 28349 ACT 2333 BUF 16638)  Step #3900.00 (1ms ~= 1000.00*RT, ~2142000.00UPS, vehicles TOT 28449 ACT 2142 BUF 16538)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.38s
- Real time factor: 1155.21
- UPS: 2977887.440758
-Vehicles:
- Inserted: 28449 (Loaded: 44987)
- Running: 2142
- Waiting: 16538
- Teleports: 2 (Jam: 2)
-Statistics (avg of 26307):
- RouteLength: 3123.24
- Speed: 16.99
- Duration: 272.12
- WaitingTime: 0.97
- TimeLoss: 131.57
- DepartDelay: 124.97
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_5.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_5.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_5_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_5_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_5_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.048484e-01 nRMSE=0.323803
-[7/30] total demand=34862.4
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (11ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_6_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 912 ACT 868 BUF 59)                            Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 1794 ACT 1401 BUF 145)                         Step #300.00 (1ms ~= 1000.00*RT, ~1609000.00UPS, vehicles TOT 2630 ACT 1609 BUF 281)      Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 3462 ACT 1820 BUF 414)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4299 ACT 2096 BUF 542)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5119 ACT 2332 BUF 690)                         Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 5817 ACT 2456 BUF 966)                         Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 6419 ACT 2475 BUF 1326)                        Step #900.00 (1ms ~= 1000.00*RT, ~2597000.00UPS, vehicles TOT 7108 ACT 2597 BUF 1616)     Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 7916 ACT 2868 BUF 1769)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 8522 ACT 2939 BUF 2132)                       Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 9120 ACT 2991 BUF 2500)                       Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 9724 ACT 3093 BUF 2869)                       Step #1400.00 (1ms ~= 1000.00*RT, ~3226000.00UPS, vehicles TOT 10322 ACT 3226 BUF 3232)   Step #1500.00 (1ms ~= 1000.00*RT, ~3424000.00UPS, vehicles TOT 10948 ACT 3424 BUF 3580)   Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 11511 ACT 3515 BUF 3981)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3461000.00UPS, vehicles TOT 11943 ACT 3461 BUF 4523)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 12397 ACT 3370 BUF 5041)                      Step #1900.00 (1ms ~= 1000.00*RT, ~3364000.00UPS, vehicles TOT 12906 ACT 3364 BUF 5493)   Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 13503 ACT 3503 BUF 5866)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3644000.00UPS, vehicles TOT 14092 ACT 3644 BUF 6248)   Step #2200.00 (1ms ~= 1000.00*RT, ~3609000.00UPS, vehicles TOT 14523 ACT 3609 BUF 6786)   Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 14945 ACT 3494 BUF 7327)                      Step #2400.00 (1ms ~= 1000.00*RT, ~3489000.00UPS, vehicles TOT 15407 ACT 3489 BUF 7834)   Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 15879 ACT 3475 BUF 8332)                      Step #2600.00 (1ms ~= 1000.00*RT, ~3483000.00UPS, vehicles TOT 16309 ACT 3483 BUF 8869)   Step #2700.00 (1ms ~= 1000.00*RT, ~3437000.00UPS, vehicles TOT 16775 ACT 3437 BUF 9376)   Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 17509 ACT 3688 BUF 9607)                      Step #2900.00 (1ms ~= 1000.00*RT, ~3676000.00UPS, vehicles TOT 17972 ACT 3676 BUF 10110)  Step #3000.00 (1ms ~= 1000.00*RT, ~3614000.00UPS, vehicles TOT 18394 ACT 3614 BUF 10662)  Step #3100.00 (2ms ~= 500.00*RT, ~1827500.00UPS, vehicles TOT 18878 ACT 3655 BUF 11146)   Step #3200.00 (1ms ~= 1000.00*RT, ~3591000.00UPS, vehicles TOT 19315 ACT 3591 BUF 11670)  Step #3300.00 (1ms ~= 1000.00*RT, ~3552000.00UPS, vehicles TOT 19751 ACT 3552 BUF 12206)  Step #3400.00 (1ms ~= 1000.00*RT, ~3758000.00UPS, vehicles TOT 20430 ACT 3758 BUF 12494)  Step #3500.00 (1ms ~= 1000.00*RT, ~3824000.00UPS, vehicles TOT 20914 ACT 3824 BUF 12980)  Step #3600.00 (1ms ~= 1000.00*RT, ~3796000.00UPS, vehicles TOT 21329 ACT 3796 BUF 13532)  Step #3700.00 (2ms ~= 500.00*RT, ~1687500.00UPS, vehicles TOT 21340 ACT 3375 BUF 13521)   Step #3800.00 (1ms ~= 1000.00*RT, ~3097000.00UPS, vehicles TOT 21352 ACT 3097 BUF 13509)  Step #3900.00 (2ms ~= 500.00*RT, ~1425500.00UPS, vehicles TOT 21368 ACT 2851 BUF 13493)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 2.91s
- Real time factor: 1338.37
- UPS: 4087859.299931
-Vehicles:
- Inserted: 21368 (Loaded: 34861)
- Running: 2851
- Waiting: 13493
- Teleports: 4 (Jam: 4)
-Statistics (avg of 18517):
- RouteLength: 3436.37
- Speed: 14.54
- Duration: 402.86
- WaitingTime: 1.80
- TimeLoss: 251.96
- DepartDelay: 39.15
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_6.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_6.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_6_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_6_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_6_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.975613e-01 nRMSE=0.444479
-[8/30] total demand=49527.4
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_7_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1194 ACT 1090 BUF 181)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2341 ACT 1658 BUF 414)                         Step #300.00 (1ms ~= 1000.00*RT, ~1823000.00UPS, vehicles TOT 3386 ACT 1823 BUF 744)      Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4409 ACT 2018 BUF 1094)                        Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5421 ACT 2177 BUF 1456)                        Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6427 ACT 2335 BUF 1833)                        Step #700.00 (1ms ~= 1000.00*RT, ~2561000.00UPS, vehicles TOT 7400 ACT 2561 BUF 2228)     Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 8349 ACT 2730 BUF 2658)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 9304 ACT 2921 BUF 3085)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 10251 ACT 3147 BUF 3507)                      Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 11115 ACT 3252 BUF 4015)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 12110 ACT 3511 BUF 4397)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12930 ACT 3568 BUF 4957)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 13782 ACT 3633 BUF 5478)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 14850 ACT 3885 BUF 5791)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 15592 ACT 3980 BUF 6418)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 16205 ACT 3823 BUF 7182)                      Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 16913 ACT 3878 BUF 7861)                      Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 17685 ACT 3974 BUF 8456)                      Step #2000.00 (1ms ~= 1000.00*RT, ~3933000.00UPS, vehicles TOT 18347 ACT 3933 BUF 9171)   Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 19028 ACT 3933 BUF 9863)                      Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 19942 ACT 4156 BUF 10328)                     Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 20972 ACT 4542 BUF 10669)                     Step #2400.00 (0ms ?*RT. ?UPS, vehicles TOT 21640 ACT 4537 BUF 11381)                     Step #2500.00 (1ms ~= 1000.00*RT, ~4387000.00UPS, vehicles TOT 22075 ACT 4387 BUF 12323)  Step #2600.00 (1ms ~= 1000.00*RT, ~4128000.00UPS, vehicles TOT 22515 ACT 4128 BUF 13257)  Step #2700.00 (1ms ~= 1000.00*RT, ~4063000.00UPS, vehicles TOT 23130 ACT 4063 BUF 14021)  Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 23772 ACT 4054 BUF 14749)                     Step #2900.00 (1ms ~= 1000.00*RT, ~3869000.00UPS, vehicles TOT 24266 ACT 3869 BUF 15634)  Step #3000.00 (1ms ~= 1000.00*RT, ~3903000.00UPS, vehicles TOT 24988 ACT 3903 BUF 16287)  Step #3100.00 (1ms ~= 1000.00*RT, ~4198000.00UPS, vehicles TOT 25895 ACT 4198 BUF 16756)  Step #3200.00 (1ms ~= 1000.00*RT, ~4210000.00UPS, vehicles TOT 26536 ACT 4210 BUF 17489)  Step #3300.00 (2ms ~= 500.00*RT, ~2154500.00UPS, vehicles TOT 27264 ACT 4309 BUF 18138)   Step #3400.00 (1ms ~= 1000.00*RT, ~4120000.00UPS, vehicles TOT 27664 ACT 4120 BUF 19111)  Step #3500.00 (1ms ~= 1000.00*RT, ~3821000.00UPS, vehicles TOT 28099 ACT 3821 BUF 20054)  Step #3600.00 (2ms ~= 500.00*RT, ~2067500.00UPS, vehicles TOT 29026 ACT 4135 BUF 20502)   Step #3700.00 (2ms ~= 500.00*RT, ~1930000.00UPS, vehicles TOT 29363 ACT 3860 BUF 20165)   Step #3800.00 (2ms ~= 500.00*RT, ~1885000.00UPS, vehicles TOT 29707 ACT 3770 BUF 19821)   Step #3900.00 (2ms ~= 500.00*RT, ~1771000.00UPS, vehicles TOT 29866 ACT 3542 BUF 19662)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.47s
- Real time factor: 1125.22
- UPS: 3914032.602424
-Vehicles:
- Inserted: 29866 (Loaded: 49528)
- Running: 3542
- Waiting: 19662
- Teleports: 1 (Jam: 1)
-Statistics (avg of 26324):
- RouteLength: 3207.98
- Speed: 14.19
- Duration: 378.62
- WaitingTime: 1.80
- TimeLoss: 235.57
- DepartDelay: 125.55
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_7.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_7.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_7_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_7_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_7_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=9.500675e-02 nRMSE=0.308232
-[9/30] total demand=43377.5
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_8_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1075 ACT 991 BUF 133)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2105 ACT 1555 BUF 305)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3083 ACT 1832 BUF 533)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4047 ACT 2148 BUF 774)                         Step #500.00 (1ms ~= 1000.00*RT, ~2456000.00UPS, vehicles TOT 5002 ACT 2456 BUF 1024)     Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5939 ACT 2773 BUF 1294)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6760 ACT 2971 BUF 1679)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7680 ACT 3302 BUF 1959)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8343 ACT 3398 BUF 2509)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9022 ACT 3484 BUF 3029)                       Step #1100.00 (1ms ~= 1000.00*RT, ~3697000.00UPS, vehicles TOT 9800 ACT 3697 BUF 3456)    Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10290 ACT 3634 BUF 4170)                      Step #1300.00 (1ms ~= 1000.00*RT, ~3595000.00UPS, vehicles TOT 10820 ACT 3595 BUF 4847)   Step #1400.00 (1ms ~= 1000.00*RT, ~3564000.00UPS, vehicles TOT 11361 ACT 3564 BUF 5510)   Step #1500.00 (1ms ~= 1000.00*RT, ~3570000.00UPS, vehicles TOT 11912 ACT 3570 BUF 6164)   Step #1600.00 (1ms ~= 1000.00*RT, ~3571000.00UPS, vehicles TOT 12451 ACT 3571 BUF 6829)   Step #1700.00 (1ms ~= 1000.00*RT, ~3499000.00UPS, vehicles TOT 12983 ACT 3499 BUF 7502)   Step #1800.00 (1ms ~= 1000.00*RT, ~3502000.00UPS, vehicles TOT 13527 ACT 3502 BUF 8175)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 14066 ACT 3486 BUF 8833)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 14567 ACT 3466 BUF 9534)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3413000.00UPS, vehicles TOT 15096 ACT 3413 BUF 10214)  Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 15921 ACT 3644 BUF 10591)                     Step #2300.00 (1ms ~= 1000.00*RT, ~3641000.00UPS, vehicles TOT 16464 ACT 3641 BUF 11253)  Step #2400.00 (2ms ~= 500.00*RT, ~1824500.00UPS, vehicles TOT 17003 ACT 3649 BUF 11918)   Step #2500.00 (1ms ~= 1000.00*RT, ~3593000.00UPS, vehicles TOT 17493 ACT 3593 BUF 12635)  Step #2600.00 (1ms ~= 1000.00*RT, ~3525000.00UPS, vehicles TOT 17982 ACT 3525 BUF 13350)  Step #2700.00 (1ms ~= 1000.00*RT, ~3482000.00UPS, vehicles TOT 18508 ACT 3482 BUF 14033)  Step #2800.00 (1ms ~= 1000.00*RT, ~3529000.00UPS, vehicles TOT 19110 ACT 3529 BUF 14632)  Step #2900.00 (1ms ~= 1000.00*RT, ~3627000.00UPS, vehicles TOT 19750 ACT 3627 BUF 15195)  Step #3000.00 (1ms ~= 1000.00*RT, ~3592000.00UPS, vehicles TOT 20266 ACT 3592 BUF 15889)  Step #3100.00 (2ms ~= 500.00*RT, ~1770000.00UPS, vehicles TOT 20755 ACT 3540 BUF 16603)   Step #3200.00 (1ms ~= 1000.00*RT, ~3532000.00UPS, vehicles TOT 21306 ACT 3532 BUF 17254)  Step #3300.00 (2ms ~= 500.00*RT, ~1873000.00UPS, vehicles TOT 22120 ACT 3746 BUF 17650)   Step #3400.00 (2ms ~= 500.00*RT, ~1866500.00UPS, vehicles TOT 22625 ACT 3733 BUF 18348)   Step #3500.00 (1ms ~= 1000.00*RT, ~3662000.00UPS, vehicles TOT 23107 ACT 3662 BUF 19069)  Step #3600.00 (2ms ~= 500.00*RT, ~1807000.00UPS, vehicles TOT 23608 ACT 3614 BUF 19773)   Step #3700.00 (2ms ~= 500.00*RT, ~1642500.00UPS, vehicles TOT 23812 ACT 3285 BUF 19569)   Step #3800.00 (2ms ~= 500.00*RT, ~1526500.00UPS, vehicles TOT 23871 ACT 3053 BUF 19510)   Step #3900.00 (2ms ~= 500.00*RT, ~1427500.00UPS, vehicles TOT 23938 ACT 2855 BUF 19443)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.42s
- Real time factor: 883.152
- UPS: 2849052.762681
-Vehicles:
- Inserted: 23938 (Loaded: 43381)
- Running: 2855
- Waiting: 19443
- Teleports: 10 (Jam: 10)
-Statistics (avg of 21083):
- RouteLength: 3100.73
- Speed: 14.63
- Duration: 388.44
- WaitingTime: 2.02
- TimeLoss: 250.95
- DepartDelay: 67.56
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_8.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_8.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_8_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_8_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_8_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=2.593526e-01 nRMSE=0.509267
-[10/30] total demand=47191.6
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (11ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_9_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1178 ACT 1101 BUF 133)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2304 ACT 1735 BUF 317)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3402 ACT 2022 BUF 531)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4464 ACT 2310 BUF 781)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5529 ACT 2635 BUF 1026)                        Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6363 ACT 2756 BUF 1510)                        Step #700.00 (1ms ~= 1000.00*RT, ~2821000.00UPS, vehicles TOT 7169 ACT 2821 BUF 2009)     Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7978 ACT 2912 BUF 2514)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8788 ACT 3023 BUF 3018)                        Step #1000.00 (1ms ~= 1000.00*RT, ~3119000.00UPS, vehicles TOT 9592 ACT 3119 BUF 3518)    Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10401 ACT 3199 BUF 4023)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11160 ACT 3279 BUF 4573)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11906 ACT 3344 BUF 5140)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12647 ACT 3384 BUF 5709)                      Step #1500.00 (1ms ~= 1000.00*RT, ~3448000.00UPS, vehicles TOT 13405 ACT 3448 BUF 6265)   Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14146 ACT 3491 BUF 6831)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3515000.00UPS, vehicles TOT 14896 ACT 3515 BUF 7391)   Step #1800.00 (1ms ~= 1000.00*RT, ~3601000.00UPS, vehicles TOT 15645 ACT 3601 BUF 7965)   Step #1900.00 (1ms ~= 1000.00*RT, ~3678000.00UPS, vehicles TOT 16393 ACT 3678 BUF 8522)   Step #2000.00 (1ms ~= 1000.00*RT, ~3774000.00UPS, vehicles TOT 17128 ACT 3774 BUF 9096)   Step #2100.00 (1ms ~= 1000.00*RT, ~3816000.00UPS, vehicles TOT 17868 ACT 3816 BUF 9667)   Step #2200.00 (1ms ~= 1000.00*RT, ~3890000.00UPS, vehicles TOT 18602 ACT 3890 BUF 10244)  Step #2300.00 (1ms ~= 1000.00*RT, ~4035000.00UPS, vehicles TOT 19394 ACT 4035 BUF 10762)  Step #2400.00 (1ms ~= 1000.00*RT, ~4120000.00UPS, vehicles TOT 20168 ACT 4120 BUF 11300)  Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 20882 ACT 4164 BUF 11896)                     Step #2600.00 (1ms ~= 1000.00*RT, ~4014000.00UPS, vehicles TOT 21414 ACT 4014 BUF 12678)  Step #2700.00 (1ms ~= 1000.00*RT, ~4105000.00UPS, vehicles TOT 22128 ACT 4105 BUF 13274)  Step #2800.00 (1ms ~= 1000.00*RT, ~4226000.00UPS, vehicles TOT 22908 ACT 4226 BUF 13801)  Step #2900.00 (2ms ~= 500.00*RT, ~2205000.00UPS, vehicles TOT 23721 ACT 4410 BUF 14303)   Step #3000.00 (2ms ~= 500.00*RT, ~2303000.00UPS, vehicles TOT 24496 ACT 4606 BUF 14842)   Step #3100.00 (1ms ~= 1000.00*RT, ~4716000.00UPS, vehicles TOT 25193 ACT 4716 BUF 15454)  Step #3200.00 (1ms ~= 1000.00*RT, ~4746000.00UPS, vehicles TOT 25875 ACT 4746 BUF 16081)  Step #3300.00 (2ms ~= 500.00*RT, ~2340000.00UPS, vehicles TOT 26494 ACT 4680 BUF 16778)   Step #3400.00 (2ms ~= 500.00*RT, ~2230000.00UPS, vehicles TOT 26861 ACT 4460 BUF 17720)   Step #3500.00 (1ms ~= 1000.00*RT, ~4670000.00UPS, vehicles TOT 27710 ACT 4670 BUF 18181)  Step #3600.00 (2ms ~= 500.00*RT, ~2342000.00UPS, vehicles TOT 28373 ACT 4684 BUF 18828)   Step #3700.00 (1ms ~= 1000.00*RT, ~4411000.00UPS, vehicles TOT 28770 ACT 4411 BUF 18431)  Step #3800.00 (2ms ~= 500.00*RT, ~2171500.00UPS, vehicles TOT 29175 ACT 4343 BUF 18026)   Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 29353 ACT 4101 BUF 17848)                     
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.44s
- Real time factor: 878.181
- UPS: 3138598.288674
-Vehicles:
- Inserted: 29353 (Loaded: 47201)
- Running: 4101
- Waiting: 17848
- Teleports: 6 (Jam: 6)
-Statistics (avg of 25252):
- RouteLength: 3149.50
- Speed: 15.24
- Duration: 341.25
- WaitingTime: 1.45
- TimeLoss: 196.81
- DepartDelay: 143.21
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_9.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_9.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_9_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_9_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_9_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.340531e-01 nRMSE=0.366133
-[11/30] total demand=44391.5
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_10_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1103 ACT 1017 BUF 130)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2151 ACT 1552 BUF 316)                         Step #300.00 (1ms ~= 1000.00*RT, ~1724000.00UPS, vehicles TOT 3094 ACT 1724 BUF 607)      Step #400.00 (1ms ~= 1000.00*RT, ~1981000.00UPS, vehicles TOT 4034 ACT 1981 BUF 899)      Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4986 ACT 2268 BUF 1184)                        Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5914 ACT 2520 BUF 1488)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6811 ACT 2747 BUF 1822)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7709 ACT 2984 BUF 2156)                        Step #900.00 (1ms ~= 1000.00*RT, ~3304000.00UPS, vehicles TOT 8631 ACT 3304 BUF 2472)     Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9539 ACT 3591 BUF 2791)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10343 ACT 3808 BUF 3222)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10955 ACT 3833 BUF 3841)                      Step #1300.00 (1ms ~= 1000.00*RT, ~3825000.00UPS, vehicles TOT 11584 ACT 3825 BUF 4444)   Step #1400.00 (1ms ~= 1000.00*RT, ~4056000.00UPS, vehicles TOT 12414 ACT 4056 BUF 4850)   Step #1500.00 (1ms ~= 1000.00*RT, ~4020000.00UPS, vehicles TOT 13006 ACT 4020 BUF 5491)   Step #1600.00 (1ms ~= 1000.00*RT, ~3998000.00UPS, vehicles TOT 13556 ACT 3998 BUF 6175)   Step #1700.00 (1ms ~= 1000.00*RT, ~4032000.00UPS, vehicles TOT 14155 ACT 4032 BUF 6809)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 14743 ACT 4033 BUF 7465)                      Step #1900.00 (1ms ~= 1000.00*RT, ~4078000.00UPS, vehicles TOT 15359 ACT 4078 BUF 8073)   Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16238 ACT 4350 BUF 8424)                      Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 16687 ACT 4213 BUF 9214)                      Step #2200.00 (1ms ~= 1000.00*RT, ~4213000.00UPS, vehicles TOT 17286 ACT 4213 BUF 9844)   Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 17716 ACT 4077 BUF 10652)                     Step #2400.00 (1ms ~= 1000.00*RT, ~4158000.00UPS, vehicles TOT 18371 ACT 4158 BUF 11226)  Step #2500.00 (2ms ~= 500.00*RT, ~1960000.00UPS, vehicles TOT 18750 ACT 3920 BUF 12081)   Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 19384 ACT 3955 BUF 12680)                     Step #2700.00 (2ms ~= 500.00*RT, ~1956500.00UPS, vehicles TOT 19967 ACT 3913 BUF 13334)   Step #2800.00 (1ms ~= 1000.00*RT, ~4007000.00UPS, vehicles TOT 20647 ACT 4007 BUF 13881)  Step #2900.00 (2ms ~= 500.00*RT, ~2054500.00UPS, vehicles TOT 21346 ACT 4109 BUF 14417)   Step #3000.00 (2ms ~= 500.00*RT, ~2056000.00UPS, vehicles TOT 21978 ACT 4112 BUF 15019)   Step #3100.00 (1ms ~= 1000.00*RT, ~3951000.00UPS, vehicles TOT 22396 ACT 3951 BUF 15830)  Step #3200.00 (2ms ~= 500.00*RT, ~2048500.00UPS, vehicles TOT 23102 ACT 4097 BUF 16358)   Step #3300.00 (2ms ~= 500.00*RT, ~1993500.00UPS, vehicles TOT 23589 ACT 3987 BUF 17108)   Step #3400.00 (2ms ~= 500.00*RT, ~1915000.00UPS, vehicles TOT 24043 ACT 3830 BUF 17884)   Step #3500.00 (1ms ~= 1000.00*RT, ~4061000.00UPS, vehicles TOT 24848 ACT 4061 BUF 18315)  Step #3600.00 (2ms ~= 500.00*RT, ~1994500.00UPS, vehicles TOT 25353 ACT 3989 BUF 19040)   Step #3700.00 (3ms ~= 333.33*RT, ~1178333.33UPS, vehicles TOT 25476 ACT 3535 BUF 18917)   Step #3800.00 (2ms ~= 500.00*RT, ~1750500.00UPS, vehicles TOT 25852 ACT 3501 BUF 18541)   Step #3900.00 (2ms ~= 500.00*RT, ~1740000.00UPS, vehicles TOT 26220 ACT 3480 BUF 18173)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.45s
- Real time factor: 876.208
- UPS: 3079675.578522
-Vehicles:
- Inserted: 26220 (Loaded: 44393)
- Running: 3480
- Waiting: 18173
- Teleports: 3 (Jam: 3)
-Statistics (avg of 22740):
- RouteLength: 3345.38
- Speed: 14.15
- Duration: 425.29
- WaitingTime: 1.90
- TimeLoss: 280.82
- DepartDelay: 161.64
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_10.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_10.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_10_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_10_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_10_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.650865e-01 nRMSE=0.406308
-[12/30] total demand=40701.4
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (11ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_11_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1036 ACT 975 BUF 98)                           Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2025 ACT 1542 BUF 236)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 2990 ACT 1696 BUF 403)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 3938 ACT 1803 BUF 586)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4885 ACT 1914 BUF 767)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5821 ACT 2043 BUF 965)                         Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6769 ACT 2167 BUF 1144)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7711 ACT 2307 BUF 1331)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8567 ACT 2398 BUF 1608)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9545 ACT 2562 BUF 1760)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10428 ACT 2636 BUF 2011)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11215 ACT 2644 BUF 2349)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12121 ACT 2734 BUF 2575)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12883 ACT 2713 BUF 2946)                      Step #1500.00 (1ms ~= 1000.00*RT, ~2615000.00UPS, vehicles TOT 13567 ACT 2615 BUF 3390)   Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14492 ACT 2743 BUF 3592)                      Step #1700.00 (1ms ~= 1000.00*RT, ~2605000.00UPS, vehicles TOT 15131 ACT 2605 BUF 4087)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 15900 ACT 2560 BUF 4459)                      Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 16711 ACT 2574 BUF 4767)                      Step #2000.00 (1ms ~= 1000.00*RT, ~2496000.00UPS, vehicles TOT 17457 ACT 2496 BUF 5154)   Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 18556 ACT 2781 BUF 5183)                      Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 19294 ACT 2759 BUF 5576)                      Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 19905 ACT 2578 BUF 6095)                      Step #2400.00 (1ms ~= 1000.00*RT, ~2635000.00UPS, vehicles TOT 20786 ACT 2635 BUF 6345)   Step #2500.00 (2ms ~= 500.00*RT, ~1401500.00UPS, vehicles TOT 21724 ACT 2803 BUF 6533)    Step #2600.00 (1ms ~= 1000.00*RT, ~2672000.00UPS, vehicles TOT 22371 ACT 2672 BUF 7023)   Step #2700.00 (0ms ?*RT. ?UPS, vehicles TOT 23198 ACT 2698 BUF 7327)                      Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 23967 ACT 2714 BUF 7686)                      Step #2900.00 (1ms ~= 1000.00*RT, ~2529000.00UPS, vehicles TOT 24584 ACT 2529 BUF 8199)   Step #3000.00 (1ms ~= 1000.00*RT, ~2592000.00UPS, vehicles TOT 25446 ACT 2592 BUF 8471)   Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 26287 ACT 2651 BUF 8757)                      Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 27047 ACT 2589 BUF 9124)                      Step #3300.00 (1ms ~= 1000.00*RT, ~2743000.00UPS, vehicles TOT 27975 ACT 2743 BUF 9328)   Step #3400.00 (0ms ?*RT. ?UPS, vehicles TOT 28608 ACT 2608 BUF 9830)                      Step #3500.00 (1ms ~= 1000.00*RT, ~2435000.00UPS, vehicles TOT 29263 ACT 2435 BUF 10299)  Step #3600.00 (1ms ~= 1000.00*RT, ~2825000.00UPS, vehicles TOT 30442 ACT 2825 BUF 10253)  Step #3700.00 (0ms ?*RT. ?UPS, vehicles TOT 30580 ACT 2253 BUF 10115)                     Step #3800.00 (1ms ~= 1000.00*RT, ~1874000.00UPS, vehicles TOT 30771 ACT 1874 BUF 9924)   Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 31365 ACT 2105 BUF 9330)                      
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 2.82s
- Real time factor: 1383.47
- UPS: 3317675.416814
-Vehicles:
- Inserted: 31365 (Loaded: 40695)
- Running: 2105
- Waiting: 9330
-Statistics (avg of 29260):
- RouteLength: 3475.09
- Speed: 17.57
- Duration: 284.00
- WaitingTime: 0.96
- TimeLoss: 128.69
- DepartDelay: 210.75
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_11.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_11.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_11_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_11_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_11_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.720009e-01 nRMSE=0.414730
-[13/30] total demand=41860.8
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_12_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1108 ACT 1026 BUF 57)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2154 ACT 1608 BUF 171)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3145 ACT 1849 BUF 346)                         Step #400.00 (1ms ~= 1000.00*RT, ~2055000.00UPS, vehicles TOT 4110 ACT 2055 BUF 543)      Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5094 ACT 2304 BUF 721)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6041 ACT 2520 BUF 937)                         Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6980 ACT 2730 BUF 1164)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7955 ACT 3035 BUF 1345)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8794 ACT 3221 BUF 1676)                        Step #1000.00 (1ms ~= 1000.00*RT, ~3271000.00UPS, vehicles TOT 9502 ACT 3271 BUF 2127)    Step #1100.00 (1ms ~= 1000.00*RT, ~3358000.00UPS, vehicles TOT 10229 ACT 3358 BUF 2565)   Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10935 ACT 3385 BUF 3019)                      Step #1300.00 (1ms ~= 1000.00*RT, ~3445000.00UPS, vehicles TOT 11675 ACT 3445 BUF 3445)   Step #1400.00 (1ms ~= 1000.00*RT, ~3503000.00UPS, vehicles TOT 12418 ACT 3503 BUF 3858)   Step #1500.00 (1ms ~= 1000.00*RT, ~3590000.00UPS, vehicles TOT 13161 ACT 3590 BUF 4282)   Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13874 ACT 3650 BUF 4730)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3712000.00UPS, vehicles TOT 14594 ACT 3712 BUF 5172)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 15335 ACT 3763 BUF 5607)                      Step #1900.00 (1ms ~= 1000.00*RT, ~3803000.00UPS, vehicles TOT 16026 ACT 3803 BUF 6071)   Step #2000.00 (1ms ~= 1000.00*RT, ~3865000.00UPS, vehicles TOT 16779 ACT 3865 BUF 6477)   Step #2100.00 (1ms ~= 1000.00*RT, ~3850000.00UPS, vehicles TOT 17448 ACT 3850 BUF 6973)   Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 18273 ACT 4058 BUF 7312)                      Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 18981 ACT 4047 BUF 7762)                      Step #2400.00 (1ms ~= 1000.00*RT, ~4009000.00UPS, vehicles TOT 19597 ACT 4009 BUF 8309)   Step #2500.00 (1ms ~= 1000.00*RT, ~4124000.00UPS, vehicles TOT 20327 ACT 4124 BUF 8742)   Step #2600.00 (1ms ~= 1000.00*RT, ~4045000.00UPS, vehicles TOT 20962 ACT 4045 BUF 9270)   Step #2700.00 (2ms ~= 500.00*RT, ~2115500.00UPS, vehicles TOT 21741 ACT 4231 BUF 9657)    Step #2800.00 (1ms ~= 1000.00*RT, ~4114000.00UPS, vehicles TOT 22346 ACT 4114 BUF 10214)  Step #2900.00 (1ms ~= 1000.00*RT, ~4109000.00UPS, vehicles TOT 22940 ACT 4109 BUF 10779)  Step #3000.00 (1ms ~= 1000.00*RT, ~4062000.00UPS, vehicles TOT 23536 ACT 4062 BUF 11350)  Step #3100.00 (1ms ~= 1000.00*RT, ~4037000.00UPS, vehicles TOT 24150 ACT 4037 BUF 11898)  Step #3200.00 (1ms ~= 1000.00*RT, ~4273000.00UPS, vehicles TOT 25035 ACT 4273 BUF 12172)  Step #3300.00 (2ms ~= 500.00*RT, ~2106000.00UPS, vehicles TOT 25716 ACT 4212 BUF 12657)   Step #3400.00 (1ms ~= 1000.00*RT, ~4050000.00UPS, vehicles TOT 26163 ACT 4050 BUF 13373)  Step #3500.00 (2ms ~= 500.00*RT, ~2104500.00UPS, vehicles TOT 26879 ACT 4209 BUF 13819)   Step #3600.00 (1ms ~= 1000.00*RT, ~4054000.00UPS, vehicles TOT 27429 ACT 4054 BUF 14431)  Step #3700.00 (1ms ~= 1000.00*RT, ~3803000.00UPS, vehicles TOT 27752 ACT 3803 BUF 14108)  Step #3800.00 (1ms ~= 1000.00*RT, ~3786000.00UPS, vehicles TOT 28163 ACT 3786 BUF 13697)  Step #3900.00 (1ms ~= 1000.00*RT, ~3533000.00UPS, vehicles TOT 28361 ACT 3533 BUF 13499)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.25s
- Real time factor: 1200.37
- UPS: 4142351.492767
-Vehicles:
- Inserted: 28361 (Loaded: 41860)
- Running: 3533
- Waiting: 13499
- Teleports: 2 (Jam: 2)
-Statistics (avg of 24828):
- RouteLength: 3248.11
- Speed: 15.00
- Duration: 362.21
- WaitingTime: 1.53
- TimeLoss: 216.10
- DepartDelay: 162.57
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_12.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_12.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_12_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_12_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_12_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.402147e-01 nRMSE=0.374453
-[14/30] total demand=43216.3
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_13_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1032 ACT 963 BUF 170)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2016 ACT 1553 BUF 381)                         Step #300.00 (1ms ~= 1000.00*RT, ~1784000.00UPS, vehicles TOT 2954 ACT 1784 BUF 649)      Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 3880 ACT 1985 BUF 922)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4816 ACT 2223 BUF 1189)                        Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5746 ACT 2486 BUF 1461)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6646 ACT 2705 BUF 1759)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7538 ACT 2917 BUF 2064)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8330 ACT 3060 BUF 2481)                        Step #1000.00 (1ms ~= 1000.00*RT, ~3131000.00UPS, vehicles TOT 9060 ACT 3131 BUF 2946)    Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 9830 ACT 3217 BUF 3379)                       Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10717 ACT 3448 BUF 3690)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11427 ACT 3522 BUF 4180)                      Step #1400.00 (1ms ~= 1000.00*RT, ~3635000.00UPS, vehicles TOT 12131 ACT 3635 BUF 4682)   Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12788 ACT 3720 BUF 5220)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13497 ACT 3896 BUF 5717)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3859000.00UPS, vehicles TOT 14046 ACT 3859 BUF 6360)   Step #1800.00 (1ms ~= 1000.00*RT, ~4004000.00UPS, vehicles TOT 14783 ACT 4004 BUF 6835)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 15512 ACT 4267 BUF 7302)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16095 ACT 4265 BUF 7911)                      Step #2100.00 (1ms ~= 1000.00*RT, ~4234000.00UPS, vehicles TOT 16662 ACT 4234 BUF 8556)   Step #2200.00 (1ms ~= 1000.00*RT, ~4127000.00UPS, vehicles TOT 17199 ACT 4127 BUF 9209)   Step #2300.00 (1ms ~= 1000.00*RT, ~4122000.00UPS, vehicles TOT 17691 ACT 4122 BUF 9922)   Step #2400.00 (1ms ~= 1000.00*RT, ~3951000.00UPS, vehicles TOT 18098 ACT 3951 BUF 10715)  Step #2500.00 (1ms ~= 1000.00*RT, ~4121000.00UPS, vehicles TOT 18861 ACT 4121 BUF 11150)  Step #2600.00 (2ms ~= 500.00*RT, ~2032000.00UPS, vehicles TOT 19444 ACT 4064 BUF 11771)   Step #2700.00 (1ms ~= 1000.00*RT, ~4336000.00UPS, vehicles TOT 20275 ACT 4336 BUF 12149)  Step #2800.00 (1ms ~= 1000.00*RT, ~4562000.00UPS, vehicles TOT 21037 ACT 4562 BUF 12581)  Step #2900.00 (2ms ~= 500.00*RT, ~2279000.00UPS, vehicles TOT 21588 ACT 4558 BUF 13227)   Step #3000.00 (2ms ~= 500.00*RT, ~2199000.00UPS, vehicles TOT 21958 ACT 4398 BUF 14063)   Step #3100.00 (1ms ~= 1000.00*RT, ~4137000.00UPS, vehicles TOT 22330 ACT 4137 BUF 14885)  Step #3200.00 (1ms ~= 1000.00*RT, ~4436000.00UPS, vehicles TOT 23164 ACT 4436 BUF 15254)  Step #3300.00 (1ms ~= 1000.00*RT, ~4494000.00UPS, vehicles TOT 23717 ACT 4494 BUF 15906)  Step #3400.00 (2ms ~= 500.00*RT, ~2223500.00UPS, vehicles TOT 24254 ACT 4447 BUF 16570)   Step #3500.00 (3ms ~= 333.33*RT, ~1458000.00UPS, vehicles TOT 24796 ACT 4374 BUF 17222)   Step #3600.00 (2ms ~= 500.00*RT, ~2203000.00UPS, vehicles TOT 25425 ACT 4406 BUF 17795)   Step #3700.00 (2ms ~= 500.00*RT, ~2051500.00UPS, vehicles TOT 25578 ACT 4103 BUF 17642)   Step #3800.00 (2ms ~= 500.00*RT, ~1981000.00UPS, vehicles TOT 25904 ACT 3962 BUF 17316)   Step #3900.00 (2ms ~= 500.00*RT, ~2017500.00UPS, vehicles TOT 26298 ACT 4035 BUF 16922)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.86s
- Real time factor: 1011.41
- UPS: 3617299.273859
-Vehicles:
- Inserted: 26298 (Loaded: 43220)
- Running: 4035
- Waiting: 16922
- Teleports: 2 (Jam: 2)
-Statistics (avg of 22263):
- RouteLength: 3336.86
- Speed: 12.70
- Duration: 440.80
- WaitingTime: 1.94
- TimeLoss: 289.64
- DepartDelay: 123.33
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_13.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_13.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_13_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_13_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_13_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.060446e-01 nRMSE=0.325645
-[15/30] total demand=48064.1
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_14_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1186 ACT 1128 BUF 150)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2332 ACT 1765 BUF 341)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3415 ACT 1912 BUF 595)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4499 ACT 2052 BUF 842)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5590 ACT 2230 BUF 1088)                        Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6667 ACT 2415 BUF 1348)                        Step #700.00 (1ms ~= 1000.00*RT, ~2573000.00UPS, vehicles TOT 7749 ACT 2573 BUF 1593)     Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 8839 ACT 2781 BUF 1840)                        Step #900.00 (1ms ~= 1000.00*RT, ~2840000.00UPS, vehicles TOT 9795 ACT 2840 BUF 2223)     Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 10882 ACT 3059 BUF 2468)                      Step #1100.00 (1ms ~= 1000.00*RT, ~3014000.00UPS, vehicles TOT 11740 ACT 3014 BUF 2948)   Step #1200.00 (1ms ~= 1000.00*RT, ~2983000.00UPS, vehicles TOT 12632 ACT 2983 BUF 3388)   Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 13720 ACT 3250 BUF 3638)                      Step #1400.00 (1ms ~= 1000.00*RT, ~3205000.00UPS, vehicles TOT 14545 ACT 3205 BUF 4147)   Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 15400 ACT 3201 BUF 4628)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 16445 ACT 3416 BUF 4916)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3307000.00UPS, vehicles TOT 17223 ACT 3307 BUF 5474)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 18157 ACT 3381 BUF 5888)                      Step #1900.00 (1ms ~= 1000.00*RT, ~3340000.00UPS, vehicles TOT 18978 ACT 3340 BUF 6388)   Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 19890 ACT 3388 BUF 6811)                      Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 20819 ACT 3484 BUF 7218)                      Step #2200.00 (1ms ~= 1000.00*RT, ~3656000.00UPS, vehicles TOT 21769 ACT 3656 BUF 7602)   Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 22482 ACT 3526 BUF 8223)                      Step #2400.00 (1ms ~= 1000.00*RT, ~3333000.00UPS, vehicles TOT 23192 ACT 3333 BUF 8850)   Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 24166 ACT 3425 BUF 9209)                      Step #2600.00 (1ms ~= 1000.00*RT, ~3466000.00UPS, vehicles TOT 25050 ACT 3466 BUF 9663)   Step #2700.00 (0ms ?*RT. ?UPS, vehicles TOT 25778 ACT 3385 BUF 10273)                     Step #2800.00 (1ms ~= 1000.00*RT, ~3432000.00UPS, vehicles TOT 26700 ACT 3432 BUF 10683)  Step #2900.00 (1ms ~= 1000.00*RT, ~3516000.00UPS, vehicles TOT 27638 ACT 3516 BUF 11083)  Step #3000.00 (1ms ~= 1000.00*RT, ~3354000.00UPS, vehicles TOT 28297 ACT 3354 BUF 11760)  Step #3100.00 (2ms ~= 500.00*RT, ~1674500.00UPS, vehicles TOT 29142 ACT 3349 BUF 12243)   Step #3200.00 (1ms ~= 1000.00*RT, ~3532000.00UPS, vehicles TOT 30157 ACT 3532 BUF 12564)  Step #3300.00 (2ms ~= 500.00*RT, ~1674500.00UPS, vehicles TOT 30808 ACT 3349 BUF 13247)   Step #3400.00 (2ms ~= 500.00*RT, ~1614000.00UPS, vehicles TOT 31562 ACT 3228 BUF 13828)   Step #3500.00 (1ms ~= 1000.00*RT, ~3377000.00UPS, vehicles TOT 32610 ACT 3377 BUF 14117)  Step #3600.00 (2ms ~= 500.00*RT, ~1762500.00UPS, vehicles TOT 33549 ACT 3525 BUF 14513)   Step #3700.00 (2ms ~= 500.00*RT, ~1450000.00UPS, vehicles TOT 33746 ACT 2900 BUF 14316)   Step #3800.00 (1ms ~= 1000.00*RT, ~2665000.00UPS, vehicles TOT 34083 ACT 2665 BUF 13979)  Step #3900.00 (1ms ~= 1000.00*RT, ~2276000.00UPS, vehicles TOT 34236 ACT 2276 BUF 13826)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.01s
- Real time factor: 972.811
- UPS: 2914840.359192
-Vehicles:
- Inserted: 34236 (Loaded: 48062)
- Running: 2276
- Waiting: 13826
-Statistics (avg of 31960):
- RouteLength: 3580.74
- Speed: 16.44
- Duration: 307.72
- WaitingTime: 1.15
- TimeLoss: 152.09
- DepartDelay: 142.63
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_14.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_14.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_14_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_14_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_14_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=2.805254e-01 nRMSE=0.529646
-[16/30] total demand=43983.2
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (9ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_15_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1091 ACT 997 BUF 134)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2129 ACT 1543 BUF 317)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3105 ACT 1764 BUF 564)                         Step #400.00 (1ms ~= 1000.00*RT, ~2010000.00UPS, vehicles TOT 4046 ACT 2010 BUF 839)      Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4979 ACT 2249 BUF 1132)                        Step #600.00 (1ms ~= 1000.00*RT, ~2504000.00UPS, vehicles TOT 5892 ACT 2504 BUF 1446)     Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6775 ACT 2741 BUF 1780)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7649 ACT 3013 BUF 2125)                        Step #900.00 (1ms ~= 1000.00*RT, ~3090000.00UPS, vehicles TOT 8342 ACT 3090 BUF 2660)     Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9147 ACT 3241 BUF 3074)                       Step #1100.00 (1ms ~= 1000.00*RT, ~3189000.00UPS, vehicles TOT 9697 ACT 3189 BUF 3742)    Step #1200.00 (1ms ~= 1000.00*RT, ~3108000.00UPS, vehicles TOT 10255 ACT 3108 BUF 4402)   Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11052 ACT 3308 BUF 4832)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 11605 ACT 3235 BUF 5502)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12414 ACT 3414 BUF 5915)                      Step #1600.00 (1ms ~= 1000.00*RT, ~3673000.00UPS, vehicles TOT 13291 ACT 3673 BUF 6257)   Step #1700.00 (1ms ~= 1000.00*RT, ~3551000.00UPS, vehicles TOT 13754 ACT 3551 BUF 7016)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 14260 ACT 3485 BUF 7742)                      Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 14764 ACT 3414 BUF 8451)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 15535 ACT 3591 BUF 8900)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3484000.00UPS, vehicles TOT 16012 ACT 3484 BUF 9647)   Step #2200.00 (1ms ~= 1000.00*RT, ~3454000.00UPS, vehicles TOT 16543 ACT 3454 BUF 10339)  Step #2300.00 (1ms ~= 1000.00*RT, ~3416000.00UPS, vehicles TOT 17123 ACT 3416 BUF 10978)  Step #2400.00 (0ms ?*RT. ?UPS, vehicles TOT 17793 ACT 3490 BUF 11533)                     Step #2500.00 (2ms ~= 500.00*RT, ~1710000.00UPS, vehicles TOT 18278 ACT 3420 BUF 12268)   Step #2600.00 (1ms ~= 1000.00*RT, ~3263000.00UPS, vehicles TOT 18741 ACT 3263 BUF 13027)  Step #2700.00 (0ms ?*RT. ?UPS, vehicles TOT 19413 ACT 3343 BUF 13580)                     Step #2800.00 (1ms ~= 1000.00*RT, ~3219000.00UPS, vehicles TOT 19905 ACT 3219 BUF 14304)  Step #2900.00 (1ms ~= 1000.00*RT, ~3445000.00UPS, vehicles TOT 20720 ACT 3445 BUF 14710)  Step #3000.00 (1ms ~= 1000.00*RT, ~3564000.00UPS, vehicles TOT 21472 ACT 3564 BUF 15184)  Step #3100.00 (1ms ~= 1000.00*RT, ~3548000.00UPS, vehicles TOT 22060 ACT 3548 BUF 15814)  Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 22557 ACT 3492 BUF 16541)                     Step #3300.00 (1ms ~= 1000.00*RT, ~3398000.00UPS, vehicles TOT 23035 ACT 3398 BUF 17284)  Step #3400.00 (1ms ~= 1000.00*RT, ~3288000.00UPS, vehicles TOT 23517 ACT 3288 BUF 18026)  Step #3500.00 (1ms ~= 1000.00*RT, ~3287000.00UPS, vehicles TOT 24164 ACT 3287 BUF 18596)  Step #3600.00 (1ms ~= 1000.00*RT, ~3470000.00UPS, vehicles TOT 24959 ACT 3470 BUF 19024)  Step #3700.00 (1ms ~= 1000.00*RT, ~2988000.00UPS, vehicles TOT 25018 ACT 2988 BUF 18965)  Step #3800.00 (1ms ~= 1000.00*RT, ~2706000.00UPS, vehicles TOT 25084 ACT 2706 BUF 18899)  Step #3900.00 (1ms ~= 1000.00*RT, ~2452000.00UPS, vehicles TOT 25168 ACT 2452 BUF 18815)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 2.73s
- Real time factor: 1430.14
- UPS: 4346100.110011
-Vehicles:
- Inserted: 25168 (Loaded: 43983)
- Running: 2452
- Waiting: 18815
-Statistics (avg of 22716):
- RouteLength: 3087.98
- Speed: 13.97
- Duration: 414.82
- WaitingTime: 1.78
- TimeLoss: 273.52
- DepartDelay: 121.20
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_15.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_15.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_15_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_15_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_15_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.871642e-01 nRMSE=0.432625
-[17/30] total demand=45852.2
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (2ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_16_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1152 ACT 1056 BUF 124)                         Step #200.00 (1ms ~= 1000.00*RT, ~1710000.00UPS, vehicles TOT 2263 ACT 1710 BUF 285)      Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3309 ACT 1986 BUF 515)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4318 ACT 2271 BUF 777)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5321 ACT 2579 BUF 1049)                        Step #600.00 (1ms ~= 1000.00*RT, ~2876000.00UPS, vehicles TOT 6282 ACT 2876 BUF 1365)     Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7236 ACT 3192 BUF 1682)                        Step #800.00 (1ms ~= 1000.00*RT, ~3333000.00UPS, vehicles TOT 8076 ACT 3333 BUF 2114)     Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 9032 ACT 3678 BUF 2436)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9768 ACT 3794 BUF 2970)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10419 ACT 3794 BUF 3594)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10855 ACT 3569 BUF 4431)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11581 ACT 3655 BUF 4978)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12306 ACT 3743 BUF 5528)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12844 ACT 3654 BUF 6266)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13289 ACT 3371 BUF 7093)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3631000.00UPS, vehicles TOT 14196 ACT 3631 BUF 7458)   Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 14998 ACT 3771 BUF 7943)                      Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 15729 ACT 3855 BUF 8475)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16326 ACT 3869 BUF 9149)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3867000.00UPS, vehicles TOT 16946 ACT 3867 BUF 9806)   Step #2200.00 (1ms ~= 1000.00*RT, ~3842000.00UPS, vehicles TOT 17535 ACT 3842 BUF 10490)  Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 18017 ACT 3705 BUF 11282)                     Step #2400.00 (2ms ~= 500.00*RT, ~1766000.00UPS, vehicles TOT 18469 ACT 3532 BUF 12102)   Step #2500.00 (1ms ~= 1000.00*RT, ~3524000.00UPS, vehicles TOT 19042 ACT 3524 BUF 12803)  Step #2600.00 (1ms ~= 1000.00*RT, ~3557000.00UPS, vehicles TOT 19714 ACT 3557 BUF 13407)  Step #2700.00 (2ms ~= 500.00*RT, ~1815500.00UPS, vehicles TOT 20429 ACT 3631 BUF 13971)   Step #2800.00 (1ms ~= 1000.00*RT, ~3349000.00UPS, vehicles TOT 20800 ACT 3349 BUF 14867)  Step #2900.00 (1ms ~= 1000.00*RT, ~3566000.00UPS, vehicles TOT 21653 ACT 3566 BUF 15287)  Step #3000.00 (2ms ~= 500.00*RT, ~1911000.00UPS, vehicles TOT 22524 ACT 3822 BUF 15692)   Step #3100.00 (1ms ~= 1000.00*RT, ~4007000.00UPS, vehicles TOT 23329 ACT 4007 BUF 16159)  Step #3200.00 (1ms ~= 1000.00*RT, ~3797000.00UPS, vehicles TOT 23739 ACT 3797 BUF 17023)  Step #3300.00 (2ms ~= 500.00*RT, ~1772000.00UPS, vehicles TOT 24125 ACT 3544 BUF 17913)   Step #3400.00 (1ms ~= 1000.00*RT, ~3544000.00UPS, vehicles TOT 24735 ACT 3544 BUF 18576)  Step #3500.00 (2ms ~= 500.00*RT, ~1768500.00UPS, vehicles TOT 25348 ACT 3537 BUF 19234)   Step #3600.00 (2ms ~= 500.00*RT, ~1774000.00UPS, vehicles TOT 25987 ACT 3548 BUF 19870)   Step #3700.00 (2ms ~= 500.00*RT, ~1666500.00UPS, vehicles TOT 26361 ACT 3333 BUF 19496)   Step #3800.00 (1ms ~= 1000.00*RT, ~3592000.00UPS, vehicles TOT 27091 ACT 3592 BUF 18766)  Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 27535 ACT 3585 BUF 18322)                     
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.39s
- Real time factor: 888.788
- UPS: 2973902.005469
-Vehicles:
- Inserted: 27535 (Loaded: 45857)
- Running: 3585
- Waiting: 18322
- Teleports: 1 (Jam: 1)
-Statistics (avg of 23950):
- RouteLength: 3409.44
- Speed: 12.49
- Duration: 445.65
- WaitingTime: 1.97
- TimeLoss: 296.25
- DepartDelay: 208.22
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_16.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_16.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_16_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_16_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_16_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.420216e-01 nRMSE=0.376858
-[18/30] total demand=41718.2
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (9ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_17_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1067 ACT 1011 BUF 93)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2097 ACT 1551 BUF 222)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3089 ACT 1740 BUF 389)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4049 ACT 1894 BUF 585)                         Step #500.00 (1ms ~= 1000.00*RT, ~2094000.00UPS, vehicles TOT 5039 ACT 2094 BUF 755)      Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6011 ACT 2290 BUF 948)                         Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6981 ACT 2489 BUF 1131)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7945 ACT 2678 BUF 1326)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8761 ACT 2722 BUF 1672)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9556 ACT 2760 BUF 2032)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10461 ACT 2923 BUF 2282)                      Step #1200.00 (1ms ~= 1000.00*RT, ~2936000.00UPS, vehicles TOT 11234 ACT 2936 BUF 2670)   Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12009 ACT 2954 BUF 3056)                      Step #1400.00 (1ms ~= 1000.00*RT, ~2984000.00UPS, vehicles TOT 12780 ACT 2984 BUF 3443)   Step #1500.00 (1ms ~= 1000.00*RT, ~3050000.00UPS, vehicles TOT 13546 ACT 3050 BUF 3838)   Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14311 ACT 3112 BUF 4230)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 15082 ACT 3174 BUF 4618)                      Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 15861 ACT 3232 BUF 5009)                      Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 16629 ACT 3264 BUF 5388)                      Step #2000.00 (2ms ~= 500.00*RT, ~1650500.00UPS, vehicles TOT 17401 ACT 3301 BUF 5775)    Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 18171 ACT 3356 BUF 6165)                      Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 18940 ACT 3400 BUF 6555)                      Step #2300.00 (1ms ~= 1000.00*RT, ~3465000.00UPS, vehicles TOT 19711 ACT 3465 BUF 6941)   Step #2400.00 (0ms ?*RT. ?UPS, vehicles TOT 20483 ACT 3488 BUF 7330)                      Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 21252 ACT 3536 BUF 7722)                      Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 22024 ACT 3613 BUF 8106)                      Step #2700.00 (1ms ~= 1000.00*RT, ~3707000.00UPS, vehicles TOT 22800 ACT 3707 BUF 8493)   Step #2800.00 (0ms ?*RT. ?UPS, vehicles TOT 23539 ACT 3771 BUF 8907)                      Step #2900.00 (1ms ~= 1000.00*RT, ~3883000.00UPS, vehicles TOT 24245 ACT 3883 BUF 9360)   Step #3000.00 (2ms ~= 500.00*RT, ~2029500.00UPS, vehicles TOT 25098 ACT 4059 BUF 9668)    Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 25736 ACT 3919 BUF 10187)                     Step #3200.00 (1ms ~= 1000.00*RT, ~4014000.00UPS, vehicles TOT 26472 ACT 4014 BUF 10611)  Step #3300.00 (1ms ~= 1000.00*RT, ~4085000.00UPS, vehicles TOT 27147 ACT 4085 BUF 11095)  Step #3400.00 (1ms ~= 1000.00*RT, ~3844000.00UPS, vehicles TOT 27678 ACT 3844 BUF 11721)  Step #3500.00 (1ms ~= 1000.00*RT, ~3855000.00UPS, vehicles TOT 28412 ACT 3855 BUF 12145)  Step #3600.00 (2ms ~= 500.00*RT, ~2076500.00UPS, vehicles TOT 29268 ACT 4153 BUF 12449)   Step #3700.00 (1ms ~= 1000.00*RT, ~3814000.00UPS, vehicles TOT 29570 ACT 3814 BUF 12147)  Step #3800.00 (1ms ~= 1000.00*RT, ~3562000.00UPS, vehicles TOT 29755 ACT 3562 BUF 11962)  Step #3900.00 (1ms ~= 1000.00*RT, ~3394000.00UPS, vehicles TOT 30028 ACT 3394 BUF 11689)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 2.77s
- Real time factor: 1409.47
- UPS: 4390792.193712
-Vehicles:
- Inserted: 30028 (Loaded: 41717)
- Running: 3394
- Waiting: 11689
- Teleports: 9 (Jam: 9)
-Statistics (avg of 26634):
- RouteLength: 3044.02
- Speed: 17.15
- Duration: 275.67
- WaitingTime: 1.11
- TimeLoss: 134.84
- DepartDelay: 142.44
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_17.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_17.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_17_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_17_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_17_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=3.124864e-01 nRMSE=0.559005
-[19/30] total demand=45121.6
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (12ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_18_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1139 ACT 1056 BUF 115)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2219 ACT 1685 BUF 286)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3219 ACT 1895 BUF 539)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4210 ACT 2123 BUF 806)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5204 ACT 2414 BUF 1064)                        Step #600.00 (1ms ~= 1000.00*RT, ~2696000.00UPS, vehicles TOT 6199 ACT 2696 BUF 1326)     Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7008 ACT 2833 BUF 1767)                        Step #800.00 (1ms ~= 1000.00*RT, ~2879000.00UPS, vehicles TOT 7749 ACT 2879 BUF 2279)     Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8489 ACT 2948 BUF 2794)                        Step #1000.00 (1ms ~= 1000.00*RT, ~2988000.00UPS, vehicles TOT 9225 ACT 2988 BUF 3307)    Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 9959 ACT 3077 BUF 3832)                       Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10695 ACT 3146 BUF 4346)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11430 ACT 3224 BUF 4865)                      Step #1400.00 (1ms ~= 1000.00*RT, ~3330000.00UPS, vehicles TOT 12164 ACT 3330 BUF 5386)   Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12897 ACT 3392 BUF 5906)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13628 ACT 3525 BUF 6427)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3607000.00UPS, vehicles TOT 14362 ACT 3607 BUF 6947)   Step #1800.00 (1ms ~= 1000.00*RT, ~3726000.00UPS, vehicles TOT 15100 ACT 3726 BUF 7475)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 15825 ACT 3822 BUF 7990)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16555 ACT 3922 BUF 8512)                      Step #2100.00 (1ms ~= 1000.00*RT, ~4042000.00UPS, vehicles TOT 17260 ACT 4042 BUF 9063)   Step #2200.00 (1ms ~= 1000.00*RT, ~4004000.00UPS, vehicles TOT 17860 ACT 4004 BUF 9713)   Step #2300.00 (1ms ~= 1000.00*RT, ~4155000.00UPS, vehicles TOT 18621 ACT 4155 BUF 10208)  Step #2400.00 (1ms ~= 1000.00*RT, ~4210000.00UPS, vehicles TOT 19263 ACT 4210 BUF 10818)  Step #2500.00 (1ms ~= 1000.00*RT, ~4230000.00UPS, vehicles TOT 19864 ACT 4230 BUF 11469)  Step #2600.00 (1ms ~= 1000.00*RT, ~4184000.00UPS, vehicles TOT 20465 ACT 4184 BUF 12126)  Step #2700.00 (1ms ~= 1000.00*RT, ~4186000.00UPS, vehicles TOT 21068 ACT 4186 BUF 12778)  Step #2800.00 (2ms ~= 500.00*RT, ~2072500.00UPS, vehicles TOT 21681 ACT 4145 BUF 13413)   Step #2900.00 (2ms ~= 500.00*RT, ~2193500.00UPS, vehicles TOT 22526 ACT 4387 BUF 13823)   Step #3000.00 (2ms ~= 500.00*RT, ~2233000.00UPS, vehicles TOT 23230 ACT 4466 BUF 14371)   Step #3100.00 (1ms ~= 1000.00*RT, ~4312000.00UPS, vehicles TOT 23681 ACT 4312 BUF 15175)  Step #3200.00 (1ms ~= 1000.00*RT, ~4343000.00UPS, vehicles TOT 24274 ACT 4343 BUF 15832)  Step #3300.00 (2ms ~= 500.00*RT, ~2193000.00UPS, vehicles TOT 24977 ACT 4386 BUF 16391)   Step #3400.00 (2ms ~= 500.00*RT, ~2149000.00UPS, vehicles TOT 25447 ACT 4298 BUF 17171)   Step #3500.00 (2ms ~= 500.00*RT, ~2172000.00UPS, vehicles TOT 26101 ACT 4344 BUF 17769)   Step #3600.00 (2ms ~= 500.00*RT, ~2219000.00UPS, vehicles TOT 26872 ACT 4438 BUF 18250)   Step #3700.00 (2ms ~= 500.00*RT, ~2066500.00UPS, vehicles TOT 27127 ACT 4133 BUF 17995)   Step #3800.00 (1ms ~= 1000.00*RT, ~3886000.00UPS, vehicles TOT 27299 ACT 3886 BUF 17823)  Step #3900.00 (2ms ~= 500.00*RT, ~1945000.00UPS, vehicles TOT 27611 ACT 3890 BUF 17511)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.27s
- Real time factor: 914.42
- UPS: 3200284.173505
-Vehicles:
- Inserted: 27611 (Loaded: 45122)
- Running: 3890
- Waiting: 17511
- Teleports: 8 (Jam: 8)
-Statistics (avg of 23721):
- RouteLength: 3357.71
- Speed: 17.13
- Duration: 340.23
- WaitingTime: 1.67
- TimeLoss: 195.06
- DepartDelay: 144.52
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_18.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_18.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_18_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_18_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_18_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.608354e-01 nRMSE=0.401043
-[20/30] total demand=42354.9
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (50ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_19_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1086 ACT 1010 BUF 90)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2132 ACT 1580 BUF 224)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3119 ACT 1900 BUF 409)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4103 ACT 2215 BUF 600)                         Step #500.00 (1ms ~= 1000.00*RT, ~2522000.00UPS, vehicles TOT 5067 ACT 2522 BUF 816)      Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5940 ACT 2770 BUF 1121)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6705 ACT 2874 BUF 1530)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7613 ACT 3142 BUF 1801)                        Step #900.00 (1ms ~= 1000.00*RT, ~3189000.00UPS, vehicles TOT 8290 ACT 3189 BUF 2302)     Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9121 ACT 3396 BUF 2644)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 9897 ACT 3588 BUF 3045)                       Step #1200.00 (1ms ~= 1000.00*RT, ~3680000.00UPS, vehicles TOT 10546 ACT 3680 BUF 3571)   Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11217 ACT 3775 BUF 4075)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 11790 ACT 3779 BUF 4682)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12341 ACT 3747 BUF 5306)                      Step #1600.00 (1ms ~= 1000.00*RT, ~3744000.00UPS, vehicles TOT 12906 ACT 3744 BUF 5918)   Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 13454 ACT 3698 BUF 6548)                      Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 14245 ACT 3843 BUF 6943)                      Step #1900.00 (1ms ~= 1000.00*RT, ~4011000.00UPS, vehicles TOT 15022 ACT 4011 BUF 7329)   Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 15589 ACT 4005 BUF 7938)                      Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 16146 ACT 3981 BUF 8561)                      Step #2200.00 (1ms ~= 1000.00*RT, ~3937000.00UPS, vehicles TOT 16713 ACT 3937 BUF 9167)   Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 17408 ACT 4041 BUF 9653)                      Step #2400.00 (0ms ?*RT. ?UPS, vehicles TOT 17971 ACT 4027 BUF 10263)                     Step #2500.00 (1ms ~= 1000.00*RT, ~3993000.00UPS, vehicles TOT 18520 ACT 3993 BUF 10891)  Step #2600.00 (1ms ~= 1000.00*RT, ~3975000.00UPS, vehicles TOT 19070 ACT 3975 BUF 11517)  Step #2700.00 (1ms ~= 1000.00*RT, ~3958000.00UPS, vehicles TOT 19617 ACT 3958 BUF 12153)  Step #2800.00 (1ms ~= 1000.00*RT, ~3929000.00UPS, vehicles TOT 20197 ACT 3929 BUF 12740)  Step #2900.00 (1ms ~= 1000.00*RT, ~4142000.00UPS, vehicles TOT 21025 ACT 4142 BUF 13093)  Step #3000.00 (1ms ~= 1000.00*RT, ~4199000.00UPS, vehicles TOT 21634 ACT 4199 BUF 13661)  Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 22215 ACT 4220 BUF 14255)                     Step #3200.00 (1ms ~= 1000.00*RT, ~4209000.00UPS, vehicles TOT 22750 ACT 4209 BUF 14898)  Step #3300.00 (1ms ~= 1000.00*RT, ~4181000.00UPS, vehicles TOT 23309 ACT 4181 BUF 15517)  Step #3400.00 (1ms ~= 1000.00*RT, ~4140000.00UPS, vehicles TOT 23840 ACT 4140 BUF 16156)  Step #3500.00 (0ms ?*RT. ?UPS, vehicles TOT 24400 ACT 4084 BUF 16777)                     Step #3600.00 (0ms ?*RT. ?UPS, vehicles TOT 25155 ACT 4236 BUF 17196)                     Step #3700.00 (0ms ?*RT. ?UPS, vehicles TOT 25319 ACT 3849 BUF 17032)                     Step #3800.00 (1ms ~= 1000.00*RT, ~3631000.00UPS, vehicles TOT 25451 ACT 3631 BUF 16900)  Step #3900.00 (1ms ~= 1000.00*RT, ~3441000.00UPS, vehicles TOT 25578 ACT 3441 BUF 16773)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 2.54s
- Real time factor: 1536.04
- UPS: 5393896.809768
-Vehicles:
- Inserted: 25578 (Loaded: 42351)
- Running: 3441
- Waiting: 16773
- Teleports: 15 (Jam: 15)
-Statistics (avg of 22137):
- RouteLength: 3154.78
- Speed: 14.84
- Duration: 367.34
- WaitingTime: 1.94
- TimeLoss: 225.34
- DepartDelay: 106.08
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_19.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_19.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_19_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_19_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_19_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.220970e-01 nRMSE=0.349424
-[21/30] total demand=41408.4
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (9ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_20_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1121 ACT 1057 BUF 33)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2204 ACT 1713 BUF 96)                          Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3228 ACT 1957 BUF 225)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4236 ACT 2203 BUF 363)                         Step #500.00 (1ms ~= 1000.00*RT, ~2419000.00UPS, vehicles TOT 5236 ACT 2419 BUF 515)      Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6228 ACT 2642 BUF 678)                         Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7195 ACT 2892 BUF 858)                         Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 8114 ACT 3109 BUF 1092)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8984 ACT 3346 BUF 1372)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9720 ACT 3390 BUF 1785)                       Step #1100.00 (1ms ~= 1000.00*RT, ~3495000.00UPS, vehicles TOT 10480 ACT 3495 BUF 2173)   Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11205 ACT 3479 BUF 2597)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11930 ACT 3441 BUF 3024)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12648 ACT 3464 BUF 3458)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 13382 ACT 3484 BUF 3872)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14148 ACT 3538 BUF 4256)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 14726 ACT 3408 BUF 4830)                      Step #1800.00 (1ms ~= 1000.00*RT, ~3611000.00UPS, vehicles TOT 15579 ACT 3611 BUF 5141)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 16179 ACT 3564 BUF 5675)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16759 ACT 3482 BUF 6247)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3688000.00UPS, vehicles TOT 17631 ACT 3688 BUF 6527)   Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 18245 ACT 3663 BUF 7061)                      Step #2300.00 (1ms ~= 1000.00*RT, ~3561000.00UPS, vehicles TOT 18828 ACT 3561 BUF 7628)   Step #2400.00 (1ms ~= 1000.00*RT, ~3662000.00UPS, vehicles TOT 19703 ACT 3662 BUF 7905)   Step #2500.00 (1ms ~= 1000.00*RT, ~3629000.00UPS, vehicles TOT 20297 ACT 3629 BUF 8460)   Step #2600.00 (1ms ~= 1000.00*RT, ~3651000.00UPS, vehicles TOT 21007 ACT 3651 BUF 8900)   Step #2700.00 (1ms ~= 1000.00*RT, ~3735000.00UPS, vehicles TOT 21768 ACT 3735 BUF 9291)   Step #2800.00 (1ms ~= 1000.00*RT, ~3592000.00UPS, vehicles TOT 22326 ACT 3592 BUF 9878)   Step #2900.00 (0ms ?*RT. ?UPS, vehicles TOT 23142 ACT 3659 BUF 10215)                     Step #3000.00 (1ms ~= 1000.00*RT, ~3847000.00UPS, vehicles TOT 23968 ACT 3847 BUF 10546)  Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 24513 ACT 3730 BUF 11146)                     Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 25250 ACT 3720 BUF 11561)                     Step #3300.00 (1ms ~= 1000.00*RT, ~3842000.00UPS, vehicles TOT 26080 ACT 3842 BUF 11879)  Step #3400.00 (1ms ~= 1000.00*RT, ~3705000.00UPS, vehicles TOT 26637 ACT 3705 BUF 12475)  Step #3500.00 (1ms ~= 1000.00*RT, ~3700000.00UPS, vehicles TOT 27361 ACT 3700 BUF 12895)  Step #3600.00 (2ms ~= 500.00*RT, ~1860500.00UPS, vehicles TOT 28138 ACT 3721 BUF 13272)   Step #3700.00 (1ms ~= 1000.00*RT, ~3143000.00UPS, vehicles TOT 28236 ACT 3143 BUF 13174)  Step #3800.00 (1ms ~= 1000.00*RT, ~2726000.00UPS, vehicles TOT 28373 ACT 2726 BUF 13037)  Step #3900.00 (2ms ~= 500.00*RT, ~1177000.00UPS, vehicles TOT 28504 ACT 2354 BUF 12906)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.15s
- Real time factor: 1238.49
- UPS: 3996852.334074
-Vehicles:
- Inserted: 28504 (Loaded: 41410)
- Running: 2354
- Waiting: 12906
- Teleports: 4 (Jam: 4)
-Statistics (avg of 26150):
- RouteLength: 3516.47
- Speed: 14.62
- Duration: 360.68
- WaitingTime: 1.91
- TimeLoss: 203.08
- DepartDelay: 41.66
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_20.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_20.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_20_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_20_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_20_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=3.060488e-01 nRMSE=0.553217
-[22/30] total demand=42021.2
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_21_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1023 ACT 925 BUF 143)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2006 ACT 1370 BUF 331)                         Step #300.00 (1ms ~= 1000.00*RT, ~1496000.00UPS, vehicles TOT 2935 ACT 1496 BUF 568)      Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 3856 ACT 1622 BUF 813)                         Step #500.00 (1ms ~= 1000.00*RT, ~1792000.00UPS, vehicles TOT 4785 ACT 1792 BUF 1051)     Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5714 ACT 1992 BUF 1295)                        Step #700.00 (1ms ~= 1000.00*RT, ~2170000.00UPS, vehicles TOT 6625 ACT 2170 BUF 1546)     Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7527 ACT 2398 BUF 1805)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8440 ACT 2592 BUF 2070)                        Step #1000.00 (1ms ~= 1000.00*RT, ~2846000.00UPS, vehicles TOT 9337 ACT 2846 BUF 2336)    Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10234 ACT 3112 BUF 2605)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11129 ACT 3379 BUF 2877)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12021 ACT 3645 BUF 3149)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12922 ACT 3978 BUF 3421)                      Step #1500.00 (1ms ~= 1000.00*RT, ~4320000.00UPS, vehicles TOT 13821 ACT 4320 BUF 3690)   Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14539 ACT 4493 BUF 4139)                      Step #1700.00 (1ms ~= 1000.00*RT, ~4556000.00UPS, vehicles TOT 15142 ACT 4556 BUF 4701)   Step #1800.00 (1ms ~= 1000.00*RT, ~4619000.00UPS, vehicles TOT 15753 ACT 4619 BUF 5267)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 16353 ACT 4677 BUF 5822)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16893 ACT 4700 BUF 6446)                      Step #2100.00 (1ms ~= 1000.00*RT, ~4651000.00UPS, vehicles TOT 17364 ACT 4651 BUF 7147)   Step #2200.00 (1ms ~= 1000.00*RT, ~4553000.00UPS, vehicles TOT 17831 ACT 4553 BUF 7845)   Step #2300.00 (1ms ~= 1000.00*RT, ~4486000.00UPS, vehicles TOT 18307 ACT 4486 BUF 8541)   Step #2400.00 (1ms ~= 1000.00*RT, ~4452000.00UPS, vehicles TOT 18777 ACT 4452 BUF 9234)   Step #2500.00 (1ms ~= 1000.00*RT, ~4385000.00UPS, vehicles TOT 19253 ACT 4385 BUF 9926)   Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 19725 ACT 4321 BUF 10621)                     Step #2700.00 (1ms ~= 1000.00*RT, ~4412000.00UPS, vehicles TOT 20374 ACT 4412 BUF 11145)  Step #2800.00 (1ms ~= 1000.00*RT, ~4746000.00UPS, vehicles TOT 21333 ACT 4746 BUF 11352)  Step #2900.00 (1ms ~= 1000.00*RT, ~4724000.00UPS, vehicles TOT 21938 ACT 4724 BUF 11909)  Step #3000.00 (1ms ~= 1000.00*RT, ~4679000.00UPS, vehicles TOT 22461 ACT 4679 BUF 12556)  Step #3100.00 (0ms ?*RT. ?UPS, vehicles TOT 22938 ACT 4647 BUF 13244)                     Step #3200.00 (1ms ~= 1000.00*RT, ~4609000.00UPS, vehicles TOT 23415 ACT 4609 BUF 13933)  Step #3300.00 (2ms ~= 500.00*RT, ~2287500.00UPS, vehicles TOT 23892 ACT 4575 BUF 14627)   Step #3400.00 (1ms ~= 1000.00*RT, ~4557000.00UPS, vehicles TOT 24371 ACT 4557 BUF 15311)  Step #3500.00 (2ms ~= 500.00*RT, ~2263000.00UPS, vehicles TOT 24854 ACT 4526 BUF 15998)   Step #3600.00 (2ms ~= 500.00*RT, ~2249500.00UPS, vehicles TOT 25331 ACT 4499 BUF 16686)   Step #3700.00 (1ms ~= 1000.00*RT, ~4151000.00UPS, vehicles TOT 25452 ACT 4151 BUF 16565)  Step #3800.00 (1ms ~= 1000.00*RT, ~3963000.00UPS, vehicles TOT 25576 ACT 3963 BUF 16441)  Step #3900.00 (1ms ~= 1000.00*RT, ~3835000.00UPS, vehicles TOT 25708 ACT 3835 BUF 16309)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.17s
- Real time factor: 1231.45
- UPS: 4533073.886959
-Vehicles:
- Inserted: 25708 (Loaded: 42017)
- Running: 3835
- Waiting: 16309
- Teleports: 10 (Jam: 10)
-Statistics (avg of 21873):
- RouteLength: 2822.34
- Speed: 17.91
- Duration: 301.98
- WaitingTime: 1.38
- TimeLoss: 175.91
- DepartDelay: 202.30
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_21.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_21.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_21_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_21_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_21_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=2.151946e-01 nRMSE=0.463891
-[23/30] total demand=46253.1
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_22_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1110 ACT 1035 BUF 173)                         Step #200.00 (1ms ~= 1000.00*RT, ~1681000.00UPS, vehicles TOT 2181 ACT 1681 BUF 391)      Step #300.00 (1ms ~= 1000.00*RT, ~1997000.00UPS, vehicles TOT 3197 ACT 1997 BUF 658)      Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4161 ACT 2282 BUF 977)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5136 ACT 2683 BUF 1290)                        Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5969 ACT 2898 BUF 1742)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6635 ACT 2986 BUF 2357)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7326 ACT 3094 BUF 2954)                        Step #900.00 (1ms ~= 1000.00*RT, ~3040000.00UPS, vehicles TOT 7877 ACT 3040 BUF 3691)     Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 8682 ACT 3241 BUF 4163)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 9493 ACT 3440 BUF 4639)                       Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10142 ACT 3556 BUF 5272)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 10714 ACT 3560 BUF 5990)                      Step #1400.00 (1ms ~= 1000.00*RT, ~3609000.00UPS, vehicles TOT 11321 ACT 3609 BUF 6665)   Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 11866 ACT 3604 BUF 7407)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 12485 ACT 3646 BUF 8067)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3800000.00UPS, vehicles TOT 13178 ACT 3800 BUF 8663)   Step #1800.00 (1ms ~= 1000.00*RT, ~3766000.00UPS, vehicles TOT 13715 ACT 3766 BUF 9420)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 14243 ACT 3751 BUF 10167)                     Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 14787 ACT 3727 BUF 10910)                     Step #2100.00 (1ms ~= 1000.00*RT, ~3872000.00UPS, vehicles TOT 15476 ACT 3872 BUF 11504)  Step #2200.00 (1ms ~= 1000.00*RT, ~3858000.00UPS, vehicles TOT 16012 ACT 3858 BUF 12252)  Step #2300.00 (1ms ~= 1000.00*RT, ~3821000.00UPS, vehicles TOT 16536 ACT 3821 BUF 13011)  Step #2400.00 (2ms ~= 500.00*RT, ~1913500.00UPS, vehicles TOT 17093 ACT 3827 BUF 13742)   Step #2500.00 (1ms ~= 1000.00*RT, ~4003000.00UPS, vehicles TOT 17827 ACT 4003 BUF 14292)  Step #2600.00 (1ms ~= 1000.00*RT, ~3990000.00UPS, vehicles TOT 18359 ACT 3990 BUF 15046)  Step #2700.00 (2ms ~= 500.00*RT, ~1973000.00UPS, vehicles TOT 18895 ACT 3946 BUF 15799)   Step #2800.00 (2ms ~= 500.00*RT, ~2004000.00UPS, vehicles TOT 19519 ACT 4008 BUF 16450)   Step #2900.00 (1ms ~= 1000.00*RT, ~4062000.00UPS, vehicles TOT 20134 ACT 4062 BUF 17125)  Step #3000.00 (2ms ~= 500.00*RT, ~2029500.00UPS, vehicles TOT 20670 ACT 4059 BUF 17873)   Step #3100.00 (1ms ~= 1000.00*RT, ~4049000.00UPS, vehicles TOT 21209 ACT 4049 BUF 18616)  Step #3200.00 (2ms ~= 500.00*RT, ~2009500.00UPS, vehicles TOT 21744 ACT 4019 BUF 19367)   Step #3300.00 (2ms ~= 500.00*RT, ~2066500.00UPS, vehicles TOT 22389 ACT 4133 BUF 20009)   Step #3400.00 (2ms ~= 500.00*RT, ~2175000.00UPS, vehicles TOT 23145 ACT 4350 BUF 20533)   Step #3500.00 (3ms ~= 333.33*RT, ~1446666.67UPS, vehicles TOT 23648 ACT 4340 BUF 21320)   Step #3600.00 (2ms ~= 500.00*RT, ~2139500.00UPS, vehicles TOT 24077 ACT 4279 BUF 22172)   Step #3700.00 (2ms ~= 500.00*RT, ~2019000.00UPS, vehicles TOT 24345 ACT 4038 BUF 21904)   Step #3800.00 (3ms ~= 333.33*RT, ~1264666.67UPS, vehicles TOT 24472 ACT 3794 BUF 21777)   Step #3900.00 (2ms ~= 500.00*RT, ~1785500.00UPS, vehicles TOT 24604 ACT 3571 BUF 21645)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 5.08s
- Real time factor: 767.113
- UPS: 2670133.556255
-Vehicles:
- Inserted: 24604 (Loaded: 46249)
- Running: 3571
- Waiting: 21645
- Teleports: 5 (Jam: 5)
-Statistics (avg of 21033):
- RouteLength: 3146.81
- Speed: 15.71
- Duration: 378.02
- WaitingTime: 1.91
- TimeLoss: 232.84
- DepartDelay: 250.69
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_22.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_22.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_22_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_22_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_22_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=3.197628e-01 nRMSE=0.565476
-[24/30] total demand=45741.1
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (9ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_23_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (1ms ~= 1000.00*RT, ~1079000.00UPS, vehicles TOT 1157 ACT 1079 BUF 113)      Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2275 ACT 1656 BUF 268)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3332 ACT 1883 BUF 485)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4355 ACT 2122 BUF 727)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5360 ACT 2341 BUF 992)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6334 ACT 2600 BUF 1293)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7259 ACT 2809 BUF 1635)                        Step #800.00 (1ms ~= 1000.00*RT, ~3064000.00UPS, vehicles TOT 8211 ACT 3064 BUF 1957)     Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 9031 ACT 3194 BUF 2411)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9903 ACT 3344 BUF 2803)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10612 ACT 3313 BUF 3362)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11325 ACT 3286 BUF 3918)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12017 ACT 3248 BUF 4505)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12584 ACT 3103 BUF 5206)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 13278 ACT 3053 BUF 5782)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 14070 ACT 3134 BUF 6257)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 14865 ACT 3204 BUF 6739)                      Step #1800.00 (1ms ~= 1000.00*RT, ~3294000.00UPS, vehicles TOT 15640 ACT 3294 BUF 7240)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 16447 ACT 3359 BUF 7691)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 17267 ACT 3436 BUF 8148)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3352000.00UPS, vehicles TOT 17908 ACT 3352 BUF 8775)   Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 18440 ACT 3182 BUF 9514)                      Step #2300.00 (1ms ~= 1000.00*RT, ~3160000.00UPS, vehicles TOT 19107 ACT 3160 BUF 10113)  Step #2400.00 (1ms ~= 1000.00*RT, ~3234000.00UPS, vehicles TOT 19876 ACT 3234 BUF 10623)  Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 20644 ACT 3333 BUF 11124)                     Step #2600.00 (1ms ~= 1000.00*RT, ~3440000.00UPS, vehicles TOT 21416 ACT 3440 BUF 11622)  Step #2700.00 (2ms ~= 500.00*RT, ~1789500.00UPS, vehicles TOT 22249 ACT 3579 BUF 12063)   Step #2800.00 (1ms ~= 1000.00*RT, ~3625000.00UPS, vehicles TOT 23013 ACT 3625 BUF 12561)  Step #2900.00 (1ms ~= 1000.00*RT, ~3483000.00UPS, vehicles TOT 23573 ACT 3483 BUF 13275)  Step #3000.00 (2ms ~= 500.00*RT, ~1661500.00UPS, vehicles TOT 24131 ACT 3323 BUF 13990)   Step #3100.00 (1ms ~= 1000.00*RT, ~3236000.00UPS, vehicles TOT 24732 ACT 3236 BUF 14658)  Step #3200.00 (1ms ~= 1000.00*RT, ~3333000.00UPS, vehicles TOT 25491 ACT 3333 BUF 15169)  Step #3300.00 (2ms ~= 500.00*RT, ~1709500.00UPS, vehicles TOT 26279 ACT 3419 BUF 15647)   Step #3400.00 (2ms ~= 500.00*RT, ~1799500.00UPS, vehicles TOT 27079 ACT 3599 BUF 16122)   Step #3500.00 (1ms ~= 1000.00*RT, ~3659000.00UPS, vehicles TOT 27853 ACT 3659 BUF 16619)  Step #3600.00 (2ms ~= 500.00*RT, ~1859000.00UPS, vehicles TOT 28604 ACT 3718 BUF 17138)   Step #3700.00 (3ms ~= 333.33*RT, ~1053000.00UPS, vehicles TOT 28716 ACT 3159 BUF 17026)   Step #3800.00 (1ms ~= 1000.00*RT, ~2867000.00UPS, vehicles TOT 28851 ACT 2867 BUF 16891)  Step #3900.00 (1ms ~= 1000.00*RT, ~2795000.00UPS, vehicles TOT 29204 ACT 2795 BUF 16538)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.08s
- Real time factor: 957.055
- UPS: 2911680.981595
-Vehicles:
- Inserted: 29204 (Loaded: 45742)
- Running: 2795
- Waiting: 16538
- Teleports: 4 (Jam: 4)
-Statistics (avg of 26409):
- RouteLength: 3085.34
- Speed: 14.79
- Duration: 312.92
- WaitingTime: 1.44
- TimeLoss: 176.19
- DepartDelay: 190.33
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_23.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_23.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_23_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_23_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_23_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=6.973103e-02 nRMSE=0.264066
-[25/30] total demand=48702.1
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_24_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1246 ACT 1152 BUF 111)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2440 ACT 1866 BUF 264)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3549 ACT 2152 BUF 514)                         Step #400.00 (1ms ~= 1000.00*RT, ~2496000.00UPS, vehicles TOT 4603 ACT 2496 BUF 808)      Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5670 ACT 2814 BUF 1095)                        Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6716 ACT 3211 BUF 1404)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7500 ACT 3307 BUF 1973)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 8169 ACT 3253 BUF 2657)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 9011 ACT 3406 BUF 3173)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9946 ACT 3659 BUF 3583)                       Step #1100.00 (1ms ~= 1000.00*RT, ~3552000.00UPS, vehicles TOT 10521 ACT 3552 BUF 4362)   Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11186 ACT 3517 BUF 5047)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12061 ACT 3719 BUF 5528)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12686 ACT 3700 BUF 6253)                      Step #1500.00 (1ms ~= 1000.00*RT, ~3615000.00UPS, vehicles TOT 13275 ACT 3615 BUF 7020)   Step #1600.00 (1ms ~= 1000.00*RT, ~3522000.00UPS, vehicles TOT 13885 ACT 3522 BUF 7761)   Step #1700.00 (1ms ~= 1000.00*RT, ~3518000.00UPS, vehicles TOT 14547 ACT 3518 BUF 8454)   Step #1800.00 (1ms ~= 1000.00*RT, ~3607000.00UPS, vehicles TOT 15322 ACT 3607 BUF 9042)   Step #1900.00 (1ms ~= 1000.00*RT, ~3567000.00UPS, vehicles TOT 15939 ACT 3567 BUF 9768)   Step #2000.00 (1ms ~= 1000.00*RT, ~3711000.00UPS, vehicles TOT 16740 ACT 3711 BUF 10320)  Step #2100.00 (2ms ~= 500.00*RT, ~1830000.00UPS, vehicles TOT 17331 ACT 3660 BUF 11083)   Step #2200.00 (1ms ~= 1000.00*RT, ~3607000.00UPS, vehicles TOT 17931 ACT 3607 BUF 11837)  Step #2300.00 (2ms ~= 500.00*RT, ~1792000.00UPS, vehicles TOT 18571 ACT 3584 BUF 12548)   Step #2400.00 (1ms ~= 1000.00*RT, ~3584000.00UPS, vehicles TOT 19310 ACT 3584 BUF 13163)  Step #2500.00 (2ms ~= 500.00*RT, ~1780500.00UPS, vehicles TOT 19977 ACT 3561 BUF 13848)   Step #2600.00 (1ms ~= 1000.00*RT, ~3698000.00UPS, vehicles TOT 20750 ACT 3698 BUF 14428)  Step #2700.00 (2ms ~= 500.00*RT, ~1809000.00UPS, vehicles TOT 21352 ACT 3618 BUF 15185)   Step #2800.00 (2ms ~= 500.00*RT, ~1789500.00UPS, vehicles TOT 21964 ACT 3579 BUF 15916)   Step #2900.00 (2ms ~= 500.00*RT, ~1756500.00UPS, vehicles TOT 22558 ACT 3513 BUF 16677)   Step #3000.00 (2ms ~= 500.00*RT, ~1813500.00UPS, vehicles TOT 23349 ACT 3627 BUF 17245)   Step #3100.00 (1ms ~= 1000.00*RT, ~3595000.00UPS, vehicles TOT 23958 ACT 3595 BUF 17985)  Step #3200.00 (2ms ~= 500.00*RT, ~1781500.00UPS, vehicles TOT 24567 ACT 3563 BUF 18728)   Step #3300.00 (2ms ~= 500.00*RT, ~1771000.00UPS, vehicles TOT 25219 ACT 3542 BUF 19427)   Step #3400.00 (2ms ~= 500.00*RT, ~1789500.00UPS, vehicles TOT 25917 ACT 3579 BUF 20086)   Step #3500.00 (2ms ~= 500.00*RT, ~1767000.00UPS, vehicles TOT 26527 ACT 3534 BUF 20824)   Step #3600.00 (3ms ~= 333.33*RT, ~1163333.33UPS, vehicles TOT 27151 ACT 3490 BUF 21555)   Step #3700.00 (3ms ~= 333.33*RT, ~1042666.67UPS, vehicles TOT 27397 ACT 3128 BUF 21309)   Step #3800.00 (3ms ~= 333.33*RT, ~920666.67UPS, vehicles TOT 27509 ACT 2762 BUF 21197)    Step #3900.00 (3ms ~= 333.33*RT, ~852000.00UPS, vehicles TOT 27604 ACT 2556 BUF 21102)    
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 5.49s
- Real time factor: 711.03
- UPS: 2332072.379216
-Vehicles:
- Inserted: 27604 (Loaded: 48706)
- Running: 2556
- Waiting: 21102
- Teleports: 2 (Jam: 2)
-Statistics (avg of 25048):
- RouteLength: 3278.71
- Speed: 15.28
- Duration: 355.59
- WaitingTime: 1.61
- TimeLoss: 208.91
- DepartDelay: 120.24
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_24.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_24.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_24_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_24_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_24_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.143916e-01 nRMSE=0.338218
-[26/30] total demand=40797.4
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_25_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1003 ACT 933 BUF 129)                          Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 1970 ACT 1395 BUF 298)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 2890 ACT 1505 BUF 510)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 3804 ACT 1581 BUF 730)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4729 ACT 1658 BUF 941)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5642 ACT 1730 BUF 1158)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 6561 ACT 1825 BUF 1374)                        Step #800.00 (1ms ~= 1000.00*RT, ~1914000.00UPS, vehicles TOT 7474 ACT 1914 BUF 1592)     Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8384 ACT 2023 BUF 1824)                        Step #1000.00 (1ms ~= 1000.00*RT, ~2085000.00UPS, vehicles TOT 9275 ACT 2085 BUF 2060)    Step #1100.00 (1ms ~= 1000.00*RT, ~2284000.00UPS, vehicles TOT 10207 ACT 2284 BUF 2263)   Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 11117 ACT 2478 BUF 2486)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12012 ACT 2638 BUF 2722)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12904 ACT 2737 BUF 2962)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 13800 ACT 2965 BUF 3203)                      Step #1600.00 (1ms ~= 1000.00*RT, ~3094000.00UPS, vehicles TOT 14574 ACT 3094 BUF 3562)   Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 15286 ACT 3184 BUF 3982)                      Step #1800.00 (1ms ~= 1000.00*RT, ~3165000.00UPS, vehicles TOT 15961 ACT 3165 BUF 4449)   Step #1900.00 (1ms ~= 1000.00*RT, ~3144000.00UPS, vehicles TOT 16589 ACT 3144 BUF 4947)   Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 17171 ACT 3037 BUF 5494)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3181000.00UPS, vehicles TOT 18030 ACT 3181 BUF 5772)   Step #2200.00 (1ms ~= 1000.00*RT, ~3352000.00UPS, vehicles TOT 18838 ACT 3352 BUF 6099)   Step #2300.00 (0ms ?*RT. ?UPS, vehicles TOT 19454 ACT 3376 BUF 6616)                      Step #2400.00 (1ms ~= 1000.00*RT, ~3269000.00UPS, vehicles TOT 19996 ACT 3269 BUF 7202)   Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 20538 ACT 3208 BUF 7796)                      Step #2600.00 (1ms ~= 1000.00*RT, ~3125000.00UPS, vehicles TOT 21081 ACT 3125 BUF 8387)   Step #2700.00 (1ms ~= 1000.00*RT, ~3233000.00UPS, vehicles TOT 21763 ACT 3233 BUF 8844)   Step #2800.00 (1ms ~= 1000.00*RT, ~3249000.00UPS, vehicles TOT 22340 ACT 3249 BUF 9395)   Step #2900.00 (1ms ~= 1000.00*RT, ~3166000.00UPS, vehicles TOT 22885 ACT 3166 BUF 9984)   Step #3000.00 (1ms ~= 1000.00*RT, ~3102000.00UPS, vehicles TOT 23427 ACT 3102 BUF 10579)  Step #3100.00 (2ms ~= 500.00*RT, ~1501500.00UPS, vehicles TOT 23976 ACT 3003 BUF 11158)   Step #3200.00 (1ms ~= 1000.00*RT, ~3211000.00UPS, vehicles TOT 24852 ACT 3211 BUF 11415)  Step #3300.00 (1ms ~= 1000.00*RT, ~3291000.00UPS, vehicles TOT 25652 ACT 3291 BUF 11753)  Step #3400.00 (1ms ~= 1000.00*RT, ~3272000.00UPS, vehicles TOT 26327 ACT 3272 BUF 12208)  Step #3500.00 (2ms ~= 500.00*RT, ~1629500.00UPS, vehicles TOT 26980 ACT 3259 BUF 12692)   Step #3600.00 (2ms ~= 500.00*RT, ~1595500.00UPS, vehicles TOT 27553 ACT 3191 BUF 13248)   Step #3700.00 (1ms ~= 1000.00*RT, ~2955000.00UPS, vehicles TOT 27947 ACT 2955 BUF 12854)  Step #3800.00 (0ms ?*RT. ?UPS, vehicles TOT 28078 ACT 2613 BUF 12723)                     Step #3900.00 (1ms ~= 1000.00*RT, ~2505000.00UPS, vehicles TOT 28299 ACT 2505 BUF 12502)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.04s
- Real time factor: 1282.47
- UPS: 3409791.187110
-Vehicles:
- Inserted: 28299 (Loaded: 40801)
- Running: 2505
- Waiting: 12502
-Statistics (avg of 25794):
- RouteLength: 3250.11
- Speed: 17.48
- Duration: 303.97
- WaitingTime: 1.24
- TimeLoss: 159.34
- DepartDelay: 193.31
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_25.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_25.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_25_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_25_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_25_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=2.858537e-01 nRMSE=0.534653
-[27/30] total demand=45784.5
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (0ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_26_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1166 ACT 1082 BUF 109)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2301 ACT 1666 BUF 243)                         Step #300.00 (1ms ~= 1000.00*RT, ~1798000.00UPS, vehicles TOT 3334 ACT 1798 BUF 486)      Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4333 ACT 1970 BUF 752)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5363 ACT 2138 BUF 998)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6364 ACT 2346 BUF 1268)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7336 ACT 2471 BUF 1566)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 8316 ACT 2638 BUF 1859)                        Step #900.00 (1ms ~= 1000.00*RT, ~2787000.00UPS, vehicles TOT 9309 ACT 2787 BUF 2143)     Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 10203 ACT 2843 BUF 2510)                      Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 11067 ACT 2866 BUF 2919)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 12130 ACT 3123 BUF 3129)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 12971 ACT 3121 BUF 3560)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 13794 ACT 3160 BUF 4010)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 14568 ACT 3115 BUF 4507)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 15462 ACT 3162 BUF 4882)                      Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 16520 ACT 3478 BUF 5094)                      Step #1800.00 (0ms ?*RT. ?UPS, vehicles TOT 17240 ACT 3340 BUF 5660)                      Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 18111 ACT 3413 BUF 6055)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 18811 ACT 3358 BUF 6623)                      Step #2100.00 (0ms ?*RT. ?UPS, vehicles TOT 19551 ACT 3260 BUF 7159)                      Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 20585 ACT 3437 BUF 7391)                      Step #2300.00 (1ms ~= 1000.00*RT, ~3405000.00UPS, vehicles TOT 21303 ACT 3405 BUF 7946)   Step #2400.00 (1ms ~= 1000.00*RT, ~3332000.00UPS, vehicles TOT 22051 ACT 3332 BUF 8468)   Step #2500.00 (1ms ~= 1000.00*RT, ~3512000.00UPS, vehicles TOT 23083 ACT 3512 BUF 8711)   Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 23877 ACT 3472 BUF 9190)                      Step #2700.00 (1ms ~= 1000.00*RT, ~3545000.00UPS, vehicles TOT 24758 ACT 3545 BUF 9581)   Step #2800.00 (1ms ~= 1000.00*RT, ~3501000.00UPS, vehicles TOT 25495 ACT 3501 BUF 10108)  Step #2900.00 (0ms ?*RT. ?UPS, vehicles TOT 26229 ACT 3357 BUF 10649)                     Step #3000.00 (1ms ~= 1000.00*RT, ~3472000.00UPS, vehicles TOT 27178 ACT 3472 BUF 10977)  Step #3100.00 (1ms ~= 1000.00*RT, ~3347000.00UPS, vehicles TOT 27847 ACT 3347 BUF 11572)  Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 28720 ACT 3515 BUF 11973)                     Step #3300.00 (1ms ~= 1000.00*RT, ~3388000.00UPS, vehicles TOT 29460 ACT 3388 BUF 12505)  Step #3400.00 (1ms ~= 1000.00*RT, ~3394000.00UPS, vehicles TOT 30253 ACT 3394 BUF 12983)  Step #3500.00 (3ms ~= 333.33*RT, ~1110666.67UPS, vehicles TOT 30974 ACT 3332 BUF 13531)   Step #3600.00 (2ms ~= 500.00*RT, ~1691000.00UPS, vehicles TOT 31842 ACT 3382 BUF 13936)   Step #3700.00 (1ms ~= 1000.00*RT, ~2820000.00UPS, vehicles TOT 32033 ACT 2820 BUF 13745)  Step #3800.00 (2ms ~= 500.00*RT, ~1270000.00UPS, vehicles TOT 32186 ACT 2540 BUF 13592)   Step #3900.00 (0ms ?*RT. ?UPS, vehicles TOT 32362 ACT 2286 BUF 13416)                     
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.11s
- Real time factor: 1256.04
- UPS: 3703916.264090
-Vehicles:
- Inserted: 32362 (Loaded: 45778)
- Running: 2286
- Waiting: 13416
-Statistics (avg of 30076):
- RouteLength: 3170.39
- Speed: 16.12
- Duration: 314.52
- WaitingTime: 1.18
- TimeLoss: 171.09
- DepartDelay: 171.15
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_26.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_26.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_26_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_26_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_26_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=2.817804e-01 nRMSE=0.530830
-[28/30] total demand=44526.0
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (12ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_27_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (0ms ?*RT. ?UPS, vehicles TOT 1115 ACT 1040 BUF 119)                         Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2194 ACT 1679 BUF 281)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3210 ACT 1992 BUF 504)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4226 ACT 2287 BUF 719)                         Step #500.00 (1ms ~= 1000.00*RT, ~2613000.00UPS, vehicles TOT 5249 ACT 2613 BUF 933)      Step #600.00 (1ms ~= 1000.00*RT, ~2961000.00UPS, vehicles TOT 6259 ACT 2961 BUF 1166)     Step #700.00 (1ms ~= 1000.00*RT, ~3334000.00UPS, vehicles TOT 7248 ACT 3334 BUF 1411)     Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 8031 ACT 3583 BUF 1868)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8769 ACT 3734 BUF 2368)                        Step #1000.00 (0ms ?*RT. ?UPS, vehicles TOT 9503 ACT 3918 BUF 2867)                       Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10260 ACT 4080 BUF 3344)                      Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10958 ACT 4306 BUF 3882)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11651 ACT 4511 BUF 4428)                      Step #1400.00 (1ms ~= 1000.00*RT, ~4659000.00UPS, vehicles TOT 12351 ACT 4659 BUF 4967)   Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 13124 ACT 4948 BUF 5427)                      Step #1600.00 (1ms ~= 1000.00*RT, ~5177000.00UPS, vehicles TOT 13789 ACT 5177 BUF 6001)   Step #1700.00 (0ms ?*RT. ?UPS, vehicles TOT 14337 ACT 5377 BUF 6688)                      Step #1800.00 (1ms ~= 1000.00*RT, ~5374000.00UPS, vehicles TOT 14752 ACT 5374 BUF 7522)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 15123 ACT 5309 BUF 8379)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 15483 ACT 5251 BUF 9253)                      Step #2100.00 (2ms ~= 500.00*RT, ~2463500.00UPS, vehicles TOT 15692 ACT 4927 BUF 10286)   Step #2200.00 (2ms ~= 500.00*RT, ~2560500.00UPS, vehicles TOT 16368 ACT 5121 BUF 10842)   Step #2300.00 (1ms ~= 1000.00*RT, ~5443000.00UPS, vehicles TOT 17109 ACT 5443 BUF 11339)  Step #2400.00 (1ms ~= 1000.00*RT, ~5451000.00UPS, vehicles TOT 17537 ACT 5451 BUF 12149)  Step #2500.00 (1ms ~= 1000.00*RT, ~5389000.00UPS, vehicles TOT 17904 ACT 5389 BUF 13019)  Step #2600.00 (1ms ~= 1000.00*RT, ~5111000.00UPS, vehicles TOT 18064 ACT 5111 BUF 14094)  Step #2700.00 (2ms ~= 500.00*RT, ~2559500.00UPS, vehicles TOT 18523 ACT 5119 BUF 14878)   Step #2800.00 (2ms ~= 500.00*RT, ~2663000.00UPS, vehicles TOT 19085 ACT 5326 BUF 15542)   Step #2900.00 (2ms ~= 500.00*RT, ~2659000.00UPS, vehicles TOT 19478 ACT 5318 BUF 16390)   Step #3000.00 (2ms ~= 500.00*RT, ~2639000.00UPS, vehicles TOT 19881 ACT 5278 BUF 17228)   Step #3100.00 (2ms ~= 500.00*RT, ~2546500.00UPS, vehicles TOT 20222 ACT 5093 BUF 18123)   Step #3200.00 (2ms ~= 500.00*RT, ~2620000.00UPS, vehicles TOT 20824 ACT 5240 BUF 18757)   Step #3300.00 (2ms ~= 500.00*RT, ~2680500.00UPS, vehicles TOT 21422 ACT 5361 BUF 19393)   Step #3400.00 (2ms ~= 500.00*RT, ~2697500.00UPS, vehicles TOT 21833 ACT 5395 BUF 20220)   Step #3500.00 (2ms ~= 500.00*RT, ~2596000.00UPS, vehicles TOT 22045 ACT 5192 BUF 21248)   Step #3600.00 (2ms ~= 500.00*RT, ~2502000.00UPS, vehicles TOT 22301 ACT 5004 BUF 22225)   Step #3700.00 (3ms ~= 333.33*RT, ~1740666.67UPS, vehicles TOT 22878 ACT 5222 BUF 21648)   Step #3800.00 (2ms ~= 500.00*RT, ~2609500.00UPS, vehicles TOT 23163 ACT 5219 BUF 21363)   Step #3900.00 (2ms ~= 500.00*RT, ~2575000.00UPS, vehicles TOT 23475 ACT 5150 BUF 21051)   
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.44s
- Real time factor: 879.17
- UPS: 3900440.261497
-Vehicles:
- Inserted: 23475 (Loaded: 44526)
- Running: 5150
- Waiting: 21051
- Teleports: 9 (Jam: 9)
-Statistics (avg of 18325):
- RouteLength: 3277.38
- Speed: 12.03
- Duration: 538.33
- WaitingTime: 2.78
- TimeLoss: 395.26
- DepartDelay: 94.89
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_27.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_27.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_27_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_27_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_27_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.859917e-01 nRMSE=0.431268
-[29/30] total demand=41161.4
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (10ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_28_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (1ms ~= 1000.00*RT, ~977000.00UPS, vehicles TOT 1022 ACT 977 BUF 125)        Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 1999 ACT 1581 BUF 286)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 2927 ACT 1777 BUF 505)                         Step #400.00 (1ms ~= 1000.00*RT, ~2002000.00UPS, vehicles TOT 3849 ACT 2002 BUF 724)      Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 4782 ACT 2214 BUF 937)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 5687 ACT 2469 BUF 1176)                        Step #700.00 (4ms ~= 250.00*RT, ~663750.00UPS, vehicles TOT 6558 ACT 2655 BUF 1446)       Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7435 ACT 2819 BUF 1710)                        Step #900.00 (1ms ~= 1000.00*RT, ~3012000.00UPS, vehicles TOT 8321 ACT 3012 BUF 1976)     Step #1000.00 (1ms ~= 1000.00*RT, ~3217000.00UPS, vehicles TOT 9224 ACT 3217 BUF 2212)    Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 9913 ACT 3219 BUF 2663)                       Step #1200.00 (0ms ?*RT. ?UPS, vehicles TOT 10793 ACT 3404 BUF 2929)                      Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11527 ACT 3455 BUF 3338)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12315 ACT 3567 BUF 3691)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12941 ACT 3533 BUF 4214)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13759 ACT 3688 BUF 4536)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3627000.00UPS, vehicles TOT 14374 ACT 3627 BUF 5062)   Step #1800.00 (1ms ~= 1000.00*RT, ~3720000.00UPS, vehicles TOT 15099 ACT 3720 BUF 5493)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 15655 ACT 3685 BUF 6071)                      Step #2000.00 (0ms ?*RT. ?UPS, vehicles TOT 16400 ACT 3751 BUF 6465)                      Step #2100.00 (1ms ~= 1000.00*RT, ~3769000.00UPS, vehicles TOT 17074 ACT 3769 BUF 6936)   Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 17647 ACT 3702 BUF 7510)                      Step #2300.00 (1ms ~= 1000.00*RT, ~3598000.00UPS, vehicles TOT 18218 ACT 3598 BUF 8079)   Step #2400.00 (1ms ~= 1000.00*RT, ~3695000.00UPS, vehicles TOT 18956 ACT 3695 BUF 8482)   Step #2500.00 (0ms ?*RT. ?UPS, vehicles TOT 19580 ACT 3720 BUF 9006)                      Step #2600.00 (0ms ?*RT. ?UPS, vehicles TOT 20139 ACT 3614 BUF 9588)                      Step #2700.00 (1ms ~= 1000.00*RT, ~3578000.00UPS, vehicles TOT 20722 ACT 3578 BUF 10153)  Step #2800.00 (1ms ~= 1000.00*RT, ~3567000.00UPS, vehicles TOT 21355 ACT 3567 BUF 10660)  Step #2900.00 (1ms ~= 1000.00*RT, ~3784000.00UPS, vehicles TOT 22212 ACT 3784 BUF 10946)  Step #3000.00 (1ms ~= 1000.00*RT, ~3706000.00UPS, vehicles TOT 22777 ACT 3706 BUF 11528)  Step #3100.00 (1ms ~= 1000.00*RT, ~3606000.00UPS, vehicles TOT 23337 ACT 3606 BUF 12106)  Step #3200.00 (0ms ?*RT. ?UPS, vehicles TOT 23947 ACT 3591 BUF 12640)                     Step #3300.00 (1ms ~= 1000.00*RT, ~3545000.00UPS, vehicles TOT 24571 ACT 3545 BUF 13162)  Step #3400.00 (1ms ~= 1000.00*RT, ~3803000.00UPS, vehicles TOT 25456 ACT 3803 BUF 13422)  Step #3500.00 (1ms ~= 1000.00*RT, ~3728000.00UPS, vehicles TOT 26038 ACT 3728 BUF 13977)  Step #3600.00 (1ms ~= 1000.00*RT, ~3670000.00UPS, vehicles TOT 26630 ACT 3670 BUF 14530)  Step #3700.00 (1ms ~= 1000.00*RT, ~3236000.00UPS, vehicles TOT 26758 ACT 3236 BUF 14402)  Step #3800.00 (1ms ~= 1000.00*RT, ~3081000.00UPS, vehicles TOT 27101 ACT 3081 BUF 14059)  Step #3900.00 (1ms ~= 1000.00*RT, ~2909000.00UPS, vehicles TOT 27292 ACT 2909 BUF 13868)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 3.44s
- Real time factor: 1133.06
- UPS: 3626257.699012
-Vehicles:
- Inserted: 27292 (Loaded: 41160)
- Running: 2909
- Waiting: 13868
- Teleports: 4 (Jam: 4)
-Statistics (avg of 24383):
- RouteLength: 3605.59
- Speed: 15.70
- Duration: 342.25
- WaitingTime: 1.46
- TimeLoss: 183.77
- DepartDelay: 169.26
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_28.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_28.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_28_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_28_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_28_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.396318e-01 nRMSE=0.373673
-[30/30] total demand=44978.4
-Loading net-file from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml' ...pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-pj_obj_create: Cannot find proj.db
-
- done (9ms).
-Loading additional-files from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml' ... done (1ms).
-Loading route-files incrementally from '/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_29_rep0_trips.xml'
-Loading done.
-Simulation version 1.24.0 started with time: 0.00.
-Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 0 ACT 0 BUF 0)                                   Step #100.00 (1ms ~= 1000.00*RT, ~1074000.00UPS, vehicles TOT 1179 ACT 1074 BUF 71)       Step #200.00 (0ms ?*RT. ?UPS, vehicles TOT 2347 ACT 1706 BUF 154)                         Step #300.00 (0ms ?*RT. ?UPS, vehicles TOT 3431 ACT 2014 BUF 318)                         Step #400.00 (0ms ?*RT. ?UPS, vehicles TOT 4489 ACT 2323 BUF 505)                         Step #500.00 (0ms ?*RT. ?UPS, vehicles TOT 5560 ACT 2683 BUF 686)                         Step #600.00 (0ms ?*RT. ?UPS, vehicles TOT 6486 ACT 2932 BUF 1014)                        Step #700.00 (0ms ?*RT. ?UPS, vehicles TOT 7242 ACT 2990 BUF 1504)                        Step #800.00 (0ms ?*RT. ?UPS, vehicles TOT 7974 ACT 3040 BUF 2018)                        Step #900.00 (0ms ?*RT. ?UPS, vehicles TOT 8723 ACT 3156 BUF 2529)                        Step #1000.00 (1ms ~= 1000.00*RT, ~3229000.00UPS, vehicles TOT 9455 ACT 3229 BUF 3040)    Step #1100.00 (0ms ?*RT. ?UPS, vehicles TOT 10177 ACT 3300 BUF 3569)                      Step #1200.00 (1ms ~= 1000.00*RT, ~3416000.00UPS, vehicles TOT 10914 ACT 3416 BUF 4078)   Step #1300.00 (0ms ?*RT. ?UPS, vehicles TOT 11653 ACT 3582 BUF 4589)                      Step #1400.00 (0ms ?*RT. ?UPS, vehicles TOT 12313 ACT 3658 BUF 5180)                      Step #1500.00 (0ms ?*RT. ?UPS, vehicles TOT 12866 ACT 3647 BUF 5876)                      Step #1600.00 (0ms ?*RT. ?UPS, vehicles TOT 13436 ACT 3600 BUF 6555)                      Step #1700.00 (1ms ~= 1000.00*RT, ~3782000.00UPS, vehicles TOT 14246 ACT 3782 BUF 6991)   Step #1800.00 (1ms ~= 1000.00*RT, ~3919000.00UPS, vehicles TOT 14990 ACT 3919 BUF 7508)   Step #1900.00 (0ms ?*RT. ?UPS, vehicles TOT 15536 ACT 3921 BUF 8205)                      Step #2000.00 (1ms ~= 1000.00*RT, ~3942000.00UPS, vehicles TOT 16103 ACT 3942 BUF 8882)   Step #2100.00 (2ms ~= 500.00*RT, ~1978500.00UPS, vehicles TOT 16654 ACT 3957 BUF 9584)    Step #2200.00 (0ms ?*RT. ?UPS, vehicles TOT 17223 ACT 3951 BUF 10261)                     Step #2300.00 (1ms ~= 1000.00*RT, ~3993000.00UPS, vehicles TOT 17795 ACT 3993 BUF 10941)  Step #2400.00 (1ms ~= 1000.00*RT, ~4016000.00UPS, vehicles TOT 18369 ACT 4016 BUF 11615)  Step #2500.00 (1ms ~= 1000.00*RT, ~4039000.00UPS, vehicles TOT 18941 ACT 4039 BUF 12291)  Step #2600.00 (1ms ~= 1000.00*RT, ~4029000.00UPS, vehicles TOT 19517 ACT 4029 BUF 12965)  Step #2700.00 (1ms ~= 1000.00*RT, ~4058000.00UPS, vehicles TOT 20092 ACT 4058 BUF 13646)  Step #2800.00 (1ms ~= 1000.00*RT, ~4067000.00UPS, vehicles TOT 20662 ACT 4067 BUF 14322)  Step #2900.00 (2ms ~= 500.00*RT, ~2039500.00UPS, vehicles TOT 21215 ACT 4079 BUF 15017)   Step #3000.00 (2ms ~= 500.00*RT, ~2013500.00UPS, vehicles TOT 21760 ACT 4027 BUF 15723)   Step #3100.00 (2ms ~= 500.00*RT, ~2105000.00UPS, vehicles TOT 22572 ACT 4210 BUF 16160)   Step #3200.00 (1ms ~= 1000.00*RT, ~4371000.00UPS, vehicles TOT 23323 ACT 4371 BUF 16659)  Step #3300.00 (2ms ~= 500.00*RT, ~2204500.00UPS, vehicles TOT 23901 ACT 4409 BUF 17330)   Step #3400.00 (2ms ~= 500.00*RT, ~2214000.00UPS, vehicles TOT 24479 ACT 4428 BUF 17997)   Step #3500.00 (3ms ~= 333.33*RT, ~1485666.67UPS, vehicles TOT 25042 ACT 4457 BUF 18686)   Step #3600.00 (2ms ~= 500.00*RT, ~2207000.00UPS, vehicles TOT 25587 ACT 4414 BUF 19389)   Step #3700.00 (2ms ~= 500.00*RT, ~1973500.00UPS, vehicles TOT 25710 ACT 3947 BUF 19266)   Step #3800.00 (2ms ~= 500.00*RT, ~1836000.00UPS, vehicles TOT 25873 ACT 3672 BUF 19103)   Step #3900.00 (1ms ~= 1000.00*RT, ~3450000.00UPS, vehicles TOT 26009 ACT 3450 BUF 18967)  
-Simulation ended at time: 3900.00.
-Reason: The final simulation step has been reached.
-Performance:
- Duration: 4.19s
- Real time factor: 929.9
- UPS: 3288008.345255
-Vehicles:
- Inserted: 26009 (Loaded: 44976)
- Running: 3450
- Waiting: 18967
- Teleports: 11 (Jam: 11)
-Statistics (avg of 22559):
- RouteLength: 2922.05
- Speed: 14.30
- Duration: 365.94
- WaitingTime: 1.88
- TimeLoss: 232.60
- DepartDelay: 117.82
-Created /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_29.xml
-od2trips --spread.uniform --taz-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/taz.xml --tazrelation-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/gt_od_network_3junction_29.xml --seed 0 -o /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_29_rep0_trips_beforeRteUpdates.xml
-Running SUMO: sumo --output-prefix output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_29_rep0_ --ignore-route-errors=true --net-file=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/net.xml --routes=/Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/sobol_29_rep0_trips.xml -b 0 -e 3900 --additional-files /Users/inesbenhamza/Desktop/Sumo_od_calibration_bn/network/network_3junction/additional.xml --duration-log.statistics --xml-validation never --vehroutes routes.vehroutes.xml --verbose --no-warnings --mesosim true --seed 0
-  S(nRMSE^2)=1.972739e-01 nRMSE=0.444155
-
-Saved 30 initial points to output/network_3junction_bo_vanilla_matern-2p5/initial_search/NRMSE/data_set_ods_30.csv
-nRMSE range: [0.2641, 0.5655]
